@@ -1,36 +1,15 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import router from './routes'
+import axios from 'axios'
 import ElementUI from 'element-ui'
-// import router from './router'
-import VueRouter from 'vue-router'
-import routes from './routes'
+import 'element-ui/lib/theme-default/index.css'    // 默认主题
+// import '../static/css/theme-green/index.css';       // 浅绿色主题
+import 'babel-polyfill'
 
-Vue.config.productionTip = false
 Vue.use(ElementUI)
-const router = new VueRouter({
-  routes
-})
-
-router.beforeEach((to, from, next) => {
-  if (to.path === '/login') {
-    console.log('login')
-    sessionStorage.removeItem('user')
-  }
-  let user = JSON.parse(sessionStorage.getItem('user'))
-  if (!user && to.path !== '/login') {
-    next({ path: '/login' })
-  } else {
-    next()
-  }
-})
-
-/* eslint-disable no-new */
+Vue.prototype.$axios = axios
 new Vue({
-  el: '#app',
   router,
   render: h => h(App)
-  // template: '<App/>',
-  // components: { App }
-})
+}).$mount('#app')

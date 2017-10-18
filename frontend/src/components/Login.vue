@@ -16,8 +16,8 @@
 </template>
 
 <script>
-  import { requestLogin } from '../api/api';
-  //import NProgress from 'nprogress'
+  import { requestLogin } from '../api/api'
+  // import NProgress from 'nprogress'
   export default {
     data() {
       return {
@@ -69,7 +69,7 @@
             console.log('error submit!!');
             return false;
           }
-        });
+        })
       }
     }
   }

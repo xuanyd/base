@@ -94,8 +94,7 @@
         <mvc:interceptor>
             <!-- 如果不配置或/*,将拦截所有的Controller -->
             <mvc:mapping path="/*"/>
-            <bean id="commonInter" class="com.base.interceptor.CommonInterceptor"></bean>
-
+            <bean id="commonInter" class="com.base.interceptor.CommonInterceptor"/>
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/*"/>

@@ -56,6 +56,7 @@
               this.logining = false
               // NProgress.done()
               let { msg, code, user } = data
+              console.log(code)
               if (code !== 200) {
                 this.$message({
                   message: msg,

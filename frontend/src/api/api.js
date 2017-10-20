@@ -1,12 +1,6 @@
 import axios from 'axios'
 let base = 'http://localhost:8081'
-axios.interceptors.request.use(
-  config => {
-    config.headers = {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-  }
-)
+axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded'
 
 export const requestLogin = params => { return axios.post(`${base}/admin/login`, params).then(res => res.data) }
 

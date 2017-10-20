@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-public class AdminController {
+class AdminController {
 
     @RequestMapping({"main.html"})
     public String main(){

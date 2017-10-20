@@ -36,6 +36,11 @@ public class LoginInterceptor implements HandlerInterceptor{
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
                              Object arg2) throws Exception {
+        response.setHeader("Access-Control-Allow-Origin","*");
+        response.setHeader("Access-Control-Allow-Methods","POST");
+        response.setHeader("Access-Control-Allow-Headers","Access-Control");
+        response.setHeader("Allow","POST");
+
         /*String url=request.getRequestURL().toString();
 
         //验证是否为管理员

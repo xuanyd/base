@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
 import java.util.Map;
 
 @Controller
@@ -24,7 +23,7 @@ class AdminController {
     }
 
     @RequestMapping({"admin/login"})
-    public @ResponseBody Map login(HttpServletRequest req, HttpSession httpSession){
+    public @ResponseBody Map login(HttpServletRequest req, HttpSession httpSession) throws Exception{
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         Map<String,Object> retMap = adminService.adminLogin(username, password);

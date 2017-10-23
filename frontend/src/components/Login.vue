@@ -55,15 +55,15 @@
               console.log(data)
               this.logining = false
               // NProgress.done()
-              let { msg, code, user } = data
-              console.log(code)
-              if (code !== 200) {
+              // let { msg, code, user } = data
+              // console.log(code)
+              if (data.code !== 'success') {
                 this.$message({
-                  message: msg,
+                  message: 'error',
                   type: 'error'
                 })
               } else {
-                sessionStorage.setItem('user', JSON.stringify(user))
+                sessionStorage.setItem('user', JSON.stringify(data.user))
                 this.$router.push({ path: '/table' })
               }
             })

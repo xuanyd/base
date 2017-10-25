@@ -57,9 +57,9 @@
               // NProgress.done()
               // let { msg, code, user } = data
               // console.log(code)
-              if (data.code !== 'success') {
+              if (data.flag !== 'success') {
                 this.$message({
-                  message: 'error',
+                  message: data.msg,
                   type: 'error'
                 })
               } else {

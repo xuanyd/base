@@ -1,6 +1,6 @@
 package com.base.service;
 
-import com.base.dao.IBaseDao;
+import com.base.admin.dao.AdminDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +11,20 @@ import java.util.Map;
 public class AdminService {
 
     @Autowired
-    private IBaseDao baseDao;
+    private AdminDao adminDao;
 
     public Map<String, Object> adminLogin(String username, String password) throws Exception {
-        Map<String, Object> params = new HashMap<>();
-        params.put("username", username);
-        params.put("password",password);
-        String sql = " select user_id, user_name from t_sys_user where user_name=:username and user_password=:password ";
-        return baseDao.queryForMap(sql, params);
+        Map<String, Object> retMap = new HashMap<>();
+        retMap.put("flag", "err");
+        retMap.put("msg", "其他错误");
+        Map<String, Object> userMap = adminDao.queryUserByNameAndPwd(username, password);
+        if (null == userMap || userMap.isEmpty()) {
+            retMap.put("msg", "错误的用户信息");
+        } else {
+            retMap.put("flag", "success");
+            retMap.put("user", userMap);
+            return retMap;
+        }
+        return retMap;
     }
 }

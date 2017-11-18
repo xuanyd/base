@@ -13,11 +13,11 @@ let routes = [
   {
     path: '/',
     component: Home,
-    name: '',
+    name: '系统管理',
     iconCls: 'el-icon-message', // 图标样式class
     children: [
       { path: '/main', component: Main, name: '主页', hidden: true },
-      { path: '/table', component: Table, name: 'Table' }
+      { path: '/table', component: Table, name: '用户管理' }
     ]
   }
 ]

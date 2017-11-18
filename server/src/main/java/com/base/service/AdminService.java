@@ -27,4 +27,8 @@ public class AdminService {
         }
         return retMap;
     }
+
+    public Map<String,Object> getUserList() {
+        return null;
+    }
 }

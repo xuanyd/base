@@ -1,20 +1,28 @@
 <template>
-  <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-position="left" label-width="0px" class="demo-ruleForm login-container">
-    <h3 class="title">系统登录</h3>
-    <el-form-item prop="account">
-      <el-input type="text" v-model="ruleForm2.account" auto-complete="off" placeholder="账号"></el-input>
-    </el-form-item>
-    <el-form-item prop="checkPass">
-      <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off" placeholder="密码"></el-input>
-    </el-form-item>
-    <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox>
-    <el-form-item style="width:100%;">
-      <el-button type="primary" style="width:100%;" @click.native.prevent="handleSubmit2" :loading="logining">登录</el-button>
-      <!--\\<el-button @click.native.prevent="handleReset2">重置</el-button>-->
-    </el-form-item>
-  </el-form>
+  <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      <input type="checkbox" class="form-check-input">
+      Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </template>
 
+
+<style>
+  @import "styles/bootstrap.css"
+</style>
 <script>
   import { requestLogin } from '../api/api'
   // import NProgress from 'nprogress'
@@ -50,8 +58,10 @@
             // _this.$router.replace('/table')
             this.logining = true
             // NProgress.start()
-            var loginParams = { username: this.ruleForm2.account, password: this.ruleForm2.checkPass }
-            requestLogin(loginParams).then(data => {
+            let params = new URLSearchParams()
+            params.append('username', this.ruleForm2.account)
+            params.append('password', this.ruleForm2.checkPass)
+            requestLogin(params).then(data => {
               console.log(data)
               this.logining = false
               // NProgress.done()

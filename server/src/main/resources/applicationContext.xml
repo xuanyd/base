@@ -105,6 +105,8 @@
     </mvc:interceptors>
     <!--**********************************************************************************-->
 
+
+
     <!-- Exception异常处理 -->
     <bean id="exceptionResolver" class="com.base.exception.AppExceptionHandler">
     </bean>

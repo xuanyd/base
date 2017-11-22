@@ -1,10 +1,10 @@
-import { BasePage } from './app.po';
+import { FrontendNgPage } from './app.po';
 
-describe('base App', function() {
-  let page: BasePage;
+describe('frontend-ng App', function() {
+  let page: FrontendNgPage;
 
   beforeEach(() => {
-    page = new BasePage();
+    page = new FrontendNgPage();
   });
 
   it('should display message saying app works', () => {

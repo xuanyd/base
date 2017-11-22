@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class BasePage {
+export class FrontendNgPage {
   navigateTo() {
     return browser.get('/');
   }

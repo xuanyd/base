@@ -1,0 +1,9 @@
+//主要颜色
+$c-color-primary:#1190d6 !default;
+
+/*页面统一样式*/
+html,
+body {
+  font-size: 14px;
+  background-color: $c-color-primary;
+}

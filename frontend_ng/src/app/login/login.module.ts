@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LoginComponent }   from './login.component';
 
-import { LoginRoutingModule } from './login-routing.module';
+import { LoginRoutingModule } from './login.routing.module';
 
 
 

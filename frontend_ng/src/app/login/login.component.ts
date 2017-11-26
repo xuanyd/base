@@ -12,7 +12,24 @@ import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms'
 @Component({
   selector: 'c-login',
   templateUrl: './login.component.html',
-  //styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+
+    constructor(private router: Router) {
+
+    }
+
+  	/**
+  	* 初始化
+  	*/
+  	ngOnInit() {
+
+  	}
+
+  	login() {
+  		alert('login ');
+  		this.router.navigate(['/app/home']);
+  	}
+
 }

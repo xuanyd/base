@@ -1,7 +1,7 @@
 import { NgModule, OnInit } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 
-import { LoginComponent }   from './home.component';
+import { HomeComponent }   from './home.component';
 
 /**
  * 主体路由
@@ -9,7 +9,7 @@ import { LoginComponent }   from './home.component';
 const mainRoutes: Routes = [
   {
     path: '',
-    component: MainComponent
+    component: HomeComponent
   }
 ];
 
@@ -21,4 +21,7 @@ const mainRoutes: Routes = [
     RouterModule
   ]
 })
-export class LoginRoutingModule { }
+
+export class HomeRoutingModule { }
+
+

@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 @Component({
   selector: 'c-main',
   templateUrl: './main.component.html',
-  // styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss']
 })
 
 export class MainComponent implements OnInit {

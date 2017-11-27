@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   	}
 
   	login() {
-  		alert('login ');
   		this.router.navigate(['/app/home']);
   	}
 

@@ -10,13 +10,22 @@ import { Component, OnInit } from '@angular/core'
 })
 
 export class LeftComponent implements OnInit {
-	/**
+	 
+    treeMenu:string='treeview';
+   
+   /**
   	* 初始化
   	*/
   	ngOnInit() {
+      
   	}
 
   	clickTree(t) {
+      this.treeMenu = 'treeview active'
   	}
+
+    toMenu() {
+      this.router.navigate(['/app/notice']);
+    }
 }
 

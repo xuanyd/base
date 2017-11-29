@@ -1,7 +1,9 @@
-import { NgModule }   from '@angular/core';
+import { NgModule }   from '@angular/core'
+import { MainComponent }   from './main.component'
+import { HeaderComponent }   from '../common/header/header.component'
+import { LeftComponent }   from '../common/left/left.component'
+import { MainRoutingModule  } from './main.routing.module'
 
-import { MainComponent }   from './main.component';
-import { MainRoutingModule  } from './main.routing.module';
 
 
 @NgModule({
@@ -9,7 +11,9 @@ import { MainRoutingModule  } from './main.routing.module';
      MainRoutingModule
   ],
   declarations: [
-     MainComponent
+     MainComponent,
+     HeaderComponent,
+     LeftComponent
   ],
   exports:      [
   ],

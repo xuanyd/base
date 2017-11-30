@@ -12,6 +12,6 @@ export class NoticeComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
-
+ 
   }
 }

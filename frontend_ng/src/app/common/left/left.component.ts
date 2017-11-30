@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
 
 /**
  * 左侧菜单组件
@@ -11,21 +12,25 @@ import { Component, OnInit } from '@angular/core'
 
 export class LeftComponent implements OnInit {
 	 
-    treeMenu:string='treeview';
+  treeMenu:string='treeview'
+
+  constructor(private router: Router) {
+
+  }
    
-   /**
-  	* 初始化
-  	*/
-  	ngOnInit() {
+  /**
+  * 初始化
+  */
+  ngOnInit() {
       
-  	}
+  }
 
-  	clickTree(t) {
-      this.treeMenu = 'treeview active'
-  	}
+  clickTree(t) {
+    this.treeMenu = 'treeview active'
+  }
 
-    toMenu() {
-      this.router.navigate(['/app/notice']);
-    }
+  toMenu() {
+    this.router.navigate(['/app/notice']);
+  }
 }
 

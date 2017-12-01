@@ -30,7 +30,7 @@ export class LeftComponent implements OnInit {
   }
 
   toMenu() {
-    this.router.navigate(['/app/notice']);
+    this.router.navigate(['/app/sitecfg/notice']);
   }
 }
 

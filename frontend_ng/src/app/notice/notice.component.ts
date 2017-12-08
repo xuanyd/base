@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'c-notice',
+  selector: 'c-sitecfg-notice',
   templateUrl: './notice.component.html',
   styleUrls: ['./notice.component.scss']
 })

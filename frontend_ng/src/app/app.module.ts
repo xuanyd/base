@@ -6,6 +6,11 @@ import { AppComponent } from './app.component';
 
 import  { AppRoutingModule } from './app-routing.module';
 
+//http
+import { HttpService }   from './common/util/http.service';
+
+import { HttpModule }    from '@angular/http';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -13,9 +18,12 @@ import  { AppRoutingModule } from './app-routing.module';
   imports: [
   	AppRoutingModule,
     NgbModule.forRoot(),
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    HttpService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

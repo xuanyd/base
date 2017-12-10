@@ -13,6 +13,7 @@ import { Router } from '@angular/router'
 export class LeftComponent implements OnInit {
 	 
   treeMenu:string='treeview'
+  
 
   constructor(private router: Router) {
 

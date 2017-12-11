@@ -14,7 +14,7 @@ export class LeftComponent implements OnInit {
 	 
   treeMenu:string='treeview'
   
-
+  
   constructor(private router: Router) {
 
   }
@@ -32,6 +32,10 @@ export class LeftComponent implements OnInit {
 
   toMenu() {
     this.router.navigate(['/app/sitecfg/notice']);
+  }
+
+  initTreeMenu() {
+
   }
 }
 

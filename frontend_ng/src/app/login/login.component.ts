@@ -1,20 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms';
-import { HttpService } from '../common/util/http.service';
+import { Component, OnInit} from '@angular/core'
+import { Router } from '@angular/router'
+import { Validators, FormControl, FormGroup, FormBuilder } from '@angular/forms'
+import { HttpService } from '../common/util/http.service'
+import { LocalStorage } from '../common/storage/local.storage'
+
 
 @Component({
   selector: 'c-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
+
 export class LoginComponent implements OnInit {
     
     private loginBtnDisable:string=''
     private loginForm: FormGroup
     private loginValid: boolean = true
-
+    private connectionValid: boolean = true
+    private connectErrMsg: string=''
     constructor(private router: Router, 
+      private ls: LocalStorage,
       private httpService: HttpService, private formBuilder: FormBuilder) {
     let userNameFc = new FormControl('admin', 
       Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15)]));
@@ -35,14 +40,18 @@ export class LoginComponent implements OnInit {
   	}
 
   	login() {
-      if (!this.loginForm.valid)
+      this.ls.setObject('username','xuanyd')
+      this.router.navigate(['/app/home'])
+      /*if (!this.loginForm.valid)
         return
       let that = this;
       that.loginBtnDisable = 'disabled'
-      that.httpService.get("http://localhost:8081/admin/login", {
+      that.httpService.get("http://10.10.10.10:8081/admin/login", {
         username: this.loginForm.value.userName,
         password: this.loginForm.value.password
       }, function (successful, data, res) {
+
+        console.log(successful);
         that.loginBtnDisable = ''
         if (successful) {
           if (data.flag!='success') {
@@ -52,7 +61,9 @@ export class LoginComponent implements OnInit {
           that.router.navigate(['/app/home']);
         }
       }, function (successful, msg, err) {
-      })
+        that.connectionValid = false
+        that.connectErrMsg = msg;
+      })*/
   	}
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core'
 import { Router } from '@angular/router'
+import { LocalStorage } from '../common/storage/local.storage'
 
 @Component({
   selector: 'c-main',
@@ -8,10 +9,15 @@ import { Router } from '@angular/router'
 })
 
 export class MainComponent implements OnInit {
+
+	constructor(private ls: LocalStorage){
+		console.log(ls)
+	}
+
 	/**
   * 初始化
   */
   ngOnInit() {
-
+  	console.log('--------------------')
   }
 }

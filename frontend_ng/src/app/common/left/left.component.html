@@ -9,8 +9,12 @@
     </div>
     <!-- Sidebar Menu-->
     <ul class="sidebar-menu">
-      <li class="active"><a href="index.html">
-      <i class="fa fa-dashboard"></i>
+      <li *ngFor="list of menuData">
+        <span>{{list.id}}</span>
+      </li> 
+      <!-- <li class="active">
+        <a href="index.html">
+        <i class="fa fa-dashboard"></i>
         <span>主页</span></a>
       </li>
       <li class="{{treeMenu}}">
@@ -66,7 +70,7 @@
             </a>
           </li>
         </ul>
-      </li>
+      </li> -->
     </ul>
   </section>
 </aside>

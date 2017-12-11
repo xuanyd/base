@@ -18,6 +18,5 @@ export class MainComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
-  	console.log('--------------------')
   }
 }

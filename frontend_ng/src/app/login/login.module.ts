@@ -19,6 +19,8 @@ import { LoginRoutingModule } from './login.routing.module'
      LoginComponent
   ],
   exports:      [],
-  providers:    [LocalStorage]
+  providers:    [
+    LocalStorage
+  ]
 })
 export class LoginModule { }

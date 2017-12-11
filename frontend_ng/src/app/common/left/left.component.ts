@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
+import { LocalStorage } from '../storage/local.storage'
 
 /**
  * 左侧菜单组件
@@ -12,11 +13,10 @@ import { Router } from '@angular/router'
 
 export class LeftComponent implements OnInit {
 	 
-  treeMenu:string='treeview'
-  
-  
-  constructor(private router: Router) {
-
+  treeMenu: string='treeview'
+  userName: string=''
+  constructor(private router: Router,private ls: LocalStorage) {
+    this.userName = ls.getObject('username')
   }
    
   /**

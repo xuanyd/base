@@ -9,10 +9,9 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: ['../../main/main.component.scss']
 })
 
-
 export class HeaderComponent implements OnInit {
 
-    userDrop:string='dropdown'
+    userDrop: string='dropdown'
 
 	  /**
   	* 初始化

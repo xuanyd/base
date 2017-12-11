@@ -1,7 +1,7 @@
-import { NgModule }   from '@angular/core';
-
-import { HomeComponent }   from './home.component';
-import { HomeRoutingModule  } from './home.routing.module';
+import { NgModule }   from '@angular/core'
+import { HomeComponent }   from './home.component'
+import { HomeRoutingModule  } from './home.routing.module'
+import { LocalStorage } from '../common/storage/local.storage'
 
 
 @NgModule({
@@ -13,7 +13,7 @@ import { HomeRoutingModule  } from './home.routing.module';
   ],
   exports:      [
   ],
-  providers:    []
+  providers:    [LocalStorage]
 })
 
 export class HomeModule { }

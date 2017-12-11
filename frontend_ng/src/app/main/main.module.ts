@@ -3,6 +3,7 @@ import { MainComponent }   from './main.component'
 import { HeaderComponent }   from '../common/header/header.component'
 import { LeftComponent }   from '../common/left/left.component'
 import { MainRoutingModule  } from './main.routing.module'
+import { LocalStorage } from '../common/storage/local.storage'
 
 
 
@@ -17,7 +18,7 @@ import { MainRoutingModule  } from './main.routing.module'
   ],
   exports:      [
   ],
-  providers:    []
+  providers:    [LocalStorage]
 })
 
 export class MainModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { LocalStorage } from '../storage/local.storage'
-import { MenuData } from '../models/main-model.ts'
+import { MenuData } from '../models/main-model'
 
 /**
  * 左侧菜单组件
@@ -13,10 +13,11 @@ import { MenuData } from '../models/main-model.ts'
 })
 
 export class LeftComponent implements OnInit {
-	 
+	
   treeMenu: string='treeview'
+  treeMenuCls: array=[]
   userName: string=''
-  menuData:[{
+  menuData = [{
     "id": "1",
     "parentId": "0",
     "name": "主页"
@@ -38,7 +39,7 @@ export class LeftComponent implements OnInit {
       "id": "023",
       "parentId": "2",
       "name": "友情链接",
-      "url": '/app/sitecfg/center-news'
+      "url": '/app/sitecfg/links'
     }]
   }]
 
@@ -50,7 +51,7 @@ export class LeftComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
-      
+      this.treeMenuCls = ['',]
   }
 
   clickTree(t) {

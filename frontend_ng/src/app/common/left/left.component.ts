@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { LocalStorage } from '../storage/local.storage'
-import { MenuData } from '../models/main-model.ts'
+import { MenuData } from '../models/main-model'
 
 /**
  * 左侧菜单组件

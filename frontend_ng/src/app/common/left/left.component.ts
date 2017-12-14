@@ -15,7 +15,7 @@ import { MenuData } from '../models/main-model'
 export class LeftComponent implements OnInit {
 	
   treeMenu: string='treeview'
-  treeMenuCls: array=[]
+  treeMenuCls=[]
   userName: string=''
   menuData = [{
     "id": "1",
@@ -41,7 +41,7 @@ export class LeftComponent implements OnInit {
       "name": "友情链接",
       "url": '/app/sitecfg/links'
     }]
-  }]
+  }] 
 
   constructor(private router: Router,private ls: LocalStorage) {
     this.userName = ls.getObject('username')

@@ -40,17 +40,16 @@ export class LoginComponent implements OnInit {
   	}
 
   	login() {
-      this.ls.setObject('username','xuanyd')
-      this.router.navigate(['/app/home'])
-      /*if (!this.loginForm.valid)
+      /*this.ls.setObject('username','xuanyd')
+      this.router.navigate(['/app/home'])*/
+      if (!this.loginForm.valid)
         return
       let that = this;
       that.loginBtnDisable = 'disabled'
-      that.httpService.get("http://10.10.10.10:8081/admin/login", {
+      that.httpService.get("http://localhost:8081/admin/login", {
         username: this.loginForm.value.userName,
         password: this.loginForm.value.password
       }, function (successful, data, res) {
-
         console.log(successful);
         that.loginBtnDisable = ''
         if (successful) {
@@ -58,12 +57,14 @@ export class LoginComponent implements OnInit {
             that.loginValid = false
             return
           }
+          that.ls.setObject('username',that.loginForm.value.userName)
           that.router.navigate(['/app/home']);
         }
       }, function (successful, msg, err) {
+        that.loginBtnDisable = ''
         that.connectionValid = false
         that.connectErrMsg = msg;
-      })*/
+      })
   	}
 
 }

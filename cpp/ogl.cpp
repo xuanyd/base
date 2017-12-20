@@ -1,15 +1,29 @@
-#include<windows.h>
-#include <GL/gl.h>
-#include <GL/glaux.h>
- 
-void main(void) {
-  auxInitDisplayMode(AUX_SINGLE|AUX_RGBA);
-  auxInitPosition(0,0,500,500);
-  auxInitWindow("str");
-  glClearColor(0.0,0.0,0.0,0.0);
-  glClear(GL_COLOR_BUFFER_BIT);
-  glColor3f(1.0,0.0,0.0);
-  glRectf(-0.5,-0.5,0.5,0.5);
-  glFlush();
-  _sleep(1000);
-}
+#include "stdafx.h"  
+#include "GL/glut.h"  
+#include "GL/gl.h"  
+  
+void  display()  
+{  
+ glClearColor(0.0,0.0,0.0,0.0);  
+ glClear(GL_COLOR_BUFFER_BIT);  
+ glColor4f(1.0,0.0,0.0,1.0);     // set the quad color  
+ glBegin(GL_QUADS);  
+     glVertex3f(-0.5,-0.5,0.0);  
+     glVertex3f(0.5,-0.5,0.0);  
+     glVertex3f(0.5,0.5,0.0);  
+     glVertex3f(-0.5,0.5,0.0);  
+  glEnd();  
+  glFlush();  
+}  
+
+int _tmain(int argc, char** argv)  
+{  
+  glutInit(&argc, argv);  
+  glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);  
+  glutInitWindowPosition(100, 100);  
+  glutInitWindowSize(400, 400);  
+  glutCreateWindow("第一个OpenGL程序");  
+  glutDisplayFunc(&display);  
+  glutMainLoop();  
+  return 0;  
+}  

@@ -10,9 +10,8 @@ import { HttpService } from '../common/util/http.service'
 
 export class NoticeComponent implements OnInit {
 
-
-	constructor(
-      private httpService: HttpService) {
+	private noticeList : Array<>
+	constructor(private httpService: HttpService) {
 
 	}
 
@@ -24,15 +23,21 @@ export class NoticeComponent implements OnInit {
   }
 
   /**
+  * 
+  */
+
+  /**
   * 获取公告列表
   */
   getNoticeList() {
+  	let that = this
   	this.httpService.get("http://localhost:8081/admin/noticelist", {
 
   	}, function (successful, data, res) {
-        console.log(successful);
         if (successful) {
           if (data.flag!='success') {
+          	that.noticeList = data.pageInfo.infoList
+          	console.log(noticeList)
           }
         }
       }, function (successful, msg, err) {

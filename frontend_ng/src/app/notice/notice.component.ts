@@ -10,7 +10,9 @@ import { HttpService } from '../common/util/http.service'
 
 export class NoticeComponent implements OnInit {
 
-	// private noticeList : Array
+	private noticeList : string
+	private pageInfo : string
+
 	constructor(private httpService: HttpService) {
 
 	}
@@ -31,17 +33,21 @@ export class NoticeComponent implements OnInit {
   */
   getNoticeList() {
   	let that = this
-  	this.httpService.get("http://localhost:8081/admin/noticelist", {
-
+  		this.httpService.get("http://localhost:8081/admin/noticelist", {
   	}, function (successful, data, res) {
-        if (successful) {
-          if (data.flag!='success') {
-          	that.noticeList = data.pageInfo.infoList
-          	console.log(noticeList)
-          }
+      if (successful) {
+        if (data.flag!='success') {
+        	that.noticeList = data.pageInfo.infoList
+        	that.pageInfo = data.pageInfo
+        	console.log(data.pageInfo)
         }
-      }, function (successful, msg, err) {
-      	console.log(err);
-      })
+      }
+    }, function (successful, msg, err) {
+    	console.log(err);
+    })
+  }
+
+  page() {
+  	this.noticeList = null
   }
 }

@@ -17,7 +17,8 @@ export class LeftComponent implements OnInit {
   treeMenu: string='treeview'
   treeMenuCls=[]
   userName: string=''
-  menuData = [{
+  testData : Array<string> = ['1','2','3']
+  menuData : Array<string> = [{
     "id": "1",
     "parentId": "0",
     "name": "主页"

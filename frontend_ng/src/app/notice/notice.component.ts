@@ -10,7 +10,7 @@ import { HttpService } from '../common/util/http.service'
 
 export class NoticeComponent implements OnInit {
 
-	private noticeList : Array<>
+	// private noticeList : Array
 	constructor(private httpService: HttpService) {
 
 	}

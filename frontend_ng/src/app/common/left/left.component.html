@@ -9,7 +9,11 @@
     </div>
     <!-- Sidebar Menu-->
     <ul class="sidebar-menu">
-      <li class="active">
+      {{testData}}
+      <li ngFor="let item of testData">
+        {{item}}
+      </li>
+     <!--  <li class="active">
         <a (click)="clickTree('app/home')">
         <i class="fa fa-dashboard"></i>
         <span>主页</span></a>
@@ -62,7 +66,7 @@
             </a>
           </li>
         </ul>
-      </li> 
-    </ul>
+      </li> -->
+    </ul> 
   </section>
 </aside>

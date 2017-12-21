@@ -5,12 +5,19 @@ import { SiteCfgRoutingModule } from './sitecfg.routing.module'
 import { SiteCfgComponent } from './sitecfg.component'
 import { NoticeComponent } from './notice/notice.component'
 import { NoticeEditComponent } from './notice/notice_edit.component'
+import { UEditorModule } from 'ngx-ueditor'
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    SiteCfgRoutingModule
+    SiteCfgRoutingModule,
+    UEditorModule.forRoot({
+      path: '../assets/ueditor/',
+      options: {
+        themePath: (~location.href.indexOf('github') ? '/ngx-ueditor' : '') +  '/assets/ueditor/themes/'
+      }
+    })
   ],
   declarations: [
     SiteCfgComponent,

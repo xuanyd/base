@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit,AfterContentInit,OnDestroy,ViewChild } from '@angular/core'
 import { HttpService } from '../../common/util/http.service'
 
+import { UEditorComponent } from 'ngx-ueditor'
+
+declare const UE: any;
 
 @Component({
   selector: 'c-sitecfg-notice',
@@ -9,8 +12,19 @@ import { HttpService } from '../../common/util/http.service'
 })
 
 export class NoticeEditComponent implements OnInit {
+  
+  @ViewChild('full') full: UEditorComponent
+  
+  full_source: string
 
-	constructor(private httpService: HttpService) {
+  config_source: string
+  config: any = {
+      toolbars: [['FullScreen', 'Source', 'Undo', 'Redo', 'Bold' ]],
+      autoClearinitialContent: true,
+      wordCount: false
+  }
+	
+  constructor(private httpService: HttpService) {
 
 	}
 
@@ -18,6 +32,14 @@ export class NoticeEditComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
+    
+  }
+
+  ngAfterViewInit() {
+    // this.ueditor = UM.getEditor('textdescription', {'initialFrameHeight': 580})
+  }
+
+  ngOnDestroy(): void {
   }
 
 }

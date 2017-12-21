@@ -1,32 +1,21 @@
-<div class="container">
-  <c-header-menu></c-header-menu>
-  <div class="row">
-    <c-left-menu></c-left-menu>
-    
-    <div class="col-9">9</div>
-  </div>
-</div>
-
-<!-- <div class="sidebar-mini fixed ">
-  <div class="wrapper">
-    <c-header-menu></c-header-menu>
-    <c-left-menu></c-left-menu>
-    <div class="content-wrapper" style="margin-top: 8px;">
-      <div class="page-title">
-        <div>
-          <h1><i class="fa fa-dashboard"></i> Dashboard</h1>
-          <p>A free and modular admin template</p>
-        </div>
-        <div>
-          <ul class="breadcrumb">
-            <li><i class="fa fa-home fa-lg"></i></li>
-            <li><a href="#">Dashboard</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <router-outlet></router-outlet>
+<c-header-menu></c-header-menu>
+<div class="container-fluid" >
+  <div class="row flex-xl-nowrap">
+    <!-- <c-left-menu></c-left-menu> -->
+    <div class="col-12 col-md-3 
+      col-xl-2 bd-sidebar" style="height: calc(100vh - 4rem);">
+      <div>
+        <img src="../../../assets/img/admin.jpg" 
+          style="width: 75px;height: 75px; margin-top: 26px;margin-left: 35px;" 
+        alt="..." class="rounded-circle">
+        <div style="margin-left: 35px;">Admin</div>
       </div>
     </div>
-  </div> 
-</div>-->
+    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+      <router-outlet></router-outlet>
+    </main>
+    <div class="d-none d-xl-block col-xl-2 bd-toc">
+      sdf
+    </div>
+  </div>
+</div>

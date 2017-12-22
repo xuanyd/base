@@ -1,21 +1,28 @@
 <c-header-menu></c-header-menu>
 <div class="container-fluid" >
   <div class="row flex-xl-nowrap">
-    <!-- <c-left-menu></c-left-menu> -->
-    <div class="col-12 col-md-3 
-      col-xl-2 bd-sidebar" style="height: calc(100vh - 4rem);">
-      <div>
-        <img src="../../../assets/img/admin.jpg" 
-          style="width: 75px;height: 75px; margin-top: 26px;margin-left: 35px;" 
-        alt="..." class="rounded-circle">
-        <div style="margin-left: 35px;">Admin</div>
-      </div>
+    <div 
+      class="col-12 col-md-3 col-xl-2 bd-sidebar" 
+      style="height: calc(100vh - 4rem);border-right: 2px solid; border-color: #CCCCCC;
+      padding-left: 0px;padding-right: 0px">
+      <c-left-menu></c-left-menu>
     </div>
-    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content" role="main">
+    <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main"
+    style="background-color: #00CCFF">
+      <div class="row route-bar">
+        <div class="col-xl-5">
+          <i class="fa fa-dashboard"></i>
+          首页
+        </div>
+        <div class="col-xl-7">
+          <i class="fa fa-home fa-lg"></i>  
+          <a href="#">Dashboard</a>
+          </div>
+      </div>
       <router-outlet></router-outlet>
     </main>
-    <div class="d-none d-xl-block col-xl-2 bd-toc">
+   <!--  <div class="d-none d-xl-block col-xl-2 bd-toc">
       sdf
-    </div>
+    </div> -->
   </div>
 </div>

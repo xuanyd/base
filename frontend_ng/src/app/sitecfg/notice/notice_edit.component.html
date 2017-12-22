@@ -1,5 +1,20 @@
-<div class="card mb-3">
-    <div class="card-body">
-        <ueditor [(ngModel)]="full_source" #full></ueditor>
-    </div>
+<div class="container" style="background-color: #FFFFFF;margin-left: -45px;">
+	<form>
+		<div class="row search" style="padding-top: 10px;">
+			<div class="form-group" style="margin-left: 10px;">
+				<div>标题</div>
+		    <input class="form-control"  type="text">
+		  </div>
+		  <div class="form-group">
+		    <button class="btn btn-primary search-btn">
+		      查询
+		    </button>
+		  </div>
+		</div>
+	</form>
+	<div>
+	<ueditor [(ngModel)]="full_source" #full></ueditor>
 </div>
+</div>
+
+

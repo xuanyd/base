@@ -9,7 +9,7 @@ import { MenuData } from '../models/main-model'
 @Component({
   selector: 'c-left-menu',
   templateUrl: './left.component.html',
-  styleUrls: ['../../main/main.component.scss']
+  styleUrls: ['./left.component.scss']
 })
 
 export class LeftComponent implements OnInit {

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SiteCfgComponent } from './sitecfg.component';
 import { NoticeComponent } from './notice/notice.component';
 import { NoticeEditComponent } from './notice/notice_edit.component';
+import { NoticeAddComponent } from './notice/notice_add.component';
 
 const sitecfgRoutes: Routes = [
   {
@@ -15,6 +16,10 @@ const sitecfgRoutes: Routes = [
       },
       {
         path:'notice-edit',
+        component:NoticeEditComponent
+      },
+      {
+        path:'notice-add',
         component:NoticeEditComponent
       }
     ]

@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
             return
           }
           that.ls.setObject('username',that.loginForm.value.userName)
-          that.router.navigate(['/app/home']);
+          that.router.navigate(['/app/home'])
         }
       }, function (successful, msg, err) {
         that.loginBtnDisable = ''

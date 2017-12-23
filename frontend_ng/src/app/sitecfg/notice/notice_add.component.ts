@@ -7,24 +7,30 @@ declare const UE: any;
 
 @Component({
   selector: 'c-sitecfg-notice',
-  templateUrl: './notice_edit.component.html',
+  templateUrl: './notice_add.component.html',
   styleUrls: ['./notice.component.scss']
 })
 
-export class NoticeEditComponent implements OnInit {
+export class NoticeAddComponent implements OnInit {
   
   @ViewChild('full') full: UEditorComponent
-  
   full_source: string
 
-  config_source: string
-  config: any = {
-      toolbars: [['FullScreen', 'Source', 'Undo', 'Redo', 'Bold' ]],
-      autoClearinitialContent: true,
-      wordCount: false
-  }
+  config_source: string;
+    config: any = {
+        toolbars: [['FullScreen', 'Source', 'Undo', 'Redo', 'Bold' ]],
+        autoClearinitialContent: true,
+        wordCount: false
+    };
+
+    form_source: string;
+
+    custom_source: string;
+    custom: any = {
+        toolbars: [['FullScreen', 'Source', 'Undo', 'Redo', 'Bold', 'button']]
+    };
 	
-  constructor(private router: Router, private httpService: HttpService) {
+  constructor(private router: Router,private httpService: HttpService) {
 
 	}
 
@@ -32,9 +38,7 @@ export class NoticeEditComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
-  }
-
-  ngAfterViewInit() {
+    console.log('----------')
   }
 
   ngOnDestroy(): void {

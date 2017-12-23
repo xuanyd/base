@@ -1,25 +1,19 @@
 <c-header-menu></c-header-menu>
 <div class="container-fluid" >
   <div class="row flex-xl-nowrap">
-    <div 
-      class="col-12 col-md-3 col-xl-2 bd-sidebar" 
-      style="height: calc(100vh - 4rem);border-right: 2px solid; border-color: #CCCCCC;
-      padding-left: 0px;padding-right: 0px">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar left">
       <c-left-menu></c-left-menu>
     </div>
-    <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content" role="main"
-    style="background-color: #00CCFF">
+    <main class="col-12 col-md-9 col-xl-10 py-md-3 pl-md-5 bd-content main" role="main">
       <div class="row route-bar">
         <div class="col-xl-5">
           <i class="fa fa-dashboard"></i>
           首页
         </div>
-        <div class="col-xl-7">
-          <i class="fa fa-home fa-lg"></i>  
-          <a href="#">Dashboard</a>
-          </div>
       </div>
-      <router-outlet></router-outlet>
+      <div class="container-fluid" style="background-color: #FFFFFF;margin-left: -45px;height: 89vh">
+        <router-outlet></router-outlet>
+      </div>
     </main>
    <!--  <div class="d-none d-xl-block col-xl-2 bd-toc">
       sdf

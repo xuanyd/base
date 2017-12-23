@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit,ViewEncapsulation,ViewChild,ElementRef } from '@angular/core'
 import { HttpService } from '../../common/util/http.service'
-
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'c-sitecfg-notice',
   templateUrl: './notice.component.html',
-  styleUrls: ['./notice.component.scss']
+  styleUrls: ['./notice.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 
 export class NoticeComponent implements OnInit {
 
-	private noticeList : string
-	private pageInfo : string
-
-	constructor(private httpService: HttpService) {
+  private noticeList:string
+  private pageInfo:string
+  
+	constructor(private router: Router,private httpService: HttpService,private el: ElementRef) {
 
 	}
 
@@ -45,6 +46,18 @@ export class NoticeComponent implements OnInit {
     }, function (successful, msg, err) {
     	console.log(err);
     })
+  }
+
+  edit(id) {
+    this.router.navigate(['/app/sitecfg/notice-edit'])
+  }
+
+  toAdd(){
+   this.router.navigate(['/app/sitecfg/notice-add'])
+  }
+
+  add(){
+    alert('123');
   }
 
   page() {

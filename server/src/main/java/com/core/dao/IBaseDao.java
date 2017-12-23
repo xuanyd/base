@@ -1,4 +1,4 @@
-package com.base.dao;
+package com.core.dao;
 
 import java.util.List;
 import java.util.Map;

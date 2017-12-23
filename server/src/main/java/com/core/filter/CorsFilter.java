@@ -1,4 +1,4 @@
-package com.base.filter;
+package com.core.filter;
 
 
 import javax.servlet.*;

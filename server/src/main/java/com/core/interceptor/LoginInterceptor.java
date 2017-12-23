@@ -1,6 +1,4 @@
-package com.base.interceptor;
-
-import java.util.Map;
+package com.core.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

@@ -1,6 +1,6 @@
-package com.base.controller;
+package com.base.admin.controller;
 
-import com.base.service.AdminService;
+import com.base.admin.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,12 +13,6 @@ class AdminController {
 
     @Autowired
     private AdminService adminService;
-
-    @RequestMapping({"main.html"})
-    public String main(){
-        System.out.print("sdfsdfs");
-        return "index";
-    }
 
     @RequestMapping({"admin/login"})
     public @ResponseBody Map login(@RequestParam("username") String username, @RequestParam("password") String password) throws Exception{

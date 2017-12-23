@@ -1,4 +1,4 @@
-package com.base.dao;
+package com.core.dao;
 
 import java.util.ArrayList;
 import java.util.HashMap;

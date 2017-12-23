@@ -80,7 +80,7 @@
     <!--**********************************************************************************-->
 
     <!-- baseDao -->
-    <bean id="baseDao" class="com.base.dao.BaseDao">
+    <bean id="baseDao" class="com.core.dao.BaseDao">
         <constructor-arg name="jdbcTemplate" ref="simpleJdbcTemplate" />
     </bean>
     <!--**********************************************************************************-->
@@ -94,12 +94,12 @@
         <mvc:interceptor>
             <!-- 如果不配置或/*,将拦截所有的Controller -->
             <mvc:mapping path="/*"/>
-            <bean id="commonInter" class="com.base.interceptor.CommonInterceptor"/>
+            <bean id="commonInter" class="com.core.interceptor.CommonInterceptor"/>
         </mvc:interceptor>
         <mvc:interceptor>
             <mvc:mapping path="/*"/>
             <mvc:mapping path="/admin/*"/>
-            <bean id="loginInter" class="com.base.interceptor.LoginInterceptor">
+            <bean id="loginInter" class="com.core.interceptor.LoginInterceptor">
             </bean>
         </mvc:interceptor>
     </mvc:interceptors>
@@ -108,7 +108,7 @@
 
 
     <!-- Exception异常处理 -->
-    <bean id="exceptionResolver" class="com.base.exception.AppExceptionHandler">
+    <bean id="exceptionResolver" class="com.core.exception.AppExceptionHandler">
     </bean>
     <!--**********************************************************************************-->
     <!-- 事务配置 -->

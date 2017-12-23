@@ -1,4 +1,4 @@
-package com.base.service;
+package com.base.admin.service;
 
 import com.base.admin.dao.AdminDao;
 import org.springframework.beans.factory.annotation.Autowired;

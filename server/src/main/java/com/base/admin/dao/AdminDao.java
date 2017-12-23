@@ -2,7 +2,7 @@ package com.base.admin.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.base.dao.IBaseDao;
+import com.core.dao.IBaseDao;
 
 import java.util.HashMap;
 import java.util.Map;

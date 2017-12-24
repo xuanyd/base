@@ -61,6 +61,6 @@ export class ColumnComponent implements OnInit {
   }
 
   page() {
-  	this.columnlist = null
+  	this.columnList = null
   }
 }

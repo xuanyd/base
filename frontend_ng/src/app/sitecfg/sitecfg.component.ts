@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'c-sitecfg',
   template: '<router-outlet></router-outlet>'
 })
-export class SiteCfgComponent  {
 
+
+export class SiteCfgComponent  {
+	
 }

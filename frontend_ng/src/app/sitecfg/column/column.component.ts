@@ -4,14 +4,14 @@ import { Router } from '@angular/router'
 
 @Component({
   selector: 'c-sitecfg-notice',
-  templateUrl: './notice.component.html',
-  styleUrls: ['./notice.component.scss'],
+  templateUrl: './column.component.html',
+  styleUrls: ['./column.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 
-export class NoticeComponent implements OnInit {
+export class ColumnComponent implements OnInit {
 
-  private noticeList:string
+  private columnList:string
   private pageInfo:string
   
 	constructor(private router: Router,private httpService: HttpService,private el: ElementRef) {
@@ -22,8 +22,7 @@ export class NoticeComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
-    console.log('----------')
-  	this.getNoticeList()
+  	this.getColumnList()
   }
 
   /**
@@ -33,13 +32,13 @@ export class NoticeComponent implements OnInit {
   /**
   * 获取公告列表
   */
-  getNoticeList() {
+  getColumnList() {
   	let that = this
-  		this.httpService.get("http://localhost:8081/admin/noticelist", {
+  		this.httpService.get("http://localhost:8081/admin/columnlist", {
   	}, function (successful, data, res) {
       if (successful) {
         if (data.flag!='success') {
-        	that.noticeList = data.pageInfo.infoList
+        	that.columnList = data.pageInfo.infoList
         	that.pageInfo = data.pageInfo
         	console.log(data.pageInfo)
         }
@@ -50,11 +49,11 @@ export class NoticeComponent implements OnInit {
   }
 
   edit(id) {
-    this.router.navigate(['/app/sitecfg/notice-edit'])
+    this.router.navigate(['/app/sitecfg/column-edit'])
   }
 
   toAdd(){
-   this.router.navigate(['/app/sitecfg/notice-add'])
+   this.router.navigate(['/app/sitecfg/column-add'])
   }
 
   add(){
@@ -62,6 +61,6 @@ export class NoticeComponent implements OnInit {
   }
 
   page() {
-  	this.noticeList = null
+  	this.columnlist = null
   }
 }

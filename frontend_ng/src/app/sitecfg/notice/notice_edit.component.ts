@@ -1,9 +1,9 @@
 import { Component, OnInit,AfterContentInit,OnDestroy,ViewChild } from '@angular/core'
 import { HttpService } from '../../common/util/http.service'
 import { Router } from '@angular/router'
-import { UEditorComponent } from 'ngx-ueditor'
+/*import { UEditorComponent } from 'ngx-ueditor'
 
-declare const UE: any;
+declare const UE: any;*/
 
 @Component({
   selector: 'c-sitecfg-notice',
@@ -13,7 +13,7 @@ declare const UE: any;
 
 export class NoticeEditComponent implements OnInit {
   
-  @ViewChild('full') full: UEditorComponent
+ /* @ViewChild('full') full: UEditorComponent
   
   full_source: string
 
@@ -23,7 +23,7 @@ export class NoticeEditComponent implements OnInit {
       autoClearinitialContent: true,
       wordCount: false
   }
-	
+	*/
   constructor(private router: Router, private httpService: HttpService) {
 
 	}

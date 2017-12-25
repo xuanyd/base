@@ -7,6 +7,8 @@ import { NoticeComponent } from './notice/notice.component'
 import { NoticeEditComponent } from './notice/notice_edit.component'
 import { NoticeAddComponent } from './notice/notice_add.component'
 import { ColumnComponent } from './column/column.component'
+import { ColumnAddComponent } from './column/column_add.component'
+import { ColumnEditComponent } from './column/column_edit.component'
 import { UEditorModule } from 'ngx-ueditor'
 
 @NgModule({
@@ -27,7 +29,9 @@ import { UEditorModule } from 'ngx-ueditor'
     NoticeComponent,
     NoticeEditComponent,
     NoticeAddComponent,
-    ColumnComponent
+    ColumnComponent,
+    ColumnAddComponent,
+    ColumnEditComponent
   ],
   exports: [
   ],

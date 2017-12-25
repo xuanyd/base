@@ -11,6 +11,8 @@ import { HttpService }   from './common/util/http.service';
 
 import { HttpModule }    from '@angular/http';
 
+import { PermissionGuard   } from './common/util/PermissionGuard'
+
 @NgModule({
   declarations: [
     AppComponent
@@ -22,8 +24,11 @@ import { HttpModule }    from '@angular/http';
     HttpModule
   ],
   providers: [
-    HttpService
+    HttpService,
+    PermissionGuard
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

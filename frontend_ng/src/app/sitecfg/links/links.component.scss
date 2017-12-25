@@ -3,34 +3,43 @@ import { HttpService } from '../../common/util/http.service'
 import { Router } from '@angular/router'
 
 @Component({
-  selector: 'c-sitecfg-notice',
-  templateUrl: './column.component.html',
-  styleUrls: ['./column.component.scss'],
+  selector: 'c-sitecfg-links',
+  templateUrl: './links.component.html',
+  styleUrls: ['./links.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 
-export class ColumnComponent implements OnInit {
+export class LinksComponent implements OnInit {
 
-  private columnList:string
+  private linksList:string
   private pageInfo:string
-
-  private subColumnShow: Array<boolean> = [true,true]
   
 	constructor(private router: Router,private httpService: HttpService,private el: ElementRef) {
 
 	}
 
+	/**
+  * 初始化
+  */
   ngOnInit() {
-  	this.getColumnList()
+    console.log('----------')
+  	this.getlinksList()
   }
 
-  getColumnList() {
+  /**
+  * 
+  */
+
+  /**
+  * 获取公告列表
+  */
+  getlinksList() {
   	let that = this
-  		this.httpService.get("http://localhost:8081/admin/columnlist", {
+  		this.httpService.get("http://localhost:8081/admin/linkslist", {
   	}, function (successful, data, res) {
       if (successful) {
         if (data.flag!='success') {
-        	that.columnList = data.pageInfo.infoList
+        	that.linksList = data.pageInfo.infoList
         	that.pageInfo = data.pageInfo
         	console.log(data.pageInfo)
         }
@@ -39,24 +48,20 @@ export class ColumnComponent implements OnInit {
     	console.log(err);
     })
   }
-  subColumn(event,idx) {
-    this.subColumnShow[idx] = !this.subColumnShow[idx]
-    console.log(event)
-  }
 
   edit(id) {
-    this.router.navigate(['/app/sitecfg/column-edit'])
+    this.router.navigate(['/app/sitecfg/links-edit'])
   }
 
   toAdd(){
-   this.router.navigate(['/app/sitecfg/column-add'])
+   this.router.navigate(['/app/sitecfg/links-add'])
   }
 
   add(){
-   
+    alert('123');
   }
 
   page() {
-  	this.columnList = null
+  	this.linksList = null
   }
 }

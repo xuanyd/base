@@ -28,6 +28,7 @@ export class HeaderComponent implements OnInit {
       
     }
 
+   
   	toggleNav() {
   		alert('menu');
   	}

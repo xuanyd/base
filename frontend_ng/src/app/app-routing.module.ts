@@ -1,7 +1,7 @@
 import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {SelectivePreloadingStrategy} from "./selective-preloading-strategy";
-
+import { PermissionGuard   } from './common/util/PermissionGuard';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -10,7 +10,8 @@ const appRoutes: Routes = [
     loadChildren: 'app/login/login.module#LoginModule'
   },
   { 
-     path: 'app',  
+     path: 'app',
+     canActivate:[PermissionGuard],  
      loadChildren: 'app/main/main.module#MainModule'
   }
 ];

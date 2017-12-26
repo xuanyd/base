@@ -11,10 +11,10 @@ import { Router } from '@angular/router'
 
 export class ColumnComponent implements OnInit {
 
-  private columnList:string
-  private pageInfo:string
+  columnList:string
+  pageInfo:string
 
-  private subColumnShow: Array<boolean> = [true,true]
+  subColumnShow: Array<boolean> = [true,true]
   
 	constructor(private router: Router,private httpService: HttpService,private el: ElementRef) {
 
@@ -44,7 +44,7 @@ export class ColumnComponent implements OnInit {
     console.log(event)
   }
 
-  edit(id) {
+  edit() {
     this.router.navigate(['/app/sitecfg/column-edit'])
   }
 

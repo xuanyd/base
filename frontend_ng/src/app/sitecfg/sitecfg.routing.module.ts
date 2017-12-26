@@ -3,11 +3,11 @@ import { RouterModule, Routes } from '@angular/router'
 
 import { SiteCfgComponent } from './sitecfg.component'
 import { NoticeComponent } from './notice/notice.component'
-import { NoticeEditComponent } from './notice/notice_edit.component'
-import { NoticeAddComponent } from './notice/notice_add.component'
+import { NoticeEditComponent } from './notice/notice-edit.component'
+import { NoticeAddComponent } from './notice/notice-add.component'
 import { ColumnComponent } from './column/column.component'
-import { ColumnAddComponent } from './column/column_add.component'
-import { ColumnEditComponent } from './column/column_edit.component'
+import { ColumnAddComponent } from './column/column-add.component'
+import { ColumnEditComponent } from './column/column-edit.component'
 
 const sitecfgRoutes: Routes = [
   {

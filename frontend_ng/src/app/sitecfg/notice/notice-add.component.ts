@@ -8,14 +8,15 @@ import { UEditorComponent } from 'ngx-ueditor'
 declare const UE: any;
 @Component({
   selector: 'c-sitecfg-notice',
-  templateUrl: './notice_add.component.html',
+  templateUrl: './notice-add.component.html',
   styleUrls: ['./notice.component.scss']
 })
 
 export class NoticeAddComponent implements OnInit {
   
-  private noticeAddForm: FormGroup
-
+  noticeAddForm: FormGroup
+  
+  
   @ViewChild('full') 
   full: UEditorComponent
   full_source: string

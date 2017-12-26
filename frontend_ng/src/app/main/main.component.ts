@@ -11,6 +11,7 @@ import { LocalStorage } from '../common/storage/local.storage'
 export class MainComponent implements OnInit {
 
 	constructor(private ls: LocalStorage){
+    console.log(ls)
 	}
 
 	/**

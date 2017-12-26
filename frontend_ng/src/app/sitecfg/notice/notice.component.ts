@@ -11,8 +11,8 @@ import { Router } from '@angular/router'
 
 export class NoticeComponent implements OnInit {
 
-  private noticeList:string
-  private pageInfo:string
+  noticeList:string
+  pageInfo:string
   
 	constructor(private router: Router,private httpService: HttpService,private el: ElementRef) {
 

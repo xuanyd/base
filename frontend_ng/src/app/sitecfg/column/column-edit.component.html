@@ -1,14 +1,14 @@
-<form [formGroup]="noticeAddForm">
+<form [formGroup]="columnEditForm">
 	<div class="search" style="padding-top: 10px;">
 		<div class="form-group row" style="margin-left: 10px;">
-			<div class="col-sm-1">分类</div>
+			<div class="col-sm-1">上级</div>
 			<div class="col-sm-5">
 	    	<select  name="noticeType" formControlName="noticeType" class="form-control">
 		      <option>通知公告</option>
 		      <option>中心新闻</option>
 		    </select>
 	  	</div>
-			<div class="col-sm-5" style="color: red;" [hidden]="loginValid">
+			<div class="col-sm-5" style="color: red;" >
       	文章分类必选
     	</div>
 	  </div>
@@ -18,15 +18,8 @@
 	    	<input  name="title" class="form-control"  
 	    	type="text" formControlName="title">
 	  	</div>
-	  	<div class="col-sm-5" style="color: red;" [hidden]="loginValid">
+	  	<div class="col-sm-5" style="color: red;" >
       	文章标题必填
-    	</div>
-	  </div>
-	  <div class="form-group row" style="margin-left: 10px;">
-	  	<div class="col-sm-1">内容</div>
-	  	<ueditor class="col-sm-9" [(ngModel)]="full_source" #full formControlName="content"></ueditor>
-  		<div class="col-sm-2" style="color: red;" [hidden]="loginValid">
-      	文章内容不能为空
     	</div>
 	  </div>
 	  <hr style="height:1px;border:none;border-top:1px solid #555555;" />

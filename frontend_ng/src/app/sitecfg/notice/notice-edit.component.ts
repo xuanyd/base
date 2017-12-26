@@ -7,7 +7,7 @@ declare const UE: any;*/
 
 @Component({
   selector: 'c-sitecfg-notice',
-  templateUrl: './notice_edit.component.html',
+  templateUrl: './notice-edit.component.html',
   styleUrls: ['./notice.component.scss']
 })
 

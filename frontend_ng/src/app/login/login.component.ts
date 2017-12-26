@@ -13,11 +13,11 @@ import { LocalStorage } from '../common/storage/local.storage'
 
 export class LoginComponent implements OnInit {
     
-    private loginBtnDisable:string=''
-    private loginForm: FormGroup
-    private loginValid: boolean = true
-    private connectionValid: boolean = true
-    private connectErrMsg: string=''
+    loginBtnDisable:string=''
+    loginForm: FormGroup
+    loginValid: boolean = true
+    connectionValid: boolean = true
+    connectErrMsg: string=''
     constructor(private router: Router, 
       private ls: LocalStorage,
       private httpService: HttpService, private formBuilder: FormBuilder) {
@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit {
   	}
 
   	login() {
-      /*this.ls.setObject('username','xuanyd')
-      this.router.navigate(['/app/home'])*/
-      if (!this.loginForm.valid)
+      this.ls.setObject('username','xuanyd')
+      this.router.navigate(['/app/home'])
+      /*if (!this.loginForm.valid)
         return
       let that = this;
       that.loginBtnDisable = 'disabled'
@@ -64,7 +64,7 @@ export class LoginComponent implements OnInit {
         that.loginBtnDisable = ''
         that.connectionValid = false
         that.connectErrMsg = msg;
-      })
+      })*/
   	}
 
 }

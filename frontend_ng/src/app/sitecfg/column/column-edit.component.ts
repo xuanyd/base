@@ -5,13 +5,13 @@ import { Router } from '@angular/router'
 
 @Component({
   selector: 'c-sitecfg-column',
-  templateUrl: './column_edit.component.html',
+  templateUrl: './column-edit.component.html',
   styleUrls: ['./column.component.scss']
 })
 
 export class ColumnEditComponent implements OnInit {
   
-  private columnEditForm: FormGroup
+  columnEditForm: FormGroup
 
   constructor(private router: Router, private httpService: HttpService,
       private formBuilder: FormBuilder) {

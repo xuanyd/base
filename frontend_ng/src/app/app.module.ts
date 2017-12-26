@@ -12,6 +12,8 @@ import { HttpService }   from './common/util/http.service';
 import { HttpModule }    from '@angular/http';
 
 import { PermissionGuard   } from './common/util/PermissionGuard'
+import { LocalStorage } from './common/storage/local.storage'
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { PermissionGuard   } from './common/util/PermissionGuard'
   ],
   providers: [
     HttpService,
-    PermissionGuard
+    PermissionGuard,
+    LocalStorage
   ],
   bootstrap: [AppComponent]
 })

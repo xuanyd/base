@@ -5,9 +5,8 @@ import { LayoutComponent }   from './layout.component'
 import { TestRoutingModule  } from './test.routing.module'
 
 @NgModule({
-  imports:      [
+  imports:      [ 
     CommonModule,
-  	TestComponent,
     TestRoutingModule
   ],
   declarations: [

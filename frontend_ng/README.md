@@ -29,3 +29,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 https://cipchk.github.io/ngx-ueditor/#/dev
 https://segmentfault.com/a/1190000009157357
+
+ng build --prod
+ng build --prod --aot

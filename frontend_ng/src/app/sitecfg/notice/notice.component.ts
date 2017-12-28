@@ -35,7 +35,7 @@ export class NoticeComponent implements OnInit {
   */
   getNoticeList() {
   	let that = this
-  		this.httpService.get("http://localhost:8081/admin/noticelist", {
+  		this.httpService.get("admin/noticelist", {
   	}, function (successful, data, res) {
       if (successful) {
         if (data.flag!='success') {

@@ -15,6 +15,10 @@ const appRoutes: Routes = [
      path: 'app',
      canActivate:[PermissionGuard],  
      loadChildren: 'app/main/main.module#MainModule'
+  },
+  { 
+     path: 'test',
+     loadChildren: 'app/test/test.module#TestModule'
   }
 ]
 

@@ -15,7 +15,7 @@ import java.util.Map;
 public class LinksController {
 
 	@Autowired
-    private LinksService LinksService;
+    private LinksService linksService;
 
     @RequestMapping("admin/linkslist")
     public @ResponseBody Map linksList(HttpServletRequest request) throws Exception{

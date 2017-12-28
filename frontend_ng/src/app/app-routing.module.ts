@@ -1,6 +1,6 @@
 import { NgModule }             from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
-import {SelectivePreloadingStrategy} from "./selective-preloading-strategy"
+import { SelectivePreloadingStrategy } from "./selective-preloading-strategy"
 import { PermissionGuard   } from './common/util/PermissionGuard'
 import { LocalStorage } from './common/storage/local.storage'
 
@@ -15,11 +15,8 @@ const appRoutes: Routes = [
      path: 'app',
      canActivate:[PermissionGuard],  
      loadChildren: 'app/main/main.module#MainModule'
-  },
-  { 
-     path: 'test',
-     loadChildren: 'app/test/test.module#TestModule'
   }
+ 
 ]
 
 @NgModule({

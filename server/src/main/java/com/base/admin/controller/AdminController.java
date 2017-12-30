@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.Map;
 import com.core.util.WebToken;
+import com.core.util.Constant;
+
 @Controller
 class AdminController {
 
@@ -21,7 +23,7 @@ class AdminController {
             Map<String, Object> loginTokenMap = new HashMap<>();
             loginTokenMap.put("username", username);
             loginTokenMap.put("password", password);
-            String token = WebToken.createJWT("adminLogin",TokenMgr.generalSubject(loginTokenMap),1000);
+            String token = WebToken.createJWT(Constant.JWT_ID,TokenMgr.generalSubject(loginTokenMap),Constant.JWT_TTL);
         }
         return retMap;
     }

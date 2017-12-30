@@ -40,9 +40,9 @@ export class LoginComponent implements OnInit {
 	}
 
 	login() {
-    /*this.ls.setObject('username','xuanyd')
-    this.router.navigate(['/app/home'])*/
-    if (!this.loginForm.valid)
+    this.ls.setObject('username','xuanyd')
+    this.router.navigate(['/app/home'])
+    /*if (!this.loginForm.valid)
       return
     let that = this;
     that.loginBtnDisable = 'disabled'
@@ -64,6 +64,6 @@ export class LoginComponent implements OnInit {
       that.loginBtnDisable = ''
       that.connectionValid = false
       that.connectErrMsg = msg;
-    })
+    })*/
 	}
 }

@@ -15,81 +15,32 @@ import com.core.util.Constant;
 
 //http://blog.csdn.net/csdn_blog_lcl/article/details/73485463
 //https://github.com/wangcantian/SecurityCommDemo
-public class WebTocken {
-
-	public static SecretKey generalKey() {
-		byte[] encodedKey = Base64.decode(Constant.JWT_SECRET);//密钥
-	    SecretKey key = new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
-	    return key;
-	}
-
-	public static String createJWT(String id, String subject, long ttMillis) {
-		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
-		long nowMillis = System.currentTimeMillis();
-		Date now = new Date(nowMillis);
-		SecretKey secretKey = generalKey();
-		JwtBuilder builder = Jwts.builder()
-				.setId(id)
-				.setSubject(subject)
-				.setIssuedAt(now)
-				.signWith(signatureAlgorithm, secretKey);
-		if (ttlMillis >= 0) {
-			long expMillis = nowMillis + ttlMillis;
-			Date expDate = new Date(expMillis);
-			builder.setExpiration(expDate);
-		}
-		return builder.compact();
-	}
-
-	/**
-	 * 验证JWT
-	 * @param jwtStr
-	 * @return
-	 */
-	public static CheckResult validateJWT(String jwtStr) {
-		CheckResult checkResult = new CheckResult();
-		Claims claims = null;
-		try {
-			claims = parseJWT(jwtStr);
-			checkResult.setSuccess(true);
-			checkResult.setClaims(claims);
-		} catch (ExpiredJwtException e) {
-			checkResult.setErrCode(Constant.JWT_ERRCODE_EXPIRE);
-			checkResult.setSuccess(false);
-		} catch (SignatureException e) {
-			checkResult.setErrCode(Constant.JWT_ERRCODE_FAIL);
-			checkResult.setSuccess(false);
-		} catch (Exception e) {
-			checkResult.setErrCode(Constant.JWT_ERRCODE_FAIL);
-			checkResult.setSuccess(false);
-		}
-		return checkResult;
-	}
+//http://blog.csdn.net/csdn_blog_lcl/article/details/73485463
+public class WebToken {
 	
-	/**
-	 * 
-	 * 解析JWT字符串
-	 * @param jwt
-	 * @return
-	 * @throws Exception
-	 */
-	public static Claims parseJWT(String jwt) throws Exception {
-		SecretKey secretKey = generalKey();
-		return Jwts.parser()
-			.setSigningKey(secretKey)
-			.parseClaimsJws(jwt)
-			.getBody();
-	}
-	
-	/**
-	 * 生成subject信息
-	 * @param user
-	 * @return
-	 */
-	public static String generalSubject(SubjectModel sub){
-		return GsonUtil.objectToJsonStr(sub);
-	}
+	//该方法使用HS256算法和Secret:bankgl生成signKey
+    private static Key getKeyInstance() {
+        //We will sign our JavaWebToken with our ApiKey secret
+        SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
+        byte[] apiKeySecretBytes = DatatypeConverter.parseBase64Binary("bankgl");
+        Key signingKey = new SecretKeySpec(apiKeySecretBytes, signatureAlgorithm.getJcaName());
+        return signingKey;
+    }
 
-	public static void main(String[] args) {
-	}
+    //使用HS256签名算法和生成的signingKey最终的Token,claims中是有效载荷
+    public static String createJavaWebToken(Map<String, Object> claims) {
+        return Jwts.builder().setClaims(claims).signWith(SignatureAlgorithm.HS256, getKeyInstance()).compact();
+    }
+
+    //解析Token，同时也能验证Token，当验证失败返回null
+    public static Map<String, Object> parserJavaWebToken(String jwt) {
+        try {
+            Map<String, Object> jwtClaims =
+                    Jwts.parser().setSigningKey(getKeyInstance()).parseClaimsJws(jwt).getBody();
+            return jwtClaims;
+        } catch (Exception e) {
+            log.error("json web token verify failed");
+            return null;
+        }
+    }
 }

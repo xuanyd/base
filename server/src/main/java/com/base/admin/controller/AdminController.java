@@ -19,12 +19,12 @@ class AdminController {
     @RequestMapping({"admin/login"})
     public @ResponseBody Map login(@RequestParam("username") String username, @RequestParam("password") String password) throws Exception{
         Map<String,Object> retMap = adminService.adminLogin(username, password);
-        if (retMap.get('flag') == "success") {
+        if (retMap.get("flag") == "success") {
             Map<String, Object> loginTokenMap = new HashMap<>();
             loginTokenMap.put("username", username);
             loginTokenMap.put("password", password);
             String token = WebToken.createJWT(Constant.JWT_ID,TokenMgr.generalSubject(loginTokenMap),Constant.JWT_TTL);
-        }
+        } 
         return retMap;
     }
 

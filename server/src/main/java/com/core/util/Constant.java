@@ -2,9 +2,9 @@ package com.core.util;
 
 public class Constant {
 	
-	private static final int RESCODE_SUCCESS = 1000; //返回成功
+	public static final int RESCODE_SUCCESS = 1000; //返回成功
 
-	private static final int RESCODE_EXCEPTION = 1100; //返回失败
+	public static final int RESCODE_EXCEPTION = 1100; //返回失败
 
 	/*JWT使用*/
 	// jwt id

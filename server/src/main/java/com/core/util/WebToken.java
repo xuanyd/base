@@ -1,95 +1,34 @@
 package com.core.util;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.JwtBuilder;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.SignatureException;
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.Claim;
+import com.auth0.jwt.interfaces.DecodedJWT;
 
-import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
-import javax.crypto.SecretKey;
-import javax.crypto.spec.SecretKeySpec;
-import com.core.util.Constant;
+public class WebToken {
 
-//http://blog.csdn.net/csdn_blog_lcl/article/details/73485463
-//https://github.com/wangcantian/SecurityCommDemo
-public class WebTocken {
-
-	public static SecretKey generalKey() {
-		byte[] encodedKey = Base64.decode(Constant.JWT_SECRET);//密钥
-	    SecretKey key = new SecretKeySpec(encodedKey, 0, encodedKey.length, "AES");
-	    return key;
+	public static String createToken(String username, String passord) throws Exception{
+		Map<String, Object> map = new HashMap<>();
+		map.put("alg", "HS256");
+		map.put("type","JWT");
+		String token = JWT.create().withHeader(map)
+				.withClaim("name", "admin")
+				.withClaim("password","123").sign(Algorithm.HMAC256(Constant.JWT_SECRET));
+		return token;
 	}
 
-	public static String createJWT(String id, String subject, long ttMillis) {
-		SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
-		long nowMillis = System.currentTimeMillis();
-		Date now = new Date(nowMillis);
-		SecretKey secretKey = generalKey();
-		JwtBuilder builder = Jwts.builder()
-				.setId(id)
-				.setSubject(subject)
-				.setIssuedAt(now)
-				.signWith(signatureAlgorithm, secretKey);
-		if (ttlMillis >= 0) {
-			long expMillis = nowMillis + ttlMillis;
-			Date expDate = new Date(expMillis);
-			builder.setExpiration(expDate);
-		}
-		return builder.compact();
+	public static void verifyToken(String token) throws Exception{
+		JWTVerifier verifier = JWT.require(Algorithm.HMAC256(Constant.JWT_SECRET)).build();
+		DecodedJWT jwt = verifier.verify(token);
+		Map<String, Claim> claims = jwt.getClaims();
+		System.out.println(claims.get("name").asString());
 	}
-
-	/**
-	 * 验证JWT
-	 * @param jwtStr
-	 * @return
-	 */
-	public static CheckResult validateJWT(String jwtStr) {
-		CheckResult checkResult = new CheckResult();
-		Claims claims = null;
-		try {
-			claims = parseJWT(jwtStr);
-			checkResult.setSuccess(true);
-			checkResult.setClaims(claims);
-		} catch (ExpiredJwtException e) {
-			checkResult.setErrCode(Constant.JWT_ERRCODE_EXPIRE);
-			checkResult.setSuccess(false);
-		} catch (SignatureException e) {
-			checkResult.setErrCode(Constant.JWT_ERRCODE_FAIL);
-			checkResult.setSuccess(false);
-		} catch (Exception e) {
-			checkResult.setErrCode(Constant.JWT_ERRCODE_FAIL);
-			checkResult.setSuccess(false);
-		}
-		return checkResult;
-	}
-	
-	/**
-	 * 
-	 * 解析JWT字符串
-	 * @param jwt
-	 * @return
-	 * @throws Exception
-	 */
-	public static Claims parseJWT(String jwt) throws Exception {
-		SecretKey secretKey = generalKey();
-		return Jwts.parser()
-			.setSigningKey(secretKey)
-			.parseClaimsJws(jwt)
-			.getBody();
-	}
-	
-	/**
-	 * 生成subject信息
-	 * @param user
-	 * @return
-	 */
-	public static String generalSubject(SubjectModel sub){
-		return GsonUtil.objectToJsonStr(sub);
-	}
-
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception{
+		String token = createToken("admin", "123");
+		verifyToken(token);
 	}
 }

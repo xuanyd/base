@@ -22,6 +22,7 @@ class AdminController {
     private AdminService adminService;
 
     @RequestMapping({"admin/login"})
+<<<<<<< HEAD
     public @ResponseBody Map login(HttpServletRequest req, HttpSession session){
         String username = req.getParameter("username");
         String password = req.getParameter("password");
@@ -41,6 +42,16 @@ class AdminController {
             retMap.put("msg","异常");
             e.printStackTrace();
         }
+=======
+    public @ResponseBody Map login(@RequestParam("username") String username, @RequestParam("password") String password) throws Exception{
+        Map<String,Object> retMap = adminService.adminLogin(username, password);
+        if (retMap.get("flag") == "success") {
+            Map<String, Object> loginTokenMap = new HashMap<>();
+            loginTokenMap.put("username", username);
+            loginTokenMap.put("password", password);
+            String token = WebToken.createJWT(Constant.JWT_ID,TokenMgr.generalSubject(loginTokenMap),Constant.JWT_TTL);
+        } 
+>>>>>>> c3ecdbe0994b2f49cd34856e972302e2a6a8fe0c
         return retMap;
     }
 

@@ -14,8 +14,6 @@ import javax.crypto.spec.SecretKeySpec;
 import com.core.util.Constant;
 
 //http://blog.csdn.net/csdn_blog_lcl/article/details/73485463
-//https://github.com/wangcantian/SecurityCommDemo
-//http://blog.csdn.net/csdn_blog_lcl/article/details/73485463
 public class WebToken {
 	
 	//该方法使用HS256算法和Secret:bankgl生成signKey

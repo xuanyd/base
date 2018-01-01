@@ -275,9 +275,6 @@ public class Utils {
         }
     }
 
-
-
-
     public static void sqlXML(Connection conn, String sql, String[] map,
                               String wrapName, Writer os, String extra, Object... args)
             throws SQLException {
@@ -328,10 +325,8 @@ public class Utils {
             }
             os.write("\n");
         }
-
-        os.flush();
-
-    }
+      os.flush();
+  }
 
     public static void resultSetCSV(ResultSet rs, Writer os)
             throws SQLException, IOException {

@@ -16,8 +16,10 @@
 河南省心电学诊疗中心 目标：坚持发展具有中国特色的心电学事业，使中国的心电学事业走向世界，并与国际心电同行互通、融合、促进、发展。
 河南省心电学诊疗中心 宗旨：为心电工作者搭建多方位的学术、心理、文化、休闲平台，交流工作体会、畅谈生活感悟，舒缓精神压力，放飞快乐心情；同时也为患者进行诊疗和健康教育，为心电厂家与心电专家搭建沟通的桥梁。">
     <meta name="keywords" content="河南省心电学诊疗中心">
-    <link href="lib/css/css.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="lib/script/jquery.min.js"></script>
+    <link href="frontend/lib/css/css.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="frontend/lib/js/jquery.min.js"></script>
+    <style type="text/css">#kinMaxShow *{ margin:0;padding:0;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box{width:100%;height:500px;position:relative;z-index:1;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box .KMSPrefix_kinMaxShow_image_item{width:100%;height:500px;position:absolute;overflow:hidden;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box .KMSPrefix_kinMaxShow_image_item a.KMSPrefix_kinMaxShow_coverlink{width:100%;height:500px;display:block;text-decoration:none;padding:0;margin:0;background:transparent;text-indent:0;outline:none;hide-focus:expression(this.hideFocus=true);} #kinMaxShow .KMSPrefix_kinMaxShow_button{right:10px;bottom:10px;;position:absolute;list-style:none;z-index:2;overflow:hidden;_zoom:1;}#kinMaxShow .KMSPrefix_kinMaxShow_button li{width:14px;height:14px;line-height:14px;font-size:10px;background:#cccaca;border:1px solid #ffffff;color:#666666;text-align:center;margin-right:8px;font-family:Verdana;float:left;;cursor:pointer;-webkit-text-size-adjust:none;}#kinMaxShow .KMSPrefix_kinMaxShow_button li.KMSPrefix_kinMaxShow_focus{background:#CC0000;border:1px solid #FF0000;color:#000000;;cursor:default;}
+        </style>
   </head>
     <body style="width: 1346px;">
     <script>
@@ -93,112 +95,7 @@
         }
       }
     </script>
-    ﻿<div class="top">
-      <div class="top_con">
-        <div class="top_con_l float"> 欢迎光临河南省心电学诊疗中心! </div>
-        <div class="top_con_r"> 
-          <a href="http://www.hnsxdx.cn/#" class="hrefs" onclick="this.style.behavior=&#39;url(#default#homepage)&#39;;this.setHomePage(&#39;http://www.hnsxdx.cn&#39;);">设为首页</a> | <a href="javascript:window.external.AddFavorite(&#39;http://www.hnsxdx.cn&#39;, &#39;河南省心电学诊疗中心&#39;)">加入收藏</a>
-          <a> 
-            <img src="lib/images/2_04.jpg"> 微信平台 
-            <img src="lib/images/wei_1.jpg" class="weibo_img"> 
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="header">
-      <div class="header_con">
-        <div class="logo float">
-          <h1><a href="http://www.hnsxdx.cn/"></a></h1>
-        </div>
-        <div class="phone">
-          <table border="0" align="left" cellspacing="0">
-            <form name="formsearch" action="http://www.hnsxdx.cn/plus/search.php"></form>
-            <tbody>
-              <tr>
-                <td>
-                  <input type="hidden" name="kwtype" value="0">
-                </td>
-                <td>
-                  <input type="text" value="站内信息查询" onfocus="this.value=&#39;&#39;" name="q" class="input1">
-                </td>
-                <td>
-                  <input type="image" src="lib/images/000.jpg" class="input2">
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="erweima">
-          <img src="lib/images/wei_1.jpg" width="100" height="130">
-        </div>  
-      </div>
-    </div>
-    <div class="nav">
-      <div class="nav_con">
-        <ul>
-          <li class="cur_index">
-            <a href="http://www.hnsxdx.cn/"></a>
-          </li>
-          <li>
-            <a id="1" href="http://www.hnsxdx.cn/about/">中心简介</a>
-              <ul>
-              <li>
-                <a href="http://www.hnsxdx.cn/zhuanjia/">专家简介</a>
-              </li> 
-              <li>
-                <a href="http://www.hnsxdx.cn/linchuang/">心电检查介绍</a>
-              </li> 
-              <li>
-                <a href="http://www.hnsxdx.cn/en/">英文简介</a>
-              </li>  
-            </ul>
-            </li>
-          <li>
-            <a id="30" href="http://www.hnsxdx.cn/gjyx/">国内外影响</a>
-              <ul>
-              <li>
-                <a href="http://www.hnsxdx.cn/lingxian/">国内外领先方向</a>
-              </li> 
-              <li>
-                <a href="http://www.hnsxdx.cn/yingxiang/">国内外知名度</a>
-              </li> 
-              <li>
-                <a href="http://www.hnsxdx.cn/jiaoliu/">国内外交流</a>
-              </li>  
-            </ul>
-            </li>
-          <li>
-            <a id="9" href="http://www.hnsxdx.cn/xueshu/">学术动态</a>
-              <ul>
-              <li>
-                <a href="http://www.hnsxdx.cn/xdxzs/">心电学之声</a>
-              </li> 
-              <li>
-                <a href="http://www.hnsxdx.cn/jiaoyu/">继续教育</a>
-              </li>  
-            </ul>
-            </li>
-          <li>
-            <a id="15" href="http://www.hnsxdx.cn/xiazai/">课件下载</a>
-            </li>
-          <li>
-            <a id="14" href="http://www.hnsxdx.cn/kepu/">科普知识</a>
-          </li>
-          <li>
-            <a id="5" href="http://www.hnsxdx.cn/jinzhan/">仪器进展</a>
-            </li>
-          <li>
-            <a id="24" href="http://www.hnsxdx.cn/shipin/">视频专区</a>
-            </li>
-          <li>
-            <a id="7" href="http://www.hnsxdx.cn/contact/">联系我们</a>
-            </li>
-          <li id="cur_index2">
-            <a href="http://search.hnsxdx.cn/search/index" target="_blank">我的心电图查询</a>
-          </li>
-        </ul>
-      </div>
-    </div> 
+    <%@ include file="common/header.jsp" %>
     <!--banner--con--start-->
     <div class="banner_div"> 
       <script type="text/javascript">
@@ -208,14 +105,12 @@
        </script>
     <div id="kinMaxShow" 
          style="width: 100%; height: 500px; overflow: visible; position: relative; visibility: visible; display: block;">
-         <style type="text/css">#kinMaxShow *{ margin:0;padding:0;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box{width:100%;height:500px;position:relative;z-index:1;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box .KMSPrefix_kinMaxShow_image_item{width:100%;height:500px;position:absolute;overflow:hidden;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box .KMSPrefix_kinMaxShow_image_item a.KMSPrefix_kinMaxShow_coverlink{width:100%;height:500px;display:block;text-decoration:none;padding:0;margin:0;background:transparent;text-indent:0;outline:none;hide-focus:expression(this.hideFocus=true);} #kinMaxShow .KMSPrefix_kinMaxShow_button{right:10px;bottom:10px;;position:absolute;list-style:none;z-index:2;overflow:hidden;_zoom:1;}#kinMaxShow .KMSPrefix_kinMaxShow_button li{width:14px;height:14px;line-height:14px;font-size:10px;background:#cccaca;border:1px solid #ffffff;color:#666666;text-align:center;margin-right:8px;font-family:Verdana;float:left;;cursor:pointer;-webkit-text-size-adjust:none;}#kinMaxShow .KMSPrefix_kinMaxShow_button li.KMSPrefix_kinMaxShow_focus{background:#CC0000;border:1px solid #FF0000;color:#000000;;cursor:default;}
-        </style>
         <div class="KMSPrefix_kinMaxShow_image_box">
-          <div class="KMSPrefix_kinMaxShow_image_item" style="display: block; background: url(&quot;/skin/images/53fef2fd60a3e.jpg&quot;) center center no-repeat; z-index: 1; opacity: 0;">
+          <div class="KMSPrefix_kinMaxShow_image_item" style="display: block; background: url(&quot;frontend/lib/images/53fef2fd60a3e.jpg&quot;) center center no-repeat; z-index: 1; opacity: 0;">
           </div>
-          <div class="KMSPrefix_kinMaxShow_image_item" style="display: block; background: url(&quot;/skin/images/53f1c1afa039c.jpg&quot;) center center no-repeat; z-index: 1; opacity: 0;">
+          <div class="KMSPrefix_kinMaxShow_image_item" style="display: block; background: url(&quot;frontend/lib/images/53f1c1afa039c.jpg&quot;) center center no-repeat; z-index: 1; opacity: 0;">
           </div>
-          <div class="KMSPrefix_kinMaxShow_image_item" style="display: block; background: url(&quot;/skin/images/135BKT3b540315.jpg&quot;) center center no-repeat; z-index: 2; opacity: 1;">
+          <div class="KMSPrefix_kinMaxShow_image_item" style="display: block; background: url(&quot;frontend/lib/images/135BKT3b540315.jpg&quot;) center center no-repeat; z-index: 2; opacity: 1;">
           </div>
         </div>
         <ul class="KMSPrefix_kinMaxShow_button">
@@ -226,24 +121,39 @@
       </div>
     </div>
 <!--banner--con--end--> 
-<div class="main">
-  <div class="clear"></div>
-  <div class="main_con"> 
-    <div id="hotpic">
-      <div class="jiudian2">
-      <h2><span><a href="http://www.hnsxdx.cn/tongzhi/" target="_blank">通知公告</a></span><a class="more" href="http://www.hnsxdx.cn/tongzhi/" target="_blank">查看更多</a></h2>
-      <ul>
-        <li style="border-top:dashed 0px #ddd !important;"><a href="http://www.hnsxdx.cn/tongzhi/2017/0803/2735.html" target="_blank">（通知+课程）第12届全国心电学进展及心电散点图临床应</a></li>
-<li style="border-top:dashed 0px #ddd !important;"><a href="http://www.hnsxdx.cn/plus/view.php?aid=2359" target="_blank">《河南省心电学重点学科》提高班通知</a></li>
-<li style="border-top:dashed 0px #ddd !important;"><a href="http://www.hnsxdx.cn/tongzhi/2016/0907/2154.html" target="_blank">2016中原心脏病学大会暨中原国际长城心脏病学大会通知</a></li>
-<li style="border-top:dashed 0px #ddd !important;"><a href="http://www.hnsxdx.cn/tongzhi/2016/0907/2151.html" target="_blank">第十三届全国复杂疑难心电图高层阅图培训班通知</a></li>
-<li style="border-top:dashed 0px #ddd !important;"><a href="http://www.hnsxdx.cn/tongzhi/2016/0907/2152.html" target="_blank">第十三届全国复杂疑难心电图高层阅图培训班通知</a></li>
-<li style="border-top:dashed 0px #ddd !important;"><a href="http://www.hnsxdx.cn/tongzhi/2016/0829/2140.html" target="_blank">全国第十三届复杂疑难心电图高层阅图提高班与阅图经验</a></li>
-
-      </ul>
+  <div class="main">
+    <div class="clear"></div>
+    <div class="main_con"> 
+      <div id="hotpic">
+        <div class="jiudian2">
+        <h2>
+          <span>
+            <a href="http://www.hnsxdx.cn/tongzhi/" target="_blank">通知公告</a>
+          </span>
+          <a class="more" href="http://www.hnsxdx.cn/tongzhi/" target="_blank">查看更多</a>
+        </h2>
+        <ul>
+          <li style="border-top:dashed 0px #ddd !important;">
+            <a href="http://www.hnsxdx.cn/tongzhi/2017/0803/2735.html" target="_blank">（通知+课程）第12届全国心电学进展及心电散点图临床应</a>
+          </li>
+          <li style="border-top:dashed 0px #ddd !important;">
+            <a href="http://www.hnsxdx.cn/plus/view.php?aid=2359" target="_blank">《河南省心电学重点学科》提高班通知</a>
+          </li>
+          <li style="border-top:dashed 0px #ddd !important;">
+            <a href="http://www.hnsxdx.cn/tongzhi/2016/0907/2154.html" target="_blank">2016中原心脏病学大会暨中原国际长城心脏病学大会通知</a>
+          </li>
+          <li style="border-top:dashed 0px #ddd !important;">
+            <a href="http://www.hnsxdx.cn/tongzhi/2016/0907/2151.html" target="_blank">第十三届全国复杂疑难心电图高层阅图培训班通知</a>
+          </li>
+          <li style="border-top:dashed 0px #ddd !important;">
+            <a href="http://www.hnsxdx.cn/tongzhi/2016/0907/2152.html" target="_blank">第十三届全国复杂疑难心电图高层阅图培训班通知</a>
+          </li>
+          <li style="border-top:dashed 0px #ddd !important;">
+            <a href="http://www.hnsxdx.cn/tongzhi/2016/0829/2140.html" target="_blank">全国第十三届复杂疑难心电图高层阅图提高班与阅图经验</a>
+          </li>
+        </ul>
+      </div>
     </div>
-    </div>
-    
     <!--选下卡开始-->
     <div class="xuanxiaka float">
       <div id="Tab1">
@@ -292,9 +202,7 @@
   <!--end-->
   
   <div class="clear"></div>
-
   <div class="youshi">
-
     <div class="link">
       <div id="Tab2">
         <div class="Menubox2">
@@ -314,66 +222,49 @@
     </div>
   </div>
 </div>
-
-﻿<div class="footer">
-  <div class="footer_con">
-    <div class="logo2 float">
-      <div class="right">
-        <p> Copyright © 2010-2017  河南省心电学诊疗中心 版权所有<br>
-          地址：郑州市金水区经八路2号，郑州大学第二附属医院门诊楼3楼心电图科 <br>邮箱：henanxindian@126.com 您好！您是本站第：<script src="./河南省心电学诊疗中心_files/count.php" type="text/javascript" language="javascript"></script>8562936 位客人！<br>
-      </p></div>
-    </div>
-    
-  </div>
-</div>
-
+<%@ include file="common/footer.jsp" %>
 <script language="javascript">
-var tips; 
-var theTop = 100;
-var old = theTop;
-function initFloatTips() 
-{ 
-tips = document.getElementById('divQQbox');
-moveTips();
-}
-function moveTips()
-{
-var tt=50; 
-if (window.innerHeight) 
-{
-pos = window.pageYOffset 
-}else if (document.documentElement && document.documentElement.scrollTop) {
-pos = document.documentElement.scrollTop 
-}else if (document.body) {
-pos = document.body.scrollTop; 
-}
-pos=pos-tips.offsetTop+theTop; 
-pos=tips.offsetTop+pos/10; 
-if (pos < theTop){
-pos = theTop;
-}
-if (pos != old) { 
-tips.style.top = pos+"px";
-tt=10; //alert(tips.style.top); 
-}
-old = pos;
-setTimeout(moveTips,tt);
-}
-initFloatTips();
-if(typeof(HTMLElement)!="undefined") //firefox定义contains()方法，ie下不起作用
-{ 
-HTMLElement.prototype.contains=function (obj) 
-{ 
-while(obj!=null&&typeof(obj.tagName)!="undefind"){
-if(obj==this) return true; 
-obj=obj.parentNode;
-} 
-return false; 
-}
-}
-
-
+  var tips; 
+  var theTop = 100;
+  var old = theTop;
+  function initFloatTips() { 
+    tips = document.getElementById('divQQbox');
+    moveTips();
+  }
+  function moveTips() {
+    var tt=50; 
+    if (window.innerHeight) {
+      pos = window.pageYOffset 
+    }else if (document.documentElement && document.documentElement.scrollTop) {
+      pos = document.documentElement.scrollTop 
+    }else if (document.body) {
+      pos = document.body.scrollTop; 
+    }
+    pos=pos-tips.offsetTop+theTop; 
+    pos=tips.offsetTop+pos/10; 
+    if (pos < theTop){
+      pos = theTop;
+    }
+    if (pos != old) { 
+      tips.style.top = pos+"px";
+      tt=10; //alert(tips.style.top); 
+    }
+    old = pos;
+    setTimeout(moveTips,tt);
+  }
+  initFloatTips();
+  if(typeof(HTMLElement)!="undefined") //firefox定义contains()方法，ie下不起作用
+  { 
+  HTMLElement.prototype.contains=function (obj) { 
+    while(obj!=null&&typeof(obj.tagName)!="undefind"){
+      if(obj==this) 
+        return true; 
+      obj=obj.parentNode;
+    } 
+      return false; 
+    }
+  }
 </script> 
 <!--kefu--end-->
-
-</body></html>
+</body>
+</html>

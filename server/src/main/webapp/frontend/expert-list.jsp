@@ -1,7 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+<!DOCTYPE html>
+<html>
 	<head>
+        <base href="<%=basePath%>">
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>中心简介  /  专家简介_河南省心电学诊疗中心</title>
 		<meta name="keywords" content="">
@@ -83,7 +88,7 @@
 	</script>
 ﻿<div class="top">
   <div class="top_con">
-    <div class="top_con_l float"> 欢迎光临河南省心电学诊疗中心! </div>
+    <div class="top_con_l float"> 欢迎光临河南省心电学诊疗中心! <%=basePath%></div>
     <div class="top_con_r"> <a href="http://www.hnsxdx.cn/zhuanjia/#" class="hrefs" onclick="this.style.behavior=&#39;url(#default#homepage)&#39;;this.setHomePage(&#39;http://www.hnsxdx.cn&#39;);">设为首页</a> | <a href="javascript:window.external.AddFavorite(&#39;http://www.hnsxdx.cn&#39;, &#39;河南省心电学诊疗中心&#39;)">加入收藏</a><a> <img src="./中心简介 _ 专家简介_河南省心电学诊疗中心_files/2_04.jpg"> 微信平台 <img src="./中心简介 _ 专家简介_河南省心电学诊疗中心_files/wei_1.jpg" class="weibo_img"> </a></div>
   </div>
 </div>

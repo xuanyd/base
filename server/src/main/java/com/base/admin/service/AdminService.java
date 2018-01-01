@@ -1,6 +1,7 @@
 package com.base.admin.service;
 
 import com.base.admin.dao.AdminDao;
+import com.core.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,19 +14,8 @@ public class AdminService {
     @Autowired
     private AdminDao adminDao;
 
-    public Map<String, Object> adminLogin(String username, String password) throws Exception {
-        Map<String, Object> retMap = new HashMap<>();
-        retMap.put("flag", "err");
-        retMap.put("msg", "其他错误");
-        Map<String, Object> userMap = adminDao.queryUserByNameAndPwd(username, password);
-        if (null == userMap || userMap.isEmpty()) {
-            retMap.put("msg", "错误的用户信息");
-        } else {
-            retMap.put("flag", "success");
-            retMap.put("user", userMap);
-            return retMap;
-        }
-        return retMap;
+    public Map<String, Object> getUserInfo(String username, String password) throws Exception {
+        return adminDao.queryUserByNameAndPwd(username, password);
     }
 
     public Map<String,Object> getUserList() {

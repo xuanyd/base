@@ -16,7 +16,6 @@ const appRoutes: Routes = [
      canActivate:[PermissionGuard],  
      loadChildren: 'app/main/main.module#MainModule'
   }
- 
 ]
 
 @NgModule({
@@ -27,4 +26,5 @@ const appRoutes: Routes = [
     RouterModule
   ]
 })
+
 export class AppRoutingModule {}

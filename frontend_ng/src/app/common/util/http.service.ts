@@ -9,7 +9,7 @@ import {
 @Injectable()
 export class HttpService {
 
-  private default_host: string = "http://122.114.216.100:8080/server/"
+  private default_host: string = "http://localhost:8081"
   constructor(private http: Http) {}
 
   public request(url: string, options: RequestOptionsArgs, success: Function, error: Function): any {

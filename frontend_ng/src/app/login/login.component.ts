@@ -12,8 +12,7 @@ import { LocalStorage } from '../common/storage/local.storage'
 })
 
 export class LoginComponent implements OnInit {
-    
-  loginBtnDisable:boolean=false
+  loginBtnDisable:string=''
   loginForm: FormGroup
   loginValid: boolean = true
   connectionValid: boolean = true

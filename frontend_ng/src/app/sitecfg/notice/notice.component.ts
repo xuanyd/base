@@ -38,7 +38,7 @@ export class NoticeComponent implements OnInit {
   		this.httpService.get("admin/noticelist", {
   	}, function (successful, data, res) {
       if (successful) {
-        if (data.flag!='success') {
+        if (data.flag!='1000W') {
         	that.noticeList = data.pageInfo.infoList
         	that.pageInfo = data.pageInfo
         	console.log(data.pageInfo)

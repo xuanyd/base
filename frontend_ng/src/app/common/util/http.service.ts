@@ -13,7 +13,7 @@ export class HttpService {
 
   public request(url: string, options: RequestOptionsArgs, success: Function, error: Function): any {
     this.http.request(url, options).subscribe(res => {
-      console.log(this.default_host + url);
+      console.log(url);
       success(res.ok, res.json(), res);
     }, err => {
       //处理请求失败

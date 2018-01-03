@@ -11,23 +11,19 @@ import { Component, OnInit } from '@angular/core'
 
 export class HeaderComponent implements OnInit {
 
-    userDrop: string='dropdown'
-
+    sub1Open:string = 'dropdown'
 	  /**
   	* 初始化
   	*/
   	ngOnInit() {
   	}
 
-    clickUseDrop() {
-      if(this.userDrop=="dropdown open") {
-        this.userDrop="dropdown"
-      } else {
-        this.userDrop="dropdown open"
-      }
-      
+    open(idx){
+      if(this.sub1Open == 'dropdown')
+        this.sub1Open = 'dropdown open'
+      else
+        this.sub1Open = 'dropdown'
     }
-
    
   	toggleNav() {
   		alert('menu');

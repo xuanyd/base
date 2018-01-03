@@ -176,7 +176,6 @@
 var tips; 
 var theTop = 100;
 var old = theTop;
-
 </script> 
 </body>
 </html>

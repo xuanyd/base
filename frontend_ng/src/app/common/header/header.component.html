@@ -1,76 +1,39 @@
-<!-- Fixed navbar -->
-<div id="head-nav" class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="fa fa-gear"></span>
-      </button>
-      <a class="navbar-brand" href="file:///D:/private/work/html/myhtml/index.html#"><span>Wang&nbsp;Dong</span></a>
+  <div id="head-nav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="fa fa-gear"></span>
+        </button>
+        <a class="navbar-brand" href="/html/index.html#"><span>Clean Zone</span></a>
+      </div>
+      <div class="navbar-collapse collapse" style="height: 1px;">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/html/index.html#">Home</a></li>
+          <li><a href="/html/index.html#about">About</a></li>
+          <li class="dropdown">
+            <a href="/html/index.html#" class="dropdown-toggle" data-toggle="dropdown">Contact <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/html/index.html#">Action</a></li>
+              <li class="dropdown-submenu"><a href="/html/index.html#">Sub menu</a>
+                <ul class="dropdown-menu">
+                  <li><a href="/html/index.html#">Action</a></li>
+                  </ul>
+              </li>              
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right user-nav">
+          <li class="dropdown profile_menu">
+            <a href="/html/index.html#" class="dropdown-toggle" data-toggle="dropdown"><img alt="Avatar" src="./Clean Zone_files/avatar2.jpg"><span>Jeff Hanneman</span> <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="/html/index.html#">My Account</a></li>
+              <li><a href="/html/index.html#">Profile</a></li>
+              <li><a href="/html/index.html#">Messages</a></li>
+              <li class="divider"></li>
+              <li><a href="/html/index.html#">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>     
+      </div><!--/.nav-collapse animate-collapse -->
     </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        <li class="{{sub1Open}}">
-          <a class="dropdown-toggle" (click)='open(1)' data-toggle="dropdown" style=" cursor: pointer">
-            菜单1<b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu col-menu-2">
-            <li class="col-sm-6 no-padding">
-             <ul>
-                <li class="dropdown-header"><i class="fa fa-group"></i>首页</li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html">首页</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/dashboard2-wangdong.html">时间线</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/form-elements-wangdong.html">表单</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-              </ul>
-            </li>
-            <li class="col-sm-6 no-padding">
-              <ul>
-                <li class="dropdown-header"><i class="fa fa-legal"></i>用户管理</li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-         <a href="file:///D:/private/work/html/myhtml/index.html#" class="dropdown-toggle" data-toggle="dropdown">菜单2<b class="caret"></b></a>
-          <ul class="dropdown-menu col-menu-2">
-            <li class="col-sm-6 no-padding">
-              <ul>
-                <li class="dropdown-header"><i class="fa fa-group"></i>用户管理</li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-                <li class="dropdown-header"><i class="fa fa-gear"></i>用户管理</li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li> 
-              </ul>
-            </li>
-            <li class="col-sm-6 no-padding">
-              <ul>
-                <li class="dropdown-header"><i class="fa fa-legal"></i>用户管理</li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li> 
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-                <li><a href="file:///D:/private/work/html/myhtml/index.html#">添加人员</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-  <ul class="nav navbar-nav navbar-right user-nav">
-    <li class="dropdown profile_menu">
-      <a href="file:///D:/private/work/html/myhtml/index.html#" class="dropdown-toggle" data-toggle="dropdown"><img alt="Avatar" src="../../assets/img/avatar2.jpg"><span>Wang&nbsp;Dong</span> <b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><a href="file:///D:/private/work/html/myhtml/index.html#">My Account</a></li>
-        <li><a href="file:///D:/private/work/html/myhtml/index.html#">Profile</a></li>
-        <li><a href="file:///D:/private/work/html/myhtml/index.html#">Messages</a></li>
-        <li class="divider"></li>
-        <li><a href="file:///D:/private/work/html/myhtml/index.html#">Sign Out</a></li>
-      </ul>
-    </li>
-  </ul>     
-  </div><!--/.nav-collapse animate-collapse -->
   </div>
-</div>

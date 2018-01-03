@@ -1,3 +1,4 @@
+
 html {
   height: 100%;
 }
@@ -874,8 +875,13 @@ body.modal-open,
   position: absolute;
 }
 /*.sb-collapsed .cl-vnavigation li:hover ul{display: block !important;}
+<<<<<<< HEAD
   .sb-collapsed .cl-vnavigation li.ocult ul{display:none !important;}
   
+=======
+	.sb-collapsed .cl-vnavigation li.ocult ul{display:none !important;}
+	
+>>>>>>> 71f7cd3fbf21c562cb72a9d04225b1f91c0d721d
 */
 /*End Collapsed*/
 .cl-vnavigation li a i {
@@ -4669,7 +4675,11 @@ button::-moz-focus-inner {
   top: 45px;
 }
 .gritter-item-wrapper {
+<<<<<<< HEAD
   background: url(../../assets/img/gritter/gritter-bg.png);
+=======
+  background: url(../../assets/img/gritter-bg.png);
+>>>>>>> 71f7cd3fbf21c562cb72a9d04225b1f91c0d721d
   box-shadow: 0 0px 5px rgba(0, 0, 0, 0.32);
 }
 .gritter-top {

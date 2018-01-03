@@ -9,16 +9,16 @@ import {
 @Injectable()
 export class HttpService {
 
-  private default_host: string = "http://localhost:8081"
   constructor(private http: Http) {}
 
   public request(url: string, options: RequestOptionsArgs, success: Function, error: Function): any {
-    this.http.request(this.default_host + url, options).subscribe(res => {
-        success(res.ok, res.json(), res);
+    this.http.request(url, options).subscribe(res => {
+      console.log(url);
+      success(res.ok, res.json(), res);
     }, err => {
-        //处理请求失败
-        let msg = this.requestFailed(url, options, err);
-        error(err.ok, msg, err);
+      //处理请求失败
+      let msg = this.requestFailed(url, options, err);
+      error(err.ok, msg, err);
     });
 
   }

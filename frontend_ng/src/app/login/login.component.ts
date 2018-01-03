@@ -12,7 +12,6 @@ import { LocalStorage } from '../common/storage/local.storage'
 })
 
 export class LoginComponent implements OnInit {
-    
   loginBtnDisable:string=''
   loginForm: FormGroup
   loginValid: boolean = true
@@ -25,7 +24,6 @@ export class LoginComponent implements OnInit {
       Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15)]));
     let passwordFc = new FormControl('123456',
       Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(15)]));
-
     this.loginForm = this.formBuilder.group({
       userName: userNameFc,
       password: passwordFc
@@ -36,7 +34,6 @@ export class LoginComponent implements OnInit {
   	* 初始化
   	*/
 	ngOnInit() {
-
 	}
 
 	login() {
@@ -46,11 +43,10 @@ export class LoginComponent implements OnInit {
       return
     let that = this;
     that.loginBtnDisable = 'disabled'
-    that.httpService.get("admin/login", {
+    that.httpService.get("http://localhost:8081/admin/login", {
       username: this.loginForm.value.userName,
       password: this.loginForm.value.password
     }, function (successful, data, res) {
-      console.log(successful);
       that.loginBtnDisable = ''
       if (successful) {
         if (data.flag!='1000') {

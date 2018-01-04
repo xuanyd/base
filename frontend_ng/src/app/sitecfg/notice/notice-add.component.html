@@ -4,7 +4,7 @@
 <form [formGroup]="noticeAddForm">
 	<div class="search" style="padding-top: 10px;">
 		<div class="form-group row" style="margin-left: 10px;">
-			<div class="col-sm-1">分类</div>
+			<div class="col-sm-1">栏目</div>
 			<div class="col-sm-6">
 	    	<select  name="noticeType" formControlName="noticeType" class="form-control">
 		      <option>通知公告</option>
@@ -32,9 +32,11 @@
     	</div>
 	  </div>
 		<button class="btn btn-primary last-btn">
+			<i class="fa fa-check" aria-hidden="true"></i>
     	保存
   	</button>
 		<button class="btn btn-secondary last-btn">
+			<i class="fa fa-reply" aria-hidden="true"></i>
    		返回
   	</button>  
 	</div>

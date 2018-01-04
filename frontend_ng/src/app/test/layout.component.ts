@@ -13,10 +13,17 @@ export class LayoutComponent implements OnInit {
 	@Output()
   public pagination:Pagination = Pagination.defaultPagination;
 	constructor(private router: Router) {
-
 	}
 
   ngOnInit() {
+    this.initJobExceptionList();
+    this.pagination.changePage = (() => {
+      this.initJobExceptionList();
+    });
   	console.log('layout init..')
+  }
+  initJobExceptionList(){
+    console.log("init")
+    this.pagination.totalItems = 50;
   }
 }

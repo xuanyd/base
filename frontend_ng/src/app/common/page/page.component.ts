@@ -9,7 +9,7 @@ import { Pagination } from "./pagination";
 export class PageComponent implements DoCheck{
 
   @Input()
-  public pagination:Pagination;
+  public pagination:Pagination; 
 
   public pageNum:number;
   public pageList:any[];

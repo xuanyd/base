@@ -9,7 +9,6 @@ import { HttpModule }    from '@angular/http'
 import { PermissionGuard   } from './common/util/PermissionGuard'
 import { LocalStorage } from './common/storage/local.storage'
 
-
 @NgModule({
   declarations: [
     AppComponent

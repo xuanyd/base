@@ -1,6 +1,7 @@
-import { Component, OnInit,ViewEncapsulation,ViewChild,ElementRef } from '@angular/core'
+import { Component, OnInit,Output, ViewEncapsulation,ViewChild,ElementRef } from '@angular/core'
 import { HttpService } from '../../common/util/http.service'
 import { Router } from '@angular/router'
+import { Pagination } from '../../common/page/pagination'
 
 @Component({
   selector: 'c-sitecfg-notice',
@@ -14,6 +15,9 @@ export class NoticeComponent implements OnInit {
   noticeList:string
   pageInfo:string
   
+  @Output()
+  public pagination:Pagination = Pagination.defaultPagination
+
 	constructor(private router: Router,private httpService: HttpService,private el: ElementRef) {
 
 	}
@@ -22,26 +26,25 @@ export class NoticeComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
-    console.log('----------')
   	this.getNoticeList()
+    this.pagination.changePage = (() => {
+      this.getNoticeList()
+    })
   }
-
-  /**
-  * 
-  */
 
   /**
   * 获取公告列表
   */
   getNoticeList() {
   	let that = this
-  		this.httpService.get("http://localhost:8081/admin/noticelist", {
+  	let page = this.pagination.currentPage - 1
+    this.httpService.get("http://localhost:8081/admin/noticelist", {
   	}, function (successful, data, res) {
       if (successful) {
         if (data.flag!='1000') {
         	that.noticeList = data.pageInfo.infoList
         	that.pageInfo = data.pageInfo
-        	console.log(data.pageInfo)
+          that.pagination.totalItems = data.pageInfo.totalCount
         }
       }
     }, function (successful, msg, err) {

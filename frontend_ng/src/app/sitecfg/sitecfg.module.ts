@@ -10,6 +10,7 @@ import { ColumnComponent } from './column/column.component'
 import { ColumnAddComponent } from './column/column-add.component'
 import { ColumnEditComponent } from './column/column-edit.component'
 import { UEditorModule } from 'ngx-ueditor'
+import { PageComponent } from '../common/page'
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { UEditorModule } from 'ngx-ueditor'
   ],
   declarations: [
     SiteCfgComponent,
+    PageComponent,
     NoticeComponent,
     NoticeEditComponent,
     NoticeAddComponent,

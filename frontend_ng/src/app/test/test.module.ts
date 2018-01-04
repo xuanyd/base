@@ -4,7 +4,6 @@ import { TestComponent } from './test.component'
 import { LayoutComponent }   from './layout.component'
 import { TestRoutingModule  } from './test.routing.module'
 import { PageComponent } from '../common/page'
-
 @NgModule({
   imports:      [ 
     CommonModule,
@@ -12,8 +11,8 @@ import { PageComponent } from '../common/page'
   ],
   declarations: [
     TestComponent,
-    LayoutComponent,
-    PageComponent
+    PageComponent,
+    LayoutComponent
   ],
   exports:      [ 
   ],

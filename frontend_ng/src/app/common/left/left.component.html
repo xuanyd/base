@@ -15,25 +15,24 @@
         <li class="parent">
           <a (click)="openLeft(0)">
             <i class="fa fa-home"></i>
-            <span>仪表盘</span>
+            <span>内容设置</span>
           </a>
           <ul class="sub-menu" [ngClass]="{'display-block':leftMenus[0]}">
             <li class="active">
-              <a href="/html/index.html">通知</a>
+              <a href="/html/index.html">文章添加</a>
             </li>
             <li>
-              <a href="/html/dashboard2.html">警告</a>
+              <a href="/html/dashboard2.html">友情链接</a>
             </li>
           </ul>
         </li>
         <li class="parent">
           <a (click)="openLeft(1)">
             <i class="fa fa-smile-o"></i>
-            <span>UI组件</span>
+            <span>用户管理</span>
           </a>
           <ul class="sub-menu" [ngClass]="{'display-block':leftMenus[1]}">
-            <li><a href="/html/ui-elements.html">General</a></li>
-            <li><a href="/html/ui-buttons.html">Buttons</a></li>
+            <li><a href="/html/ui-elements.html">修改密码</a></li>
           </ul>
         </li>
       </ul>
@@ -44,5 +43,7 @@
 </div>
 <div class="text-right collapse-button" style="padding: 7px 9px;">
   <input type="text" class="form-control search" placeholder="Search...">
-  <button id="sidebar-collapse" class="btn btn-default" style=""><i style="color:#fff;" class="fa fa-angle-left"></i></button>
+  <button id="sidebar-collapse" class="btn btn-default" style="">
+    <i style="color:#fff;" class="fa fa-angle-left"></i>
+  </button>
 </div>

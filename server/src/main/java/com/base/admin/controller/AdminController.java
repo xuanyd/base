@@ -33,6 +33,7 @@ class AdminController {
                 //session.setAttribute(retMap.get("user_id").toString(), loginToken);
                 session.setAttribute("U1001", loginToken);
                 retMap.put("flag", Constant.RESCODE_SUCCESS);
+                retMap.put("tocken",loginToken);
            /* } else {
                 retMap.put("flag", Constant.RESCODE_EXCEPTION);
                 retMap.put("msg", "登录异常");

@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
           return
         }
         that.ls.setObject('username',that.loginForm.value.userName)
+        that.ls.setObject('token',that.loginForm.value.token)
         that.router.navigate(['/app/home'])
       }
     }, function (successful, msg, err) {

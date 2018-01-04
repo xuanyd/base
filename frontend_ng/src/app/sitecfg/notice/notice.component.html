@@ -10,7 +10,14 @@
             <div class="dataTables_filter" >
               <label>
                 <input aria-controls="datatable" class="form-control" placeholder="Search" type="text">
-                <button class="btn btn-primary" data-dismiss="modal">查询</button>
+                <button class="btn btn-primary" style="margin-top: 5px;" data-dismiss="modal">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                  查询
+                </button>
+                <button class="btn btn-info search-btn" style="margin-top: 5px;" (click)="toAdd()">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  添加
+                </button>
               </label>
             </div>
           </div>
@@ -32,7 +39,7 @@
       <table class="table table-bordered table-hover table-bordered" >
         <thead>
           <tr role="row">
-            <th tabindex="0" style="width: 277px;" >ID</th>
+            <th tabindex="0" style="width: 60px;" >编号</th>
             <th tabindex="0" style="width: 390px;" >标题</th>
             <th tabindex="0" style="width: 358px;" >内容</th>
             <th tabindex="0" style="width: 234px;" >添加日期</th>
@@ -41,7 +48,7 @@
         </thead>
         <tbody role="alert" aria-live="polite" aria-relevant="all">
           <tr *ngFor="let item of noticeList" role="row" class="odd">
-            <td>{{item.id}}</td>
+            <td align="center">{{item.id}}</td>
             <td>{{item.title}}</td>
             <td>{{item.content}}</td>
             <td>{{item.add_time}}</td>
@@ -54,29 +61,7 @@
           </tr>
         </tbody>
       </table>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="pull-left">
-          <div class="dataTables_info" id="datatable_info">展示 1 到 10 条</div>
-        </div>
-        <div class="pull-right">
-          <div class="dataTables_paginate paging_bs_normal">
-            <ul class="pagination">
-              <li class="prev disabled">
-                <a href="#"><span class="fa fa-angle-left"></span>&nbsp;上一页</a>
-              </li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li class="next"><a href="#">下一页&nbsp;<span class="fa fa-angle-right"></span></a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-  </div>             
+      <page [(pagination)]="pagination"></page>
+    </div>             
   </div>
 </div>

@@ -14,10 +14,8 @@ import { MenuData } from '../models/main-model'
 
 export class LeftComponent implements OnInit {
 	
-  treeMenu: string='treeview'
-  treeMenuCls=[]
+  leftMenus: Array<boolean> = [false,false]
   userName: string=''
-  testData : Array<string> = ['1','2','3'];
 
   constructor(private router: Router,private ls: LocalStorage) {
     this.userName = ls.getObject('username')
@@ -27,19 +25,20 @@ export class LeftComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
-      this.treeMenuCls = ['',]
   }
 
-  clickTree(t) {
-    this.treeMenu = 'treeview active'
+  openLeft(idx) {
+     for(let i =0; i < this.leftMenus.length; i++){
+      if(i == idx)
+        this.leftMenus[idx] = !this.leftMenus[idx]
+      else
+        this.leftMenus[i] = false
+    }
   }
 
   toMenu() {
     this.router.navigate(['/app/sitecfg/notice']);
   }
 
-  initTreeMenu() {
-
-  }
 }
 

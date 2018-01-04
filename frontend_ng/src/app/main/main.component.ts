@@ -1,7 +1,7 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core'
+import { Component, OnInit,ElementRef, ViewChild } from '@angular/core'
 import { Router } from '@angular/router'
 import { LocalStorage } from '../common/storage/local.storage'
-
+ 
 @Component({
   selector: 'c-main',
   templateUrl: './main.component.html'

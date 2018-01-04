@@ -10,23 +10,24 @@ import { Component, OnInit } from '@angular/core'
 })
 
 export class HeaderComponent implements OnInit {
+  profileOpen:boolean = false  
+  headerMenus:Array<boolean> = [false, false, false]
+  /**
+	* 初始化
+	*/
+	ngOnInit() {
+	}
 
-    sub1Open:string = 'dropdown'
-	  /**
-  	* 初始化
-  	*/
-  	ngOnInit() {
-  	}
-
-    open(idx){
-      if(this.sub1Open == 'dropdown')
-        this.sub1Open = 'dropdown open'
+  openHeader(idx){
+    for(let i =0; i < this.headerMenus.length; i++){
+      if(i == idx)
+        this.headerMenus[idx] = !this.headerMenus[idx]
       else
-        this.sub1Open = 'dropdown'
+        this.headerMenus[i] = false
     }
-   
-  	toggleNav() {
-  		alert('menu');
-  	}
+  }
+	toggleNav() {
+		alert('menu');
+	}
 }
 

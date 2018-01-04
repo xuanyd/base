@@ -1,16 +1,11 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { BrowserModule } from '@angular/platform-browser'
+import { NgModule } from '@angular/core'
 
-import { AppComponent } from './app.component';
-
-import  { AppRoutingModule } from './app-routing.module';
-
+import { AppComponent } from './app.component'
+import  { AppRoutingModule } from './app-routing.module'
 //http
-import { HttpService }   from './common/util/http.service';
-
-import { HttpModule }    from '@angular/http';
-
+import { HttpService }   from './common/util/http.service'
+import { HttpModule }    from '@angular/http'
 import { PermissionGuard   } from './common/util/PermissionGuard'
 import { LocalStorage } from './common/storage/local.storage'
 
@@ -21,7 +16,6 @@ import { LocalStorage } from './common/storage/local.storage'
   ],
   imports: [
   	AppRoutingModule,
-    NgbModule.forRoot(),
     BrowserModule,
     HttpModule
   ],

@@ -6,14 +6,15 @@
     <div id="datatable_wrapper" class="dataTables_wrapper form-inline" role="grid">
       <div class="row">
         <div class="col-sm-12">
-          <div class="pull-right">
-            <div class="dataTables_filter" id="datatable_filter">
+          <div class="pull-left">
+            <div class="dataTables_filter" >
               <label>
                 <input aria-controls="datatable" class="form-control" placeholder="Search" type="text">
+                <button class="btn btn-primary" data-dismiss="modal">查询</button>
               </label>
             </div>
           </div>
-          <div class="pull-left">
+          <div class="pull-right">
             <div id="datatable_length" class="dataTables_length">
               <label>每页 
                 <select size="1" name="datatable_length" aria-controls="datatable" class="form-control">
@@ -29,30 +30,30 @@
         </div>
       </div>
       <table class="table table-bordered table-hover table-bordered" >
-      <thead>
-        <tr role="row">
-          <th tabindex="0" style="width: 277px;" >ID</th>
-          <th tabindex="0" style="width: 390px;" >标题</th>
-          <th tabindex="0" style="width: 358px;" >内容</th>
-          <th tabindex="0" style="width: 234px;" >添加日期</th>
-          <th tabindex="0" style="width: 235px;" >操作</th>
-        </tr>
-      </thead>
-    <tbody role="alert" aria-live="polite" aria-relevant="all">
-      <tr *ngFor="let item of noticeList" role="row" class="odd">
-        <td>{{item.id}}</td>
-        <td>{{item.title}}</td>
-        <td>{{item.content}}</td>
-        <td>{{item.add_time}}</td>
-        <td>
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-info">修改</button>
-            <button type="button" class="btn btn-sm btn-warning">删除</button>
-          </div>
-        </td>
-       </tr>
-      </tbody>
-    </table>
+        <thead>
+          <tr role="row">
+            <th tabindex="0" style="width: 277px;" >ID</th>
+            <th tabindex="0" style="width: 390px;" >标题</th>
+            <th tabindex="0" style="width: 358px;" >内容</th>
+            <th tabindex="0" style="width: 234px;" >添加日期</th>
+            <th tabindex="0" style="width: 235px;" >操作</th>
+          </tr>
+        </thead>
+        <tbody role="alert" aria-live="polite" aria-relevant="all">
+          <tr *ngFor="let item of noticeList" role="row" class="odd">
+            <td>{{item.id}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.content}}</td>
+            <td>{{item.add_time}}</td>
+            <td>
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-info">修改</button>
+                <button type="button" class="btn btn-sm btn-warning">删除</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     <div class="row">
       <div class="col-sm-12">
         <div class="pull-left">

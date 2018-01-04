@@ -1,20 +1,21 @@
-//http://blog.csdn.net/pujiaolin/article/details/70049133
+import {Component, Input, DoCheck} from "@angular/core";
 
-import {Component, Input, DoCheck} from "@angular/core"
-import { Pagination } from "./pagination"
+import { Pagination } from "./pagination";
 
 @Component({
   selector: 'page',
   templateUrl: "./page.component.html"
 })
-
 export class PageComponent implements DoCheck{
-	@Input()
-  public pagination:Pagination
-  public pageNum:number
-  public pageList:any[]
+
+  @Input()
+  public pagination:Pagination;
+
+  public pageNum:number;
+  public pageList:any[];
 
   private oldTotalItems:number = 0;
+  private oldCurrentPage:number = 1;
 
   public changeCurrentPage(item:any): void{
     if(typeof item === 'number'){
@@ -73,4 +74,19 @@ export class PageComponent implements DoCheck{
         this.pageList.push(this.pageNum);
       }
     }
+  }
+
+  ngDoCheck():void {
+    if(this.pagination.totalItems != this.oldTotalItems || this.pagination.currentPage != this.oldCurrentPage){
+      this.initPageList();
+      this.oldTotalItems = this.pagination.totalItems;
+      this.oldCurrentPage = this.pagination.currentPage;
+    }
+
+    if(this.pagination.currentPage > this.pageNum){
+      this.pagination.currentPage = this.pageNum;
+      this.pagination.changePage();
+    }
+  }
+
 }

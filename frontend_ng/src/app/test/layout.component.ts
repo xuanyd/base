@@ -1,5 +1,6 @@
-import { Component, OnInit} from '@angular/core'
+import { Component, OnInit, Output} from '@angular/core'
 import { Router } from '@angular/router'
+import { Pagination } from '../common/page/pagination'
 
 @Component({
   selector: 'c-test-layout',
@@ -8,9 +9,9 @@ import { Router } from '@angular/router'
 })
 
 export class LayoutComponent implements OnInit {
-
-
-  
+	
+	@Output()
+  public pagination:Pagination = Pagination.defaultPagination;
 	constructor(private router: Router) {
 
 	}

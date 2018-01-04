@@ -1,4 +1,5 @@
 export class Pagination {
+
   /**
    * 构造函数，同时设置属性，初始值
    * @param pageLength 显示的页码数，奇数，默认7
@@ -15,5 +16,5 @@ export class Pagination {
     public changePage:() => void
   ){}
 
-  public static defaultPagination = new Pagination(7,1,0,10, function () {})
+  public static defaultPagination = new Pagination(7,1,0,10, function () {});
 }

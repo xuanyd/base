@@ -11,28 +11,16 @@
           <span>在线</span>
         </div>
       </div>
-      <ul class="cl-vnavigation" style="display: none;">
+      <ul *ngFor="let item of leftMenuJson" class="cl-vnavigation" style="display: none;">
         <li class="parent">
-          <a (click)="openLeft(0)">
-            <i class="fa fa-home"></i>
-            <span>内容设置</span>
+          <a href="javascript:void(0);" (click)="openLeft(item.id,item.url)">
+            <i class="fa {{item.cls}}"></i>
+            <span>{{item.name}}</span>
           </a>
-          <ul class="sub-menu" [ngClass]="{'display-block':leftMenus[0]}">
-            <li class="active">
-              <a href="/html/index.html">文章添加</a>
+          <ul *ngIf="item.childs" class="sub-menu" [ngClass]="{'display-block':leftMenus[item.id]}">
+            <li *ngFor="let sItem of item.childs" [ngClass]="{'active':leftMenus[sItem.id]}">
+              <a href="javascript:void(0);" (click)="openLeft(sItem.id,sItem.url)">{{sItem.name}}</a>
             </li>
-            <li>
-              <a href="/html/dashboard2.html">友情链接</a>
-            </li>
-          </ul>
-        </li>
-        <li class="parent">
-          <a (click)="openLeft(1)">
-            <i class="fa fa-smile-o"></i>
-            <span>用户管理</span>
-          </a>
-          <ul class="sub-menu" [ngClass]="{'display-block':leftMenus[1]}">
-            <li><a href="/html/ui-elements.html">修改密码</a></li>
           </ul>
         </li>
       </ul>

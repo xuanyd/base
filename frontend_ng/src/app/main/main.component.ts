@@ -8,8 +8,9 @@ import { LocalStorage } from '../common/storage/local.storage'
 })
 
 export class MainComponent implements OnInit {
-
+  url:string='1'
 	constructor(private ls: LocalStorage){
+    this.url=ls.getObject("curl")
     console.log(ls)
 	}
 
@@ -17,5 +18,6 @@ export class MainComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
+
   }
 }

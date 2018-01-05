@@ -22,9 +22,6 @@ export class NoticeComponent implements OnInit {
 
 	}
 
-	/**
-  * 初始化
-  */
   ngOnInit() {
   	this.getNoticeList()
     this.pagination.changePage = (() => {
@@ -32,9 +29,6 @@ export class NoticeComponent implements OnInit {
     })
   }
 
-  /**
-  * 获取公告列表
-  */
   getNoticeList() {
   	let that = this
   	let page = this.pagination.currentPage - 1

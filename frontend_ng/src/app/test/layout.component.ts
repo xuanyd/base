@@ -1,6 +1,7 @@
 import { Component, OnInit, Output} from '@angular/core'
 import { Router } from '@angular/router'
 import { Pagination } from '../common/page/pagination'
+import { SelectTree } from '../common/select-tree/select-tree'
 
 @Component({
   selector: 'c-test-layout',
@@ -11,7 +12,11 @@ import { Pagination } from '../common/page/pagination'
 export class LayoutComponent implements OnInit {
 	
 	@Output()
-  public pagination:Pagination = Pagination.defaultPagination;
+  public pagination:Pagination = Pagination.defaultPagination
+
+  @Output
+  public selectTree:SelectTree = SelectTree.defaultSelectTree
+
 	constructor(private router: Router) {
 	}
 

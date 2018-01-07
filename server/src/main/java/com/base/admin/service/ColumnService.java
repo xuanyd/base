@@ -5,20 +5,24 @@ import com.core.util.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 @Service
 public class ColumnService {
 
     @Autowired
     private ColumnDao columnDao;
 
-    public PageInfo getColumnPage(String title, int page, int pageSize) throws Exception{
-        PageInfo pageInfo = new PageInfo();
-        int start = (page -1) * pageSize;
-        int size = pageSize;
-        pageInfo.setPageSize(pageSize);
-        pageInfo.setCurrentPage(page);
-        pageInfo.setTotalCount(columnDao.getColumnCount(title));
-        pageInfo.setInfoList(columnDao.getColumnList(title, start, size));
-        return pageInfo;
+    public List<Map<String, Object>> getColumnPage(String title) throws Exception{
+        List<Map<String, Object>> columnList = columnDao.getColumnList(title, 0);
+        for (int i = 0; i < columnList.size(); i++) {
+            int id = (int)(columnList.get(i).get("id"));
+            List<Map<String, Object>> childList = columnDao.getColumnList(null, id);
+            if(childList != null && !childList.isEmpty())
+                columnList.get(i).put("child", childList);
+        }
+        return columnList;
     }
 }

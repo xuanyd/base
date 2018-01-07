@@ -14,7 +14,8 @@ export class NoticeComponent implements OnInit {
 
   noticeList:string
   pageInfo:string
-  
+  selDisabled = "disabled"
+  selectId =""
   @Output()
   public pagination:Pagination = Pagination.defaultPagination
 
@@ -31,11 +32,12 @@ export class NoticeComponent implements OnInit {
 
   getNoticeList() {
   	let that = this
-  	let page = this.pagination.currentPage - 1
+  	let page = this.pagination.currentPage
     this.httpService.get("http://localhost:8081/admin/noticelist", {
+      page:page
   	}, function (successful, data, res) {
       if (successful) {
-        if (data.flag!='1000') {
+        if (data.flag=='1000') {
         	that.noticeList = data.pageInfo.infoList
         	that.pageInfo = data.pageInfo
           that.pagination.totalItems = data.pageInfo.totalCount
@@ -46,7 +48,7 @@ export class NoticeComponent implements OnInit {
     })
   }
 
-  edit(id) {
+  toEdit() {
     this.router.navigate(['/app/sitecfg/notice-edit'])
   }
 
@@ -54,8 +56,13 @@ export class NoticeComponent implements OnInit {
    this.router.navigate(['/app/sitecfg/notice-add'])
   }
 
-  add(){
-    alert('123');
+  toDelete() {
+    alert("确认删除？")
+  }
+
+  select(id) {
+    this.selectId = id
+    this.selDisabled=""
   }
 
   page() {

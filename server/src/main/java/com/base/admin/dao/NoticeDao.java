@@ -36,4 +36,16 @@ public class NoticeDao {
         sql += " order by add_time desc limit :start, :size ";
         return this.baseDao.queryForList(sql, params);
     }
+
+    public boolean noticeAdd(String noticeType, String title, String content) throws Exception {
+        Map<String, Object> params = new HashMap<>();
+        String sql = " insert into t_n_notice (notice_type, title, content, add_time) values (:noticeType, :title, :content, sysdate()) ";
+        params.put("noticeType", noticeType);
+        params.put("title", title);
+        params.put("content", content);
+        int addC = this.baseDao.update(sql, params);
+        if(addC > 0)
+            return true;
+        return false;
+    }
 }

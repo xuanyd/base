@@ -1,6 +1,7 @@
 package com.base.admin.controller;
 
 import com.base.admin.service.LinksService;
+import com.core.util.Constant;
 import com.core.util.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,8 +18,8 @@ public class LinksController {
 	@Autowired
     private LinksService linksService;
 
-    @RequestMapping("admin/linkslist")
-    public @ResponseBody Map linksList(HttpServletRequest request) throws Exception{
+    @RequestMapping("admin/linklist")
+    public @ResponseBody Map linksList(HttpServletRequest request) {
         Map<String, Object> retMap = new HashMap<>();
         String title = request.getParameter("title");
         String currentPage = request.getParameter("page");
@@ -29,8 +30,12 @@ public class LinksController {
         } else {
             page = Integer.valueOf(request.getParameter("page")).intValue();
         }
-        PageInfo pageInfo = linksService.getLinksPage(title, page, pageSize);
-        retMap.put("pageInfo", pageInfo);
+        try {
+            PageInfo pageInfo = linksService.getLinksPage(title, page, pageSize);
+            retMap.put("pageInfo", pageInfo);
+        } catch (Exception e) {
+            retMap.put("flag", Constant.RESCODE_EXCEPTION);
+        }
         return retMap;
     }
 }

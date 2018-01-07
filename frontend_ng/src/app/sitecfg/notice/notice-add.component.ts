@@ -15,7 +15,7 @@ declare const UE: any;
 export class NoticeAddComponent implements OnInit {
   
   noticeAddForm: FormGroup
-  
+  columnList:string
   
   @ViewChild('full') 
   full: UEditorComponent
@@ -37,9 +37,9 @@ export class NoticeAddComponent implements OnInit {
 	
   constructor(private router: Router, private httpService: HttpService,
       private formBuilder: FormBuilder) {
-      let noticeTypeFc = new FormControl('admin', Validators.compose([Validators.required]))
-      let titleFc = new FormControl('admin', Validators.compose([Validators.required]))
-      let contentFc = new FormControl('admin', Validators.compose([Validators.required]))
+      let noticeTypeFc = new FormControl('', Validators.compose([Validators.required]))
+      let titleFc = new FormControl('', Validators.compose([Validators.required,Validators.minLength(5), Validators.maxLength(15)]))
+      let contentFc = new FormControl('', Validators.compose([Validators.required]))
       this.noticeAddForm = this.formBuilder.group({
         noticeType: noticeTypeFc,
         title: titleFc,
@@ -51,25 +51,54 @@ export class NoticeAddComponent implements OnInit {
   * 初始化
   */
   ngOnInit() {
-    let that = this
-    window.onresize = function () {
-      //that.UE.getEditor('aaa', { initialFrameWidth: null })
-      console.log(that.full.Instance)
-      that.full.Instance.reset()
-    }
+    this.getColumnList()
   }
 
   ngOnDestroy(): void {
   }
 
   add() {
-    console.log(this.noticeAddForm.value.noticeType)
-    console.log(this.noticeAddForm.value.title)
-    console.log(this.full_source)
+    if (!this.noticeAddForm.valid)
+      return
+    let that = this;
+    that.addBtnDisable = 'disabled'
+    that.httpService.get("http://localhost:8081/admin/notice-add", {
+      noticeType: that.noticeAddForm.value.noticeType,
+      title: that.noticeAddForm.value.title
+      content: that.full.Instance.getContent()
+    }, function (successful, data, res) {
+      that.addBtnDisable = ''
+      if (successful) {
+        if (data.flag!='1000') {
+          alert(data.msg)
+          return
+        } else {
+          alert("保存成功")
+        }
+      }
+    }, function (successful, msg, err) {
+      that.addBtnDisable = ''
+    })
+  }
+
+  getColumnList() {
+    let that = this
+      this.httpService.get("http://localhost:8081/admin/columnlist", {
+    }, function (successful, data, res) {
+      if (successful) {
+        console.log(data)
+        if (data.flag == '1000') {
+          that.columnList = data.columnList
+          console.log(that.columnList)
+        }
+      }
+    }, function (successful, msg, err) {
+      console.log(err);
+    })
   }
 
   back() {
-   this.router.navigate(['/app/sitecfg/notice'])
+    this.router.navigate(['/app/sitecfg/notice'])
   }
 
 }

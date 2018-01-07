@@ -21,4 +21,8 @@ public class NoticeService {
         pageInfo.setInfoList(noticeDao.getNoticeList(title, start, size));
         return pageInfo;
     }
+
+    public boolean noticeAdd(String noticeType, String title, String content) throws Exception{
+        return noticeDao.noticeAdd(noticeType, title, content);
+    }
 }

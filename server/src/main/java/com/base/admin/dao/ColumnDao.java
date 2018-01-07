@@ -13,27 +13,15 @@ public class ColumnDao {
 
     @Autowired
     private IBaseDao baseDao;
-
-    public int getColumnCount(String title) throws Exception {
+    public List<Map<String, Object>> getColumnList(String name, int pid) throws Exception{
         Map<String, Object> params = new HashMap<>();
-        String sql = "select 1 from t_n_column where 1 = 1 ";
-        if (title  != null ) {
-            params.put("title", title);
-            sql += " and title like %:title% ";
+        String sql = " select id, pid, name from t_n_column where 1 = 1 ";
+        sql += " and pid = :pid";
+        params.put("pid", pid);
+        if(name != null) {
+            params.put("name", name);
+            sql += " and name like %:name% ";
         }
-        return this.baseDao.getSqlCount(sql, params);
-    }
-
-    public List<Map<String, Object>> getColumnList(String title, int start, int size) throws Exception{
-        Map<String, Object> params = new HashMap<>();
-        params.put("start", start);
-        params.put("size", size);
-        String sql = " select id, title, content, add_time from t_n_column where 1 = 1 ";
-        if(title != null) {
-            params.put("title", title);
-            sql += " and title like %:title% ";
-        }
-        sql += " order by add_time desc limit :start, :size ";
         return this.baseDao.queryForList(sql, params);
     }
 }

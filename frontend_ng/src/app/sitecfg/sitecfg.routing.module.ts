@@ -8,6 +8,8 @@ import { NoticeAddComponent } from './notice/notice-add.component'
 import { ColumnComponent } from './column/column.component'
 import { ColumnAddComponent } from './column/column-add.component'
 import { ColumnEditComponent } from './column/column-edit.component'
+import { LinkComponent } from './link/link.component'
+import { LinkAddComponent } from './link/link-add.component'
 
 const sitecfgRoutes: Routes = [
   {
@@ -36,6 +38,14 @@ const sitecfgRoutes: Routes = [
       {
         path:'column-edit',
         component:ColumnEditComponent
+      },
+      {
+        path:'link',
+        component:LinkComponent
+      },
+      {
+        path:'link-add',
+        component:LinkAddComponent
       }
     ]
   }

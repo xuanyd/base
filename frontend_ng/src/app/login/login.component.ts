@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private httpService: HttpService, private formBuilder: FormBuilder) {
     let userNameFc = new FormControl('admin', 
       Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15)]));
-    let passwordFc = new FormControl('123456',
+    let passwordFc = new FormControl('123',
       Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(15)]));
     this.loginForm = this.formBuilder.group({
       userName: userNameFc,

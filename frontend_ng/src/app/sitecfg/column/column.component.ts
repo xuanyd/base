@@ -29,10 +29,10 @@ export class ColumnComponent implements OnInit {
   		this.httpService.get("http://localhost:8081/admin/columnlist", {
   	}, function (successful, data, res) {
       if (successful) {
-        if (data.flag!='success') {
-        	that.columnList = data.pageInfo.infoList
-        	that.pageInfo = data.pageInfo
-        	console.log(data.pageInfo)
+        console.log(data)
+        if (data.flag == '1000') {
+        	that.columnList = data.columnList
+          console.log(that.columnList)
         }
       }
     }, function (successful, msg, err) {

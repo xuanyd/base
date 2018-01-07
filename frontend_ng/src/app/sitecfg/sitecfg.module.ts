@@ -11,6 +11,8 @@ import { ColumnAddComponent } from './column/column-add.component'
 import { ColumnEditComponent } from './column/column-edit.component'
 import { UEditorModule } from 'ngx-ueditor'
 import { PageComponent } from '../common/page'
+import { LinkComponent } from './link/link.component'
+import { LinkAddComponent } from './link/link-add.component'
 
 @NgModule({
   imports: [
@@ -33,7 +35,9 @@ import { PageComponent } from '../common/page'
     NoticeAddComponent,
     ColumnComponent,
     ColumnAddComponent,
-    ColumnEditComponent
+    ColumnEditComponent,
+    LinkComponent,
+    LinkAddComponent
   ],
   exports: [
   ],

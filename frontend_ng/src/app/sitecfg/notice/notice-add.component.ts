@@ -16,6 +16,7 @@ export class NoticeAddComponent implements OnInit {
   
   noticeAddForm: FormGroup
   columnList:string
+  addBtnDisable:string=''
   
   @ViewChild('full') 
   full: UEditorComponent
@@ -64,7 +65,7 @@ export class NoticeAddComponent implements OnInit {
     that.addBtnDisable = 'disabled'
     that.httpService.get("http://localhost:8081/admin/notice-add", {
       noticeType: that.noticeAddForm.value.noticeType,
-      title: that.noticeAddForm.value.title
+      title: that.noticeAddForm.value.title,
       content: that.full.Instance.getContent()
     }, function (successful, data, res) {
       that.addBtnDisable = ''

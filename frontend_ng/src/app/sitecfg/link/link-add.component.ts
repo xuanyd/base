@@ -50,7 +50,6 @@ export class LinkAddComponent implements OnInit {
       }
     }, function (successful, msg, err) {
       that.addDisabled = ''
-      that.connectErrMsg = msg
     })
   }
 

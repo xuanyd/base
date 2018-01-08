@@ -14,21 +14,22 @@ export class LayoutComponent implements OnInit {
 	@Output()
   public pagination:Pagination = Pagination.defaultPagination
 
-  @Output
+  @Output()
   public selectTree:SelectTree = SelectTree.defaultSelectTree
 
 	constructor(private router: Router) {
 	}
 
   ngOnInit() {
+    
+    this.selectTree.datas = [{id:1,name:'测试'},{id:2,name:'测试'}]
+
     this.initJobExceptionList();
     this.pagination.changePage = (() => {
       this.initJobExceptionList();
     });
-  	console.log('layout init..')
   }
   initJobExceptionList(){
-    console.log("init")
-    this.pagination.totalItems = 50;
+    this.pagination.totalItems = 60;
   }
 }

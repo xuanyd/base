@@ -1,3 +1,7 @@
-<div>
-	sdfdsfdsd
-</div>
+<select name="noticeType" formControlName="noticeType"  class="form-control">
+	<optgroup *ngFor = "let item of datas" label="{{item.name}}" style="">
+		<option *ngFor="let sItem of item.child" value="{{sItem.id}}">
+			{{sItem.name}}
+		</option>
+	</optgroup>
+</select>

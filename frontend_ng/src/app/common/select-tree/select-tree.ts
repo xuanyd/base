@@ -1,7 +1,7 @@
 export class SelectTree {
 
   constructor(
-    public data: String = '',
+  	public datas:Object,
     public changeSelect:() => void
   ){}
 

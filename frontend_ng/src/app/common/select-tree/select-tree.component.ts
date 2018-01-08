@@ -9,14 +9,16 @@ import { SelectTree } from "./select-tree";
 export class SelectTreeComponent implements DoCheck{
 
   @Input()
-  public selectTree:SelectTree; 
+  public selectTree:SelectTree
 
-  public changeCurrentSelect(): void{
+  public treeData: Object
+
+  public changeSelect(): void{
    
   }
 
   public initSelectTreeList():void {
-    
+    console.log(this.treeData)
   }
 
   ngDoCheck():void {

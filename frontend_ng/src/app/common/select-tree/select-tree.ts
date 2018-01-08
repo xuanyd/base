@@ -1,9 +1,9 @@
 export class SelectTree {
 
   constructor(
-  	public datas:Object,
-    public changeSelect:() => void
+  	public treeData: Object,
+  	public treeName: String
   ){}
 
-  public static defaultSelectTree = new SelectTree('', function () {})
+  public static defaultSelectTree = new SelectTree('','selectTree')
 }

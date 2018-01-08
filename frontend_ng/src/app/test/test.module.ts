@@ -5,6 +5,8 @@ import { LayoutComponent }   from './layout.component'
 import { TestRoutingModule  } from './test.routing.module'
 import { PageComponent } from '../common/page'
 import { SelectTreeComponent } from '../common/select-tree'
+import { ModalComponent } from '../common/modal'
+
 
 @NgModule({
   imports:      [ 
@@ -15,6 +17,7 @@ import { SelectTreeComponent } from '../common/select-tree'
     TestComponent,
     PageComponent,
     SelectTreeComponent,
+    ModalComponent,
     LayoutComponent
   ],
   exports:      [ 

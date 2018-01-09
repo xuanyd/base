@@ -1,4 +1,4 @@
-<div class="modal fade in" id="mod-success" tabindex="-1" role="dialog" 
+<div class="modal fade in" tabindex="-1" role="dialog" 
 	aria-hidden="false" [ngStyle]="{'display': showStyle}">
 	<div class="modal-dialog">
 	  	<div class="modal-content">
@@ -8,13 +8,14 @@
 			</div>
 			<div class="modal-body">
 				<div class="text-center">
-					<div class="i-circle success"><i class="fa fa-check"></i></div>
-					<h4>123</h4>
-					<p>123</p>
+					<div class="i-circle" [ngClass]="{'success':modalAlert.success,'warning':!modalAlert.success}"><i class="fa fa-check"></i></div>
+					<h4>{{modalAlert.title}}</h4>
+					<p>{{modalAlert.content}}</p>
 				</div>
 			</div>
 			<div class="modal-footer">
-			  <button type="button" class="btn btn-default" data-dismiss="modal"
+			  <button type="button" class="btn" [ngClass]="{'btn-default':modalAlert.success,'btn-warning':!modalAlert.success}"
+			  	data-dismiss="modal"
 			  	(click)="close()">
 			  	确定
 				</button>

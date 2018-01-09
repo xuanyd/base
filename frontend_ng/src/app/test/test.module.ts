@@ -6,7 +6,8 @@ import { TestRoutingModule  } from './test.routing.module'
 import { PageComponent } from '../common/page'
 import { SelectTreeComponent } from '../common/select-tree'
 import { ModalComponent } from '../common/modal'
-
+import { ConfirmComponent } from '../common/confirm'
+import { GridComponent } from '../common/grid'
 
 @NgModule({
   imports:      [ 
@@ -18,6 +19,8 @@ import { ModalComponent } from '../common/modal'
     PageComponent,
     SelectTreeComponent,
     ModalComponent,
+    ConfirmComponent,
+    GridComponent,
     LayoutComponent
   ],
   exports:      [ 

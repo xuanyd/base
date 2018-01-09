@@ -1,6 +1,6 @@
 import {Component, Input, DoCheck} from "@angular/core";
 
-import { Modal } from "./modal";
+import { ModalAlert } from "./modal-alert";
 
 @Component({
   selector: 'modal',
@@ -9,19 +9,19 @@ import { Modal } from "./modal";
 export class ModalComponent implements DoCheck{
 
   @Input()
-  public modal:Modal;
-
-  public title: String;
-  public content: String;
+  public modalAlert:ModalAlert;
 
   public showStyle: String='block';
 
   ngDoCheck():void {
-    console.log('modal do check')
-    console.log(this.modal)
+    if(this.modalAlert.show) {
+      this.showStyle = 'block'
+    } else {
+      this.showStyle = 'none'
+    }
   }
 
   close() {
-  	this.showStyle = 'none'
+  	this.modalAlert.show = false
   }
 }

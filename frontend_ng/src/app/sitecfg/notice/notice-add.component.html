@@ -7,16 +7,14 @@
 			<div class="col-sm-1">所属栏目</div>
 			<div class="col-sm-6">
 				<select name="noticeType" formControlName="noticeType"  class="form-control">
-			        <optgroup *ngFor = "let item of columnList" label="{{item.name}}" style="">
-			        	<option *ngFor="let sItem of item.child" value="{{sItem.id}}">
-			        		{{sItem.name}}
-			        	</option>
-			        </optgroup>
-	      		</select>
-	  		</div>
-			<div [hidden]="!(noticeAddForm.controls['noticeType'].errors && noticeAddForm.controls['noticeType'].dirty)"
-				class="col-sm-5" style="color: red;" >文章分类必选</div>
-	  </div>
+	        <optgroup *ngFor = "let item of columnList" label="{{item.name}}" style="">
+	        	<option *ngFor="let sItem of item.child" value="{{sItem.id}}">
+	        		{{sItem.name}}
+	        	</option>
+	        </optgroup>
+    		</select>
+  		</div>
+    </div>
 		<div class="form-group row" style="margin-left: 10px;">
 			<div class="col-sm-1">标题</div>
 			<div class="col-sm-6">
@@ -31,10 +29,6 @@
 	  <div class="form-group row" style="margin-left: 10px;">
 	  	<div class="col-sm-1">内容</div>
 	  	<ueditor class="col-sm-6" [(ngModel)]="full_source" #full formControlName="content"></ueditor>
-  		<div [hidden]="!(noticeAddForm.controls['content'].errors && noticeAddForm.controls['content'].dirty)" 
-  			class="col-sm-2" style="color: red;" >
-      	文章内容不能为空
-    	</div>
 	  </div>
 		<button class="btn btn-primary last-btn" (click)="add()">
 			<i class="fa fa-check" aria-hidden="true"></i>

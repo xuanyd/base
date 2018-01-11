@@ -36,7 +36,7 @@ export class HttpService {
       method: RequestMethod.Post,
       body: body,
       headers: new Headers({
-          'Content-Type': 'application/json; charset=UTF-8'
+          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
       })
     }), success, error);
   }

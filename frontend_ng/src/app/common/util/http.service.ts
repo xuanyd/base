@@ -1,81 +1,99 @@
-import { Injectable } from '@angular/core';
-import {
-    Http, Response, Headers, RequestOptions, URLSearchParams, RequestOptionsArgs, RequestMethod
-} from '@angular/http';
-
-/**
- * http服务
- */
+import {Injectable}    from '@angular/core';
+import {Http, Response}   from '@angular/http';
+import 'rxjs/add/operator/toPromise';
+ 
 @Injectable()
 export class HttpService {
-
-  constructor(private http: Http) {}
-
-  public request(url: string, options: RequestOptionsArgs, success: Function, error: Function): any {
-    this.http.request(url, options).subscribe(res => {
-      console.log(url);
-      success(res.ok, res.json(), res);
-    }, err => {
-      //处理请求失败
-      let msg = this.requestFailed(url, options, err);
-      error(err.ok, msg, err);
-    });
-
-  }
-
-  public get(url: string, paramMap: any = null, success: Function=function(successful, data, res){}, error: Function=function(successful, msg, err){}): any {
-    return this.request(url, new RequestOptions({
-        method: RequestMethod.Get,
-        search: HttpService.buildURLSearchParams(paramMap)
-    }), success, error);
-  }
-
-  public post(url: string, body: any = null, success: Function=function(successful, data, res){
-  	}, error: Function=function(successful, msg, err){}): any {
-    return this.request(url, new RequestOptions({
-      method: RequestMethod.Post,
-      body: body,
-      headers: new Headers({
-          'Content-Type': 'application/json; charset=UTF-8'
-      })
-    }), success, error);
-  }
-  /**
-   * 将对象转为查询参数
-   * @param paramMap
-   * @returns {URLSearchParams}
-   */
-  private static buildURLSearchParams(paramMap): URLSearchParams {
-      let params = new URLSearchParams();
-      if (!paramMap) {
-        return params;
-      }
-      for (let key in paramMap) {
-        let val = paramMap[key];
-        if (val instanceof Date) {
-        }
-        params.set(key, val);
-      }
-      return params;
-  }
-
-  /**
-   * 处理请求失败事件
-   * @param url
-   * @param options
-   * @param err
-   */
-  private requestFailed(url: string, options: RequestOptionsArgs, err) {
-    let msg = '请求发生异常', status = err.status;
-    if (status === 0) {
-      msg = '请求失败，请求响应出错';
-    } else if (status === 404) {
-      msg = '请求失败，未找到请求地址';
-    } else if (status === 500) {
-      msg = '请求失败，服务器出错，请稍后再试';
-    } else {
-      msg = "未知错误，请检查网络";
+ 
+ constructor(private http: Http) {
+ }
+ 
+ /**
+ * 统一发送请求
+ * @param params
+ * @returns {Promise<{success: boolean, msg: string}>|Promise<R>}
+ */
+ public request(params: any): any {
+   if (params['method'] == 'post' || params['method'] == 'POST') {
+    return this.post(params['url'], params['data']);
+   }
+   else {
+    return this.get(params['url'], params['data']);
+   }
+ }
+ 
+ /**
+ * get请求
+ * @param url 接口地址
+ * @param params 参数
+ * @returns {Promise<R>|Promise<U>}
+ */
+ public get(url: string, params: any): any {
+   return this.http.get(url, {search: params})
+    .toPromise()
+    .then(this.handleSuccess)
+    .catch(res => this.handleError(res));
+ }
+ 
+ /**
+ * post请求
+ * @param url 接口地址
+ * @param params 参数
+ * @returns {Promise<R>|Promise<U>}
+ */
+ public post(url: string, params: any) {
+   return this.http.post(url, params)
+    .toPromise()
+    .then(this.handleSuccess)
+    .catch(res => this.handleError(res));
+ }
+ 
+ /**
+ * 处理请求成功
+ * @param res
+ * @returns {{data: (string|null|((node:any)=>any)
+ */
+ private handleSuccess(res: Response) {
+   let body = res["_body"];
+   if (body) {
+    return {
+    data: res.json().content || {},
+    page: res.json().page || {},
+    statusText: res.statusText,
+    status: res.status,
+    success: true
     }
-    return msg;
-  }
+   } else {
+      return {
+    statusText: res.statusText,
+    status: res.status,
+    success: true
+    }
+   }
+ 
+ }
+ 
+ /**
+ * 处理请求错误
+ * @param error
+ * @returns {void|Promise<string>|Promise<T>|any}
+ */
+ private handleError(error) {
+ console.log(error);
+ let msg = '请求失败';
+ if (error.status == 400) {
+  console.log('请求参数正确');
+ }
+ if (error.status == 404) {
+ 
+  console.error('请检查路径是否正确');
+ }
+ if (error.status == 500) {
+  console.error('请求的服务器错误');
+ }
+ console.log(error);
+ return {success: false, msg: msg};
+ 
+ }
+ 
 }

@@ -63,7 +63,7 @@ export class NoticeAddComponent implements OnInit {
       return
     let that = this;
     that.addBtnDisable = 'disabled'
-    that.httpService.get("http://localhost:8081/admin/notice-add", {
+    that.httpService.post("http://localhost:8081/admin/notice-add", {
       noticeType: that.noticeAddForm.value.noticeType,
       title: that.noticeAddForm.value.title,
       content: that.full.Instance.getContent()

@@ -42,25 +42,14 @@ export class LoginComponent implements OnInit {
     if (!this.loginForm.valid)
       return
     let that = this;
-    that.loginBtnDisable = 'disabled'
-    that.httpService.get("http://localhost:8081/admin/login", {
-      username: this.loginForm.value.userName,
-      password: this.loginForm.value.password
-    }, function (successful, data, res) {
-      that.loginBtnDisable = ''
-      if (successful) {
-        if (data.flag!='1000') {
-          that.loginValid = false
-          return
-        }
-        that.ls.setObject('username',that.loginForm.value.userName)
-        that.ls.setObject('token',that.loginForm.value.token)
-        that.router.navigate(['/app/home'])
+    that.loginBtnDisable = 'disabled';
+    this.httpService.request({
+      method: "POST",
+      url: "http://localhost:8081/admin/login",
+      data: {
+        username: this.loginForm.value.userName,
+        password: this.loginForm.value.password
       }
-    }, function (successful, msg, err) {
-      that.loginBtnDisable = ''
-      that.connectionValid = false
-      that.connectErrMsg = msg;
     })
 	}
 }

@@ -26,7 +26,7 @@ export class ColumnComponent implements OnInit {
 
   getColumnList() {
   	let that = this
-  		this.httpService.get("http://localhost:8081/admin/columnlist", {
+  /*	this.httpService.get("http://localhost:8081/admin/columnlist", {
   	}, function (successful, data, res) {
       if (successful) {
         console.log(data)
@@ -37,7 +37,7 @@ export class ColumnComponent implements OnInit {
       }
     }, function (successful, msg, err) {
     	console.log(err);
-    })
+    })*/
   }
   subColumn(event,idx) {
     this.subColumnShow[idx] = !this.subColumnShow[idx]

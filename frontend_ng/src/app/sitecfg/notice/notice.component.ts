@@ -49,7 +49,7 @@ export class NoticeComponent implements OnInit {
   }
 
   toEdit() {
-    this.router.navigate(['/app/sitecfg/notice-edit'])
+    this.router.navigate(['/app/sitecfg/notice-edit',12])
   }
 
   toAdd(){

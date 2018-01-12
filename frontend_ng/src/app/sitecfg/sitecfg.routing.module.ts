@@ -20,7 +20,7 @@ const sitecfgRoutes: Routes = [
         component:NoticeComponent
       },
       {
-        path:'notice-edit',
+        path:'notice-edit/:id',
         component:NoticeEditComponent
       },
       {

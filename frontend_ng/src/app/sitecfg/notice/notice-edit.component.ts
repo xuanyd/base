@@ -1,6 +1,6 @@
 import { Component, OnInit,AfterContentInit,OnDestroy,ViewChild } from '@angular/core'
 import { HttpService } from '../../common/util/http.service'
-import { Router } from '@angular/router'
+import { Router,ActivatedRoute } from '@angular/router'
 /*import { UEditorComponent } from 'ngx-ueditor'
 
 declare const UE: any;*/
@@ -24,8 +24,8 @@ export class NoticeEditComponent implements OnInit {
       wordCount: false
   }
 	*/
-  constructor(private router: Router, private httpService: HttpService) {
-
+  constructor(private router: Router,private acRouter: ActivatedRoute, private httpService: HttpService) {
+    console.log(this.acRouter.params['value']['id'])
 	}
 
 	/**

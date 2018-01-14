@@ -46,13 +46,12 @@ export class LoginComponent implements OnInit {
         password: that.loginForm.value.password
       }
     }).then(result => {
+      console.log(result);
       if(result.data.flag == "1000"){
         that.ls.setObject('userName', that.loginForm.value.userName);
         that.ls.setObject('token', result.data.token);
         that.router.navigate(["/app/home"]);
       }
-    }).cach(result => {
-      console.log('请求失败')
     });
 	}
 }

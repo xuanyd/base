@@ -51,7 +51,7 @@ export class HttpService {
  /**
  * 处理请求成功
  * @param res
- * @returns {{data: (string|null|((node:any)=>any)
+ * @returns 
  */
  private handleSuccess(res: Response) {
    let body = res["_body"];

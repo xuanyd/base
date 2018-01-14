@@ -57,11 +57,11 @@ export class HttpService {
    let body = res["_body"];
    if (body) {
     return {
-    data: res.json().content || {},
-    page: res.json().page || {},
-    statusText: res.statusText,
-    status: res.status,
-    success: true
+      data: res.json() || {},
+      page: res.json().page || {},
+      statusText: res.statusText,
+      status: res.status,
+      success: true
     }
    } else {
       return {
@@ -79,21 +79,20 @@ export class HttpService {
  * @returns {void|Promise<string>|Promise<T>|any}
  */
  private handleError(error) {
- console.log(error);
- let msg = '请求失败';
- if (error.status == 400) {
-  console.log('请求参数正确');
- }
- if (error.status == 404) {
- 
-  console.error('请检查路径是否正确');
- }
- if (error.status == 500) {
-  console.error('请求的服务器错误');
- }
- console.log(error);
- return {success: false, msg: msg};
- 
- }
+   console.log(error);
+   let msg = '请求失败';
+   if (error.status == 400) {
+    console.log('请求参数正确');
+   }
+   if (error.status == 404) {
+    console.error('请检查路径是否正确');
+   }
+   if (error.status == 500) {
+    console.error('请求的服务器错误');
+   }
+   console.log(error);
+   return {success: false, msg: msg};
+   
+   }
  
 }

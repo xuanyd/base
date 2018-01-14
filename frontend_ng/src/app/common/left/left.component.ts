@@ -12,7 +12,7 @@ import { ActiveTitleService } from "../page-title/active-title.service";
 
 export class LeftComponent implements OnInit {
 	
-  leftMenus: Array<boolean> = [false, false, false, false, false,false,false]
+  leftMenus: Array<boolean> = [false, false, false, false, false,false,false,false]
   userName: string=''
   _ls:LocalStorage
   _activeTitleService : ActiveTitleService
@@ -27,7 +27,7 @@ export class LeftComponent implements OnInit {
     },
     {"id": 6, name: "用户管理",pid: 0, url: "", cls: "fa-users",
       childs:[
-        {"id": 7, name: "密码修改",pid: 6, url: ""}
+        {"id": 7, name: "密码修改",pid: 6, url: "/app/sitecfg/change-pwd"}
       ]
     }
   ]
@@ -35,7 +35,7 @@ export class LeftComponent implements OnInit {
   constructor(private router: Router,
     private ls: LocalStorage, 
     private activeTitleService: ActiveTitleService) {
-    this.userName = ls.getObject('username')
+    this.userName = ls.getObject('userName')
     this._ls = ls
     this._activeTitleService = activeTitleService
   }

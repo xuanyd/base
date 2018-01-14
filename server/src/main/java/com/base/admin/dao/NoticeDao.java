@@ -28,7 +28,7 @@ public class NoticeDao {
         Map<String, Object> params = new HashMap<>();
         params.put("start", start);
         params.put("size", size);
-        String sql = " select id, title, content, add_time from t_n_notice where 1 = 1 ";
+        String sql = " select id, (select name from t_n_column c where c.id=n.notice_type) as column_type_name, title, content, add_time from t_n_notice n where 1 = 1 ";
         if(title != null) {
             params.put("title", title);
             sql += " and title like %:title% ";
@@ -45,6 +45,26 @@ public class NoticeDao {
         params.put("content", content);
         int addC = this.baseDao.update(sql, params);
         if(addC > 0)
+            return true;
+        return false;
+    }
+
+    public Map<String,Object> getNoticeInfo(String id) throws  Exception{
+        Map<String, Object> params = new HashMap<>();
+        String sql = " select * from t_n_notice where id = :id ";
+        params.put("id", id);
+        return this.baseDao.queryForMap(sql, params);
+    }
+
+    public boolean noticeEdit(String id, String noticeType, String title, String content) throws  Exception{
+        Map<String, Object> params = new HashMap<>();
+        String sql = " update t_n_notice set notice_type = :noticeType, title = :title, content=:content where id = :id";
+        params.put("id", id);
+        params.put("noticeType", noticeType);
+        params.put("title", title);
+        params.put("content", content);
+        int updateC = this.baseDao.update(sql, params);
+        if(updateC >0)
             return true;
         return false;
     }

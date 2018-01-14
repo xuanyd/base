@@ -37,7 +37,7 @@ export class LinkAddComponent implements OnInit {
       return
     let that = this;
     that.addDisabled = 'disabled'
-    that.httpService.get("http://localhost:8081/admin/link-add", {
+    /*that.httpService.get("http://localhost:8081/admin/link-add", {
       name: this.linkAddForm.value.name,
       url: this.linkAddForm.value.url
     }, function (successful, data, res) {
@@ -50,7 +50,7 @@ export class LinkAddComponent implements OnInit {
       }
     }, function (successful, msg, err) {
       that.addDisabled = ''
-    })
+    })*/
   }
 
   back() {

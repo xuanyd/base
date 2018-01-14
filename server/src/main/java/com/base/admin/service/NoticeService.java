@@ -5,6 +5,8 @@ import com.core.util.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Map;
+
 @Service
 public class NoticeService {
 
@@ -24,5 +26,13 @@ public class NoticeService {
 
     public boolean noticeAdd(String noticeType, String title, String content) throws Exception{
         return noticeDao.noticeAdd(noticeType, title, content);
+    }
+
+    public Map<String,Object> getNoticeInfo(String id) throws Exception{
+        return noticeDao.getNoticeInfo(id);
+    }
+
+    public boolean noticeEdit(String id, String noticeType, String title, String content) throws Exception{
+        return noticeDao.noticeEdit(id, noticeType, title, content);
     }
 }

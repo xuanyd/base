@@ -15,22 +15,19 @@
     <meta name="keywords" content="河南省心电学诊疗中心">
     <link href="frontend/lib/css/css.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="frontend/lib/js/jquery.min.js"></script>
-    <style type="text/css">#kinMaxShow *{ margin:0;padding:0;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box{width:100%;height:500px;position:relative;z-index:1;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box .KMSPrefix_kinMaxShow_image_item{width:100%;height:500px;position:absolute;overflow:hidden;} #kinMaxShow .KMSPrefix_kinMaxShow_image_box .KMSPrefix_kinMaxShow_image_item a.KMSPrefix_kinMaxShow_coverlink{width:100%;height:500px;display:block;text-decoration:none;padding:0;margin:0;background:transparent;text-indent:0;outline:none;hide-focus:expression(this.hideFocus=true);} #kinMaxShow .KMSPrefix_kinMaxShow_button{right:10px;bottom:10px;;position:absolute;list-style:none;z-index:2;overflow:hidden;_zoom:1;}#kinMaxShow .KMSPrefix_kinMaxShow_button li{width:14px;height:14px;line-height:14px;font-size:10px;background:#cccaca;border:1px solid #ffffff;color:#666666;text-align:center;margin-right:8px;font-family:Verdana;float:left;;cursor:pointer;-webkit-text-size-adjust:none;}#kinMaxShow .KMSPrefix_kinMaxShow_button li.KMSPrefix_kinMaxShow_focus{background:#CC0000;border:1px solid #FF0000;color:#000000;;cursor:default;}
-        </style>
-  </head>
+    <link href="frontend/lib/css/main.css" rel="stylesheet" type="text/css">
+    </head>
     <body style="width: 1346px;">
     <script>
         $(document).ready(function(){
             var screen_width = window.screen.width;
             var body_width = window.document.body.clientWidth;
-
             if(body_width <= 1280){
                 if(screen_width <= 1280){
                     $('body').css('width','1280px');
                 }else{
                     $('body').css('width',screen_width);
                 }
-                
             }else {
                 $('body').css('width',screen_width-20);
             }

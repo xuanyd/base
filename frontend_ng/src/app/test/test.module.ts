@@ -3,11 +3,10 @@ import { CommonModule }  from '@angular/common'
 import { TestComponent } from './test.component'
 import { LayoutComponent }   from './layout.component'
 import { TestRoutingModule  } from './test.routing.module'
-import { PageComponent } from '../common/page'
-import { SelectTreeComponent } from '../common/select-tree'
-import { ModalComponent } from '../common/modal'
-import { ConfirmComponent } from '../common/confirm'
-import { GridComponent } from '../common/grid'
+// import { SelectTreeComponent } from '../common/select-tree'
+// import { ModalComponent } from '../common/modal'
+// import { ConfirmComponent } from '../common/confirm'
+// import { GridComponent } from '../common/grid'
 
 @NgModule({
   imports:      [ 
@@ -16,11 +15,10 @@ import { GridComponent } from '../common/grid'
   ],
   declarations: [
     TestComponent,
-    PageComponent,
-    SelectTreeComponent,
-    ModalComponent,
-    ConfirmComponent,
-    GridComponent,
+    //SelectTreeComponent,
+    //ModalComponent,
+    //ConfirmComponent,
+    //GridComponent,
     LayoutComponent
   ],
   exports:      [ 

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     private httpService: HttpService, private formBuilder: FormBuilder) {
     let userNameFc = new FormControl('admin', 
       Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15)]));
-    let passwordFc = new FormControl('123',
+    let passwordFc = new FormControl('123456',
       Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(15)]));
     this.loginForm = this.formBuilder.group({
       userName: userNameFc,
@@ -30,26 +30,29 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  	/**
-  	* 初始化
-  	*/
 	ngOnInit() {
 	}
 
 	login() {
-    /*this.ls.setObject('username','xuanyd')
-    this.router.navigate(['/app/home'])*/
     if (!this.loginForm.valid)
       return
     let that = this;
     that.loginBtnDisable = 'disabled';
-    this.httpService.request({
+    that.httpService.request({
       method: "POST",
       url: "http://localhost:8081/admin/login",
       data: {
-        username: this.loginForm.value.userName,
-        password: this.loginForm.value.password
+        username: that.loginForm.value.userName,
+        password: that.loginForm.value.password
       }
-    })
+    }).then(result => {
+      if(result.data.flag == "1000"){
+        that.ls.setObject('userName', that.loginForm.value.userName);
+        that.ls.setObject('token', result.data.token);
+        that.router.navigate(["/app/home"]);
+      }
+    }).cach(result => {
+      console.log('请求失败')
+    });
 	}
 }

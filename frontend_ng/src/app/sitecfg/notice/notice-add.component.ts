@@ -1,9 +1,10 @@
-import { Component, OnInit,AfterContentInit,OnDestroy,ViewChild } from '@angular/core'
-import { Validators, FormControl, FormGroup, FormBuilder,FormsModule,ReactiveFormsModule } from '@angular/forms'
-import { HttpService } from '../../common/util/http.service'
-import { Router } from '@angular/router'
+import { Component, OnInit,AfterContentInit,OnDestroy,ViewChild,Output } from '@angular/core';
+import { Validators, FormControl, FormGroup, FormBuilder,
+  FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { HttpService } from '../../common/util/http.service';
+import { Router } from '@angular/router';
 
-import { UEditorComponent } from 'ngx-ueditor'
+import { UEditorComponent } from 'ngx-ueditor';
 
 declare const UE: any;
 @Component({
@@ -38,14 +39,15 @@ export class NoticeAddComponent implements OnInit {
 	
   constructor(private router: Router, private httpService: HttpService,
       private formBuilder: FormBuilder) {
-      let noticeTypeFc = new FormControl('', Validators.compose([Validators.required]))
-      let titleFc = new FormControl('', Validators.compose([Validators.required,Validators.minLength(5), Validators.maxLength(15)]))
-      let contentFc = new FormControl('', Validators.compose([Validators.required]))
+      let noticeTypeFc = new FormControl('', Validators.compose([Validators.required]));
+      let titleFc = new FormControl('', Validators.compose([Validators.required,Validators.minLength(1), Validators.maxLength(15)]));
+      let contentFc = new FormControl();
       this.noticeAddForm = this.formBuilder.group({
         noticeType: noticeTypeFc,
         title: titleFc,
         content: contentFc
       });
+    
     }
 
 	/**
@@ -62,40 +64,31 @@ export class NoticeAddComponent implements OnInit {
     if (!this.noticeAddForm.valid)
       return
     let that = this;
-    that.addBtnDisable = 'disabled'
-    that.httpService.post("http://localhost:8081/admin/notice-add", {
-      noticeType: that.noticeAddForm.value.noticeType,
-      title: that.noticeAddForm.value.title,
-      content: that.full.Instance.getContent()
-    }, function (successful, data, res) {
-      that.addBtnDisable = ''
-      if (successful) {
-        if (data.flag!='1000') {
-          alert(data.msg)
-          return
-        } else {
-          alert("保存成功")
-        }
+    this.httpService.request({
+      method: "POST",
+      url: "http://localhost:8081/admin/notice-add",
+      data:{
+        noticeType: that.noticeAddForm.value.noticeType,
+        title: that.noticeAddForm.value.title,
+        content: that.full.Instance.getContent()
       }
-    }, function (successful, msg, err) {
-      that.addBtnDisable = ''
-    })
+    }).then(result => {
+      if(result.data.flag == "1000"){
+        alert("保存成功");
+      }
+    });
   }
 
   getColumnList() {
-    let that = this
-      this.httpService.get("http://localhost:8081/admin/columnlist", {
-    }, function (successful, data, res) {
-      if (successful) {
-        console.log(data)
-        if (data.flag == '1000') {
-          that.columnList = data.columnList
-          console.log(that.columnList)
-        }
+    let that = this;
+    this.httpService.request({
+      method: "POST",
+      url: "http://localhost:8081/admin/columnlist",
+    }).then(result => {
+      if(result.data.flag == "1000"){
+        that.columnList = result.data.columnList
       }
-    }, function (successful, msg, err) {
-      console.log(err);
-    })
+    });
   }
 
   back() {

@@ -11,10 +11,10 @@ import { ActiveTitleService } from "../common/page-title/active-title.service";
 })
 
 export class MainComponent implements OnInit {
-  url:string='1';
-  appTitle = 'Hello title';
+  	url:string='1';
+  	appTitle = 'Hello title';
 	constructor(private ls: LocalStorage, private activeTitleService: ActiveTitleService){
-		this.url=ls.getObject("curl");
+	this.url=ls.getObject("curl");
     this.appTitle = activeTitleService.getTitle();
 		console.log(ls);
 	}

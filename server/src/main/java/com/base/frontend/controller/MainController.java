@@ -14,4 +14,9 @@ public class MainController {
 	public String expertList(){
 		return "frontend/expert-list";
 	}
+
+	@RequestMapping({"frontend/contact.html"})
+	public String contact(){
+		return "frontend/contact";
+	}
 }

@@ -23,7 +23,7 @@ export class LinkComponent implements OnInit {
 
   getLinkList() {
   	let that = this
-  		this.httpService.get("http://localhost:8081/admin/linklist", {
+  		/*this.httpService.get("http://localhost:8081/admin/linklist", {
   	}, function (successful, data, res) {
       if (successful) {
         if (data.flag!='1000') {
@@ -32,7 +32,7 @@ export class LinkComponent implements OnInit {
       }
     }, function (successful, msg, err) {
     	console.log(err);
-    })
+    })*/
   }
 
   edit() {

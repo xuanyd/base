@@ -22,7 +22,6 @@
     <!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven/>
     <!--**********************************************************************************-->
-
     <!-- view -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/" />
@@ -90,6 +89,7 @@
     <!--**********************************************************************************-->
     <!-- 拦截器配置 -->
     <mvc:interceptors>
+
         <!-- 多个拦截器,顺序执行 -->
         <mvc:interceptor>
             <!-- 如果不配置或/*,将拦截所有的Controller -->

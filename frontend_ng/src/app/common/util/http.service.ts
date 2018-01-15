@@ -64,13 +64,12 @@ export class HttpService {
       success: true
     }
    } else {
-      return {
-    statusText: res.statusText,
-    status: res.status,
-    success: true
+    return {
+      statusText: res.statusText,
+      status: res.status,
+      success: true
     }
    }
- 
  }
  
  /**
@@ -78,21 +77,18 @@ export class HttpService {
  * @param error
  * @returns {void|Promise<string>|Promise<T>|any}
  */
- private handleError(error) {
-   console.log(error);
-   let msg = '请求失败';
-   if (error.status == 400) {
-    console.log('请求参数正确');
-   }
-   if (error.status == 404) {
-    console.error('请检查路径是否正确');
-   }
-   if (error.status == 500) {
-    console.error('请求的服务器错误');
-   }
-   console.log(error);
-   return {success: false, msg: msg};
-   
-   }
+  private handleError(error) {
+    let msg = '请求失败';
+    if (error.status == 400) {
+      console.log('请求参数正确');
+    }
+    if (error.status == 404) {
+      console.error('请检查路径是否正确');
+    }
+    if (error.status == 500) {
+      console.error('请求的服务器错误');
+    }
+    return {success: false, msg: msg};
+  }
  
 }

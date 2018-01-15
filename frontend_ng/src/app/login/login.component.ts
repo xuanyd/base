@@ -46,11 +46,15 @@ export class LoginComponent implements OnInit {
         password: that.loginForm.value.password
       }
     }).then(result => {
-      console.log(result);
-      if(result.data.flag == "1000"){
-        that.ls.setObject('userName', that.loginForm.value.userName);
-        that.ls.setObject('token', result.data.token);
-        that.router.navigate(["/app/home"]);
+      if(result.success) {
+        if(result.data.flag == "1000"){
+          that.ls.setObject('userName', that.loginForm.value.userName);
+          that.ls.setObject('token', result.data.token);
+          that.router.navigate(["/app/home"]);
+        }
+      } else {
+        that.connectErrMsg = result.msg;
+        that.connectionValid = false;
       }
     });
 	}

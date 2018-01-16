@@ -106,14 +106,26 @@
             <p>2017年12月26日-27日，郑州大学第二附属医院心电图科李世锋主任及河南省青年文明号号长申继红博士来到河北省衡水市故城县医院，...</p>
 
             <ul>
-              <li><span>2017-12-22</span><a href="http://www.hnsxdx.cn/imgnews/2776.html" title="2017西部心电新技术高端论坛暨SynEci18技术研讨会">2017西部心电新技术高端论坛暨SynEci18技术研讨会</a></li>
-<li><span>2017-12-11</span><a href="http://www.hnsxdx.cn/imgnews/2774.html" title="河南主持月视频合辑——2017年11月中国心电YY语音">河南主持月视频合辑——2017年11月中国心电YY语音</a></li>
-<li><span>2017-12-11</span><a href="http://www.hnsxdx.cn/imgnews/2772.html" title="“青年文明号”走进基层--中牟县义诊">“青年文明号”走进基层--中牟县义诊</a></li>
-<li><span>2017-12-11</span><a href="http://www.hnsxdx.cn/imgnews/2773.html" title="精彩11月！河南团队YY课堂展风采！">精彩11月！河南团队YY课堂展风采！</a></li>
-<li><span>2017-12-05</span><a href="http://www.hnsxdx.cn/imgnews/2771.html" title="陕西省宝鸡市人民医院考察团到访郑州大学第二">陕西省宝鸡市人民医院考察团到访郑州大学第二</a></li>
-<li><span>2017-11-14</span><a href="http://www.hnsxdx.cn/imgnews/2768.html" title="远程网络心电图走基层进万家">远程网络心电图走基层进万家</a></li>
-
-            </ul>
+              <li>
+                <span>2017-12-22</span>
+                <a href="http://www.hnsxdx.cn/imgnews/2776.html" title="2017西部心电新技术高端论坛暨SynEci18技术研讨会">2017西部心电新技术高端论坛暨SynEci18技术研讨会</a></li>
+                <li>
+                  <span>2017-12-11</span>
+                  <a href="http://www.hnsxdx.cn/imgnews/2774.html" title="河南主持月视频合辑——2017年11月中国心电YY语音">河南主持月视频合辑——2017年11月中国心电YY语音</a>
+                </li>
+                <li>
+                  <span>2017-12-11</span><a href="http://www.hnsxdx.cn/imgnews/2772.html" title="“青年文明号”走进基层--中牟县义诊">“青年文明号”走进基层--中牟县义诊</a>
+                </li>
+                <li>
+                  <span>2017-12-11</span><a href="http://www.hnsxdx.cn/imgnews/2773.html" title="精彩11月！河南团队YY课堂展风采！">精彩11月！河南团队YY课堂展风采！</a>
+                </li>
+                <li>
+                  <span>2017-12-05</span><a href="http://www.hnsxdx.cn/imgnews/2771.html" title="陕西省宝鸡市人民医院考察团到访郑州大学第二">陕西省宝鸡市人民医院考察团到访郑州大学第二</a>
+                </li>
+                <li>
+                  <span>2017-11-14</span><a href="http://www.hnsxdx.cn/imgnews/2768.html" title="远程网络心电图走基层进万家">远程网络心电图走基层进万家</a>
+                </li>
+             </ul>
           </div>
         </div>
       </div>
@@ -121,24 +133,33 @@
     <!--选下卡开始end--> 
     <!--start-->
     <div class="jiudian">
-      <h2><span><a href="http://www.hnsxdx.cn/bbs/forum.php?mod=forumdisplay&amp;fid=2" target="_blank">医师会诊中心[点击]</a></span></h2>
-      <p></p><div style="text-align:center;">
-<object id="bcastr4" data="./河南省心电学诊疗中心_files/xixi.swf.下载" type="application/x-shockwave-flash" width="200" height="95">
-    <param name="movie" value="/skin/swf/xixi.swf?xml=/skin/xml/huizhen.xml">
-</object>
-</div><p></p>
-<h2><span><a href="http://www.hnsxdx.cn/bbs/forum.php?mod=forumdisplay&amp;fid=38" target="_blank">患者咨询中心[点击]</a></span></h2>
-<p>
-</p><div style="text-align:center;">
-<object id="bcastr4" data="./河南省心电学诊疗中心_files/xixi.swf(1).下载" type="application/x-shockwave-flash" width="200" height="95">
-    <param name="movie" value="/skin/swf/xixi.swf?xml=/skin/xml/lanren.xml">
-</object>
-</div>
-    <p></p>           
+      <h2>
+        <span>
+          <a href="http://www.hnsxdx.cn/bbs/forum.php?mod=forumdisplay&amp;fid=2" target="_blank">医师会诊中心[点击]</a>
+        </span>
+      </h2>
+      <p></p>
+      <div style="text-align:center;">
+        <object id="bcastr4" data="./河南省心电学诊疗中心_files/xixi.swf.下载" type="application/x-shockwave-flash" width="200" height="95">
+          <param name="movie" value="/skin/swf/xixi.swf?xml=/skin/xml/huizhen.xml">
+        </object>
+      </div>
+      <p></p>
+      <h2>
+        <span>
+          <a href="http://www.hnsxdx.cn/bbs/forum.php?mod=forumdisplay&amp;fid=38" target="_blank">患者咨询中心[点击]</a>
+        </span>
+      </h2>
+      <p></p>
+      <div style="text-align:center;">
+        <object id="bcastr4" data="./河南省心电学诊疗中心_files/xixi.swf(1).下载" type="application/x-shockwave-flash" width="200" height="95">
+          <param name="movie" value="/skin/swf/xixi.swf?xml=/skin/xml/lanren.xml">
+        </object>
+      </div>
+      <p></p>
     </div>
   </div>
   <!--end-->
-  
   <div class="clear"></div>
   <div class="youshi">
     <div class="link">
@@ -151,7 +172,17 @@
         <div class="Contentbox2">
           <div id="con_a_1" class="hover">
             <ul>
-              <li class="li7">  <a href="http://www5.zzu.edu.cn/xdxyjs/" target="_blank">郑州大学心电学研究所</a>     <a href="http://www.zzusah.com/" target="_blank">郑州大学第二附属医院</a>     <a href="http://www.besthealth.com.cn/index.html" target="_blank">百誉健康</a>     <a href="http://www.ceheart.com/" target="_blank">中国心电学网</a>     <a href="http://www.dxy.cn/" target="_blank">丁香园</a>     <a href="http://www.365heart.com/" target="_blank">365心血管网</a>     <a href="http://www.hn-eecp.com/" target="_blank">心血管康复与体外反搏网</a>     <a href="http://www.yywsb.com/" target="_blank">医药卫生网</a>     <a href="http://www.cma.org.cn/" target="_blank">中华医学会</a>   </li>
+              <li class="li7">
+                <a href="http://www5.zzu.edu.cn/xdxyjs/" target="_blank">郑州大学心电学研究所</a>
+                <a href="http://www.zzusah.com/" target="_blank">郑州大学第二附属医院</a>
+                <a href="http://www.besthealth.com.cn/index.html" target="_blank">百誉健康</a>
+                <a href="http://www.ceheart.com/" target="_blank">中国心电学网</a>
+                <a href="http://www.dxy.cn/" target="_blank">丁香园</a>
+                <a href="http://www.365heart.com/" target="_blank">365心血管网</a>
+                <a href="http://www.hn-eecp.com/" target="_blank">心血管康复与体外反搏网</a>
+                <a href="http://www.yywsb.com/" target="_blank">医药卫生网</a>
+                <a href="http://www.cma.org.cn/" target="_blank">中华医学会</a>
+              </li>
               <div class="clear"></div>
             </ul>
           </div>

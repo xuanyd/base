@@ -19,4 +19,29 @@ public class MainController {
 	public String contact(){
 		return "frontend/contact";
 	}
+	
+	/*kejianxiazai*/
+	@RequestMapping({"frontend/download.html"})
+	public String download(){
+		return "frontend/vedio";
+	}
+
+	/*kp*/
+	@RequestMapping({"frontend/scientific.html"})
+	public String scientific(){
+		return "frontend/scientific";
+	}
+
+	/*yiqijinzan*/
+	@RequestMapping({"frontend/instrument.html"})
+	public String instrument(){
+		return "frontend/instrument";
+	}
+
+	/*shipin*/
+	@RequestMapping({"frontend/vedio.html"})
+	public String vedio(){
+		return "frontend/vedio";
+	}
+
 }

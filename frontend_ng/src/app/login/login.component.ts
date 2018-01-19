@@ -12,11 +12,11 @@ import { LocalStorage } from '../common/storage/local.storage'
 })
 
 export class LoginComponent implements OnInit {
-  loginBtnDisable:string=''
-  loginForm: FormGroup
-  loginValid: boolean = true
-  connectionValid: boolean = true
-  connectErrMsg: string=''
+  loginBtnDisable:string='';
+  loginForm: FormGroup;
+  loginValid: boolean = true;
+  connectionValid: boolean = true;
+  connectErrMsg: string='';
   constructor(private router: Router, 
     private ls: LocalStorage,
     private httpService: HttpService, private formBuilder: FormBuilder) {

@@ -40,7 +40,8 @@ export class NoticeAddComponent implements OnInit {
   constructor(private router: Router, private httpService: HttpService,
       private formBuilder: FormBuilder) {
       let noticeTypeFc = new FormControl('', Validators.compose([Validators.required]));
-      let titleFc = new FormControl('', Validators.compose([Validators.required,Validators.minLength(1), Validators.maxLength(15)]));
+      let titleFc = new FormControl('', Validators.compose([Validators.required,Validators.minLength(1), 
+        Validators.maxLength(50)]));
       let contentFc = new FormControl();
       this.noticeAddForm = this.formBuilder.group({
         noticeType: noticeTypeFc,

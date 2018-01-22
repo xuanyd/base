@@ -64,4 +64,32 @@ public class MainService {
         return mainDao.getInfoMap(id);
     }
 
+    public PageInfo getScienceList(int page) throws Exception{
+        PageInfo pageInfo = new PageInfo();
+        String noticeType = "20";
+        int pageSize = 5;
+        int start = (page-1) * pageSize;
+        pageInfo.setTotalCount(mainDao.getInfoCount(noticeType));
+        pageInfo.setInfoList(mainDao.getInfoList(noticeType, start, pageSize));
+        return pageInfo;
+    }
+
+    public Map<String,Object> getScienceDetail(int id) throws Exception {
+        return mainDao.getInfoMap(id);
+    }
+
+    public PageInfo getInstrumentList(int page) throws Exception{
+        PageInfo pageInfo = new PageInfo();
+        String noticeType = "20";
+        int pageSize = 5;
+        int start = (page-1) * pageSize;
+        pageInfo.setTotalCount(mainDao.getInfoCount(noticeType));
+        pageInfo.setInfoList(mainDao.getInfoList(noticeType, start, pageSize));
+        return pageInfo;
+    }
+
+    public Map<String,Object> getInstrumentDetail(int id) throws Exception {
+        return mainDao.getInfoMap(id);
+    }
+
 }

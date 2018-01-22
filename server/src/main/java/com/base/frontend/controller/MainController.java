@@ -189,31 +189,95 @@ public class MainController {
 		return "education-detail";
 	}
 
+	@RequestMapping({"instrument.html"})
+	public String instrument(HttpServletRequest req, Map<String,Object> model){
+		int page;
+		try {
+			page = req.getParameter("page") == null ? 1 : Integer.valueOf(req.getParameter("page"));
+		} catch (Exception e) {
+			page=1;
+		}
+		try {
+			PageInfo pageInfo = mainService.getInstrumentList(page);
+			pageInfo.setPageSize(5);
+			pageInfo.setCurrentPage(page);
+			model.put("pageInfo", pageInfo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "instrument";
+	}
+
+	@RequestMapping({"instrument-detail.html"})
+	public String instrumentDetail(HttpServletRequest req, Map<String,Object> model){
+		try {
+			int id = req.getParameter("id") == null ? 1 : Integer.valueOf(req.getParameter("id"));
+			Map<String, Object> educationDetail = mainService.getInstrumentDetail(id);
+			model.put("content", educationDetail.get("content"));
+			model.put("title", educationDetail.get("title"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "instrument-detail";
+	}
+
+	@RequestMapping({"science.html"})
+	public String science(HttpServletRequest req, Map<String,Object> model){
+		int page;
+		try {
+			page = req.getParameter("page") == null ? 1 : Integer.valueOf(req.getParameter("page"));
+		} catch (Exception e) {
+			page=1;
+		}
+		try {
+			PageInfo pageInfo = mainService.getScienceList(page);
+			pageInfo.setPageSize(5);
+			pageInfo.setCurrentPage(page);
+			model.put("pageInfo", pageInfo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "science";
+	}
+
+	@RequestMapping({"science-detail.html"})
+	public String scienceDetail(HttpServletRequest req, Map<String,Object> model){
+		try {
+			int id = req.getParameter("id") == null ? 1 : Integer.valueOf(req.getParameter("id"));
+			Map<String, Object> educationDetail = mainService.getScienceDetail(id);
+			model.put("content", educationDetail.get("content"));
+			model.put("title", educationDetail.get("title"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "science-detail";
+	}
+
 	@RequestMapping({"contact.html"})
 	public String contact(){
 		return "contact";
 	}
 	
 	/*kejianxiazai*/
-	@RequestMapping({"download.html"})
-	public String download(){
-		return "vedio";
+	@RequestMapping({"courseware.html"})
+	public String courseware(){
+		return "courseware";
 	}
 
-	/*kp*/
-	@RequestMapping({"scientific.html"})
-	public String scientific(){
-		return "scientific";
-	}
-
-	/*yiqijinzan*/
-	@RequestMapping({"instrument.html"})
-	public String instrument(){
-		return "instrument";
+	/*kejianxiazai*/
+	@RequestMapping({"courseware-detail.html"})
+	public String coursewareDetail(){
+		return "courseware-detail";
 	}
 
 	/*shipin*/
 	@RequestMapping({"vedio.html"})
+	public String vedio(){
+		return "vedio";
+	}
+
+	/*shipin*/
+	@RequestMapping({"vedio-detail.html"})
 	public String vedio(){
 		return "vedio";
 	}

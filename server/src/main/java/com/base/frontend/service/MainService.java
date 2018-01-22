@@ -40,7 +40,7 @@ public class MainService {
 
     public PageInfo getElectrocardiologyList(int page) throws Exception{
         PageInfo pageInfo = new PageInfo();
-        String noticeType = "19";
+        String noticeType = "13";
         int pageSize = 5;
         int start = (page-1) * pageSize;
         pageInfo.setTotalCount(mainDao.getInfoCount(noticeType));
@@ -92,4 +92,17 @@ public class MainService {
         return mainDao.getInfoMap(id);
     }
 
+    public PageInfo getCheckingList(int page) throws Exception{
+        PageInfo pageInfo = new PageInfo();
+        String noticeType = "11";
+        int pageSize = 5;
+        int start = (page-1) * pageSize;
+        pageInfo.setTotalCount(mainDao.getInfoCount(noticeType));
+        pageInfo.setInfoList(mainDao.getInfoList(noticeType, start, pageSize));
+        return pageInfo;
+    }
+
+    public Map<String,Object> getCheckingDetail(int id) throws Exception{
+        return mainDao.getInfoMap(id);
+    }
 }

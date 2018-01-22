@@ -10,7 +10,7 @@
 <head>
     <base href="<%=basePath%>">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>学术动态  /  继续教育_河南省心电学诊疗中心</title>
+    <title>中心简介  /  心电检查介绍_河南省心电学诊疗中心</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <link href="clk/lib/css/css.css" rel="stylesheet" type="text/css" />
@@ -54,30 +54,28 @@
         <div class="new">
             <h2><img src="clk/lib/images/011_06.jpg" /></h2>
             <ul>
-                <li><a href='/xdxzs/'>心电学之声</a></li>
-                <li><a href="/jiaoyu/" class='left_current'>继续教育</a></li>
+                <li><a href="/zhuanjia/">专家简介</a></li>
+                <li><a href='/linchuang/' class='left_current'>心电检查介绍</a></li>
+                <li><a href="/en/">英文简介</a></li>
             </ul>
         </div>
-        <div class="tutu">
-            <a href="http://search.hnsxdx.cn/search/" target="_blank">
-                <img src="clk/lib/images/011_21.jpg" />
-            </a>
-        </div>
+        <div class="tutu"><a href="http://search.hnsxdx.cn/search/" target="_blank"><img src="clk/lib/images/011_21.jpg" /><a/></div>
     </div>
     <div class="news_r">
         <div class="news_con">
-            <h2 class="news_con_h2">继续教育</h2>
+            <h2 class="news_con_h2">心电检查介绍</h2>
             <div class="">
+                <!--right--con--start-->
                 <ul class="sec_news_ul">
                     <c:if test="${pageInfo.infoList!= null && fn:length(pageInfo.infoList) != 0}">
                         <c:forEach var="communicate" items="${pageInfo.infoList}" varStatus="st">
                             <li>
                                 <h3>
-                                    <a href="communicate-detail.html?id=${communicate.id}" >${communicate.title}</a>
+                                    <a href="checking-detail.html?id=${communicate.id}" >${communicate.title}</a>
                                     <i>2016-06-15 09:32:26</i>
                                 </h3>
                                 <p>${communicate.sub_title}...</p>
-                                <a href="communicate-detail.html?id=${communicate.id}"class="a_more">查看详情</a>
+                                <a href="checking-detail.html?id=${communicate.id}"class="a_more">查看详情</a>
                             </li>
                         </c:forEach>
                     </c:if>

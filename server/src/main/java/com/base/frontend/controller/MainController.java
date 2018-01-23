@@ -21,6 +21,13 @@ public class MainController {
 	public String index(){
 		return "index";
 	}
+
+	/**
+	 * 中心简介
+	 * @param req
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({"about.html"})
 	public String about(HttpServletRequest req, Map<String,Object> model){
 		String lan = req.getParameter("lang");
@@ -37,6 +44,12 @@ public class MainController {
 		return "about";
 	}
 
+	/**
+	 * 专家介绍
+	 * @param req
+	 * @param model
+	 * @return
+	 */
  	@RequestMapping({"expert-list.html"})
 	public String expertList(HttpServletRequest req, Map<String,Object> model){
 		int page;
@@ -53,7 +66,50 @@ public class MainController {
 		}
  		return "expert-list";
 	}
+	/**
+	 * 心电检查介绍
+	 * @param req
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping({"checking.html"})
+	public String checkingList(HttpServletRequest req, Map<String,Object> model){
+		int page;
+		try {
+			page = req.getParameter("page") == null ? 1 : Integer.valueOf(req.getParameter("page"));
+		} catch (Exception e) {
+			page=1;
+		}
+		try {
+			PageInfo pageInfo = mainService.getCheckingList(page);
+			pageInfo.setPageSize(5);
+			pageInfo.setCurrentPage(page);
+			model.put("pageInfo", pageInfo);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "checking";
+	}
 
+	@RequestMapping({"checking-detail.html"})
+	public String checkingDetail(HttpServletRequest req, Map<String,Object> model){
+		try {
+			int id = req.getParameter("id") == null ? 1 : Integer.valueOf(req.getParameter("id"));
+			Map<String, Object> communicateDetail = mainService.getCheckingDetail(id);
+			model.put("content", communicateDetail.get("content"));
+			model.put("title", communicateDetail.get("title"));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "checking-detail";
+	}
+
+	/**
+	 * 国内外影响
+	 * @param req
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({"influences.html"})
 	public String influences(HttpServletRequest req, Map<String,Object> model){
 		int start = 0;
@@ -67,6 +123,12 @@ public class MainController {
 		return "influences";
 	}
 
+	/**
+	 * 国内外领先方向
+	 * @param req
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({"lead.html"})
 	public String lead(HttpServletRequest req, Map<String,Object> model){
 		int start = 0;
@@ -80,6 +142,12 @@ public class MainController {
 		return "lead";
 	}
 
+	/**
+	 * 国内外知名度
+	 * @param req
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({"reputation.html"})
 	public String reputation(HttpServletRequest req, Map<String,Object> model){
 		int start = 0;
@@ -93,6 +161,12 @@ public class MainController {
 		return "reputation";
 	}
 
+	/**
+	 * 国内外交流
+	 * @param req
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({"communicate.html"})
 	public String communicate(HttpServletRequest req, Map<String,Object> model){
 		int page;
@@ -125,6 +199,12 @@ public class MainController {
 		return "communicate-detail";
 	}
 
+	/**
+	 * 心电学之声
+	 * @param req
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({"electrocardiology.html"})
 	public String electrocardiology(HttpServletRequest req, Map<String,Object> model){
 		int page;
@@ -157,6 +237,12 @@ public class MainController {
 		return "electrocardiology-detail";
 	}
 
+	/**
+	 * 继续教育
+	 * @param req
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({"education.html"})
 	public String education(HttpServletRequest req, Map<String,Object> model){
 		int page;
@@ -221,6 +307,12 @@ public class MainController {
 		return "instrument-detail";
 	}
 
+	/**
+	 * 科普知识
+	 * @param req
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping({"science.html"})
 	public String science(HttpServletRequest req, Map<String,Object> model){
 		int page;
@@ -278,8 +370,8 @@ public class MainController {
 
 	/*shipin*/
 	@RequestMapping({"vedio-detail.html"})
-	public String vedio(){
-		return "vedio";
+	public String vedioDetail(){
+		return "vedio-detail";
 	}
 
 }

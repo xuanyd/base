@@ -66,7 +66,7 @@
     </div>
     <div class="news_r">
         <div class="news_con">
-            <h2 class="news_con_h2">国内外交流</h2>
+            <h2 class="news_con_h2">心电学之声</h2>
             <div class="">
                 <ul class="sec_news_ul">
                     <c:if test="${pageInfo.infoList!= null && fn:length(pageInfo.infoList) != 0}">

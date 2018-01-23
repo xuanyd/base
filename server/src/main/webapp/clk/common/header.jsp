@@ -52,7 +52,7 @@
                          <a href="/expert-list.html">专家简介</a>
                      </li>
                      <li>
-                         <a href="/linchuang.html">心电检查介绍</a>
+                         <a href="/checking.html">心电检查介绍</a>
                      </li>
                      <li>
                          <a href="/about.html?lang=en">英文简介</a>
@@ -74,24 +74,24 @@
                  </ul>
              </li>
              <li>
-                 <a id="9" href="/xueshu/">学术动态</a>
+                 <a id="9" href="/academic.html">学术动态</a>
              <ul>
                  <li>
                      <a href="/electrocardiology.html">心电学之声</a>
                  </li>
                  <li>
-                     <a href="/jiaoyu/">继续教育</a>
+                     <a href="/education.html">继续教育</a>
                  </li>
              </ul>
-         </li><li><a id="15" href="/xiazai/">课件下载</a>
+         </li><li><a id="15" href="/courseware.html">课件下载</a>
              <ul> </ul>
-         </li><li><a id="14" href="/kepu/">科普知识</a>
+         </li><li><a id="14" href="/science.html">科普知识</a>
              <ul> </ul>
-         </li><li><a id="5" href="/jinzhan/">仪器进展</a>
+         </li><li><a id="5" href="/instrument.html">仪器进展</a>
              <ul> </ul>
-         </li><li><a id="24" href="/vedio.html/">视频专区</a>
+         </li><li><a id="24" href="/vedio.html">视频专区</a>
              <ul> </ul>
-         </li><li><a id="7" href="/contact.html/">联系我们</a>
+         </li><li><a id="7" href="/contact.html">联系我们</a>
              <ul> </ul>
          </li>
              <li id="cur_index2">

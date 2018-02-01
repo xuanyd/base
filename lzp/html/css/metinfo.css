@@ -7755,10 +7755,7 @@ div.widget-title {
 .timeline-feed.timeline-simple .timeline-dot {
   margin-top: 5px;
 }
-.timeline-feed > li {
-  padding-right: 30px;
-  margin-bottom: 22px;
-}
+ 
 .timeline-feed > li.timeline-reverse {
   padding-left: 30px;
 }

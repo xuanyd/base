@@ -34,7 +34,7 @@ public class CardInfoDao {
 		int start = (page - 1) * pageSize;
 		String sql = " select id,visit_date_time, patient_name, report_date_time,relative_path_jpg,compare_ids from patinfo where "
 				+ " patient_name=:name and "
-				+ " sex=:sex order by id desc ";
+				+ " sex=:sex order by id desc limit :start, :size";
 		params.put("name", name);
 		params.put("sex", sex);
 		params.put("cardId", cardId);

@@ -95,7 +95,7 @@
              <ul> </ul>
          </li>
              <li id="cur_index2">
-                 <a href="http://search.hnsxdx.cn/search/index" target="_blank">我的心电图查询</a>
+                 <a href="/search/login.html" target="_blank">我的心电图查询</a>
              </li>
          </ul>
      </div>

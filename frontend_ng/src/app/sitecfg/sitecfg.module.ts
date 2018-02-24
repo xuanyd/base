@@ -15,7 +15,8 @@ import { LinkAddComponent } from './link/link-add.component';
 import { SelectTreeComponent } from '../common/select-tree';
 import { ConfirmComponent } from '../common/confirm';
 import { PageComponent } from '../common/page';
-
+import { GridComponent } from '../common/grid';
+import { ModalComponent } from '../common/modal';
 @NgModule({
   imports: [
     CommonModule,
@@ -35,6 +36,8 @@ import { PageComponent } from '../common/page';
     ConfirmComponent,
     NoticeComponent,
     PageComponent,
+    GridComponent,
+    ModalComponent,
     NoticeEditComponent,
     NoticeAddComponent,
     ColumnComponent,

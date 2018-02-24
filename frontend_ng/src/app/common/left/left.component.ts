@@ -16,7 +16,7 @@ export class LeftComponent implements OnInit {
   userName: string=''
   _ls:LocalStorage
   _activeTitleService : ActiveTitleService
-  private leftMenuJson = [
+  leftMenuJson = [
     {"id": 1, name: "主页",pid: 0, url: "/app/home", cls: "fa-home"},
     {"id": 2, name: "内容设置",pid: 0, url: "", cls: "fa-book",  
       childs: [

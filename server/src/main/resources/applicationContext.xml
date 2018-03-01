@@ -33,9 +33,9 @@
     <bean id="dbcpDataSource" class="org.apache.commons.dbcp.BasicDataSource"
         destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/clk_web?generateSimpleParameterMetadata=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
-        <property name="username" value="root" />
-        <property name="password" value="root" />
+        <property name="url" value="jdbc:mysql://47.94.81.15:3306/test?generateSimpleParameterMetadata=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
+        <property name="username" value="cat" />
+        <property name="password" value="cat123" />
         <property name="initialSize" value="5"></property>
         <property name="maxActive" value="20"></property>
         <property name="minIdle" value="5"></property>

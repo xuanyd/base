@@ -16,7 +16,7 @@ import { ActiveTitleService } from "../common/page-title/active-title.service";
   declarations: [
      MainComponent,
      HeaderComponent,
-     LeftComponent,
+     LeftComponent, 
      PageTitleComponent
   ],
   exports:      [],

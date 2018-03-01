@@ -1,87 +1,32 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, world!</title>
-
+    <title>七里家园</title>
+    <!-- Sets initial viewport load and disables zooming  -->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <!-- Makes your prototype chrome-less once bookmarked to your phone's home screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm title">
-          热门
-        </div>
-        <div class="col-sm title">
-          热门01
-        </div>
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class="bar bar-nav">
+      <div class="segmented-control">
+        <a class="control-item" [ngClass]="{'active':hotSelect}" (click)="changePath('hot')">热门</a>
+        <a class="control-item" [ngClass]="{'active':plateSelect}"  (click)="changePath('plate')">板块</a>
       </div>
-      <div class="row">
-        <div class="col-sm sub-title">
-          热门0001
-        </div>
-      </div>
-    </div>
-    <div class="container main">
-      <div class="row new-item">
-        <div class="col-sm">
-          <div>Xuanyd</div><div style="float: right;">活动</div>
-          <div>XXXX，XXXXX，XXXXXXXXXX</div>
-        </div>
-      </div>
-      <div class="row new-item">
-        <div class="col-sm">
-          <div>Xuanyd</div><div style="float: right;">活动</div>
-          <div>XXXX，XXXXX，XXXXXXXXXX</div>
-        </div>
-      </div>
-      <div class="row new-item">
-        <div class="col-sm">
-          <div>Xuanyd</div><div style="float: right;">活动</div>
-          <div>XXXX，XXXXX，XXXXXXXXXX</div>
-        </div>
-      </div>
-      <div class="row new-item">
-        <div class="col-sm">
-          <div>Xuanyd</div><div style="float: right;">活动</div>
-          <div>XXXX，XXXXX，XXXXXXXXXX</div>
-        </div>
-      </div>
-      <div class="row new-item">
-        <div class="col-sm">
-          <div>Xuanyd</div><div style="float: right;">活动</div>
-          <div>XXXX，XXXXX，XXXXXXXXXX</div>
-        </div>
-      </div>
-      <div class="row new-item">
-        <div class="col-sm">
-          <div>Xuanyd</div><div style="float: right;">活动</div>
-          <div>XXXX，XXXXX，XXXXXXXXXX</div>
-        </div>
-      </div>
-      <div class="row new-item">
-        <div class="col-sm">
-          <div>Xuanyd</div><div style="float: right;">活动</div>
-          <div>XXXX，XXXXX，XXXXXXXXXX</div>
-        </div>
-      </div>
-      <div class="row new-item">
-        <div class="col-sm">
-          <div>Xuanyd</div><div style="float: right;">活动</div>
-          <div>XXXX，XXXXX，XXXXXXXXXX</div>
-        </div>
-      </div>
-    </div>
-    <div class="container bottom">
-      <div class="row">
-        <div class="col-sm title">
-          热门
-        </div>
-        <div class="col-sm title">
-          热门01
-        </div>
-      </div>
-    </div>
+    </header>
+    <router-outlet ></router-outlet>
+    <nav class="bar bar-tab">
+      <a class="tab-item active" href="#">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">社区</span>
+      </a>
+      <a class="tab-item" href="#">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">个人</span>
+      </a>
+    </nav>
   </body>
 </html>

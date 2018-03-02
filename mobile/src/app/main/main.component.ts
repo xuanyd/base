@@ -8,8 +8,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 })
 export class MainComponent implements OnInit{
 
-  hotSelect: boolean = true;
-  plateSelect: boolean = false;
+  menuClick: boolean = false;
 
   constructor(private router: Router){
 
@@ -19,15 +18,19 @@ export class MainComponent implements OnInit{
 
   }
 
-  changePath(path) {
-    if(path === 'plate'){
-      this.plateSelect = true;
-      this.hotSelect = false;
-      this.router.navigate(['/main/community/plate']);
-    } else if(path === 'hot'){
-      this.hotSelect = true;
-      this.plateSelect = false;
-      this.router.navigate(['/main/community/hot']);
-    }
+  clickMenu() {
+    this.menuClick = !this.menuClick;
   }
+
+  /*changePath(path) {
+    if(path === 'home'){
+      this.homeSelect = true;
+      this.mySelect = false;
+      this.router.navigate(['/main/community/hot']);
+    } else if(path === 'my'){
+      this.homeSelect = false;
+      this.mySelect = true;
+      this.router.navigate(['/main/user/home']);
+    } 
+  }*/
 }

@@ -10,7 +10,8 @@ const mainRoutes: Routes = [
     path: '',
     component: MainComponent,
     children: [ 
-      { path: 'community', loadChildren: 'app/community/community.module#CommunityModule' }
+      { path: 'community', loadChildren: 'app/community/community.module#CommunityModule' },
+      { path: 'user', loadChildren: 'app/user/user.module#UserModule' }
     ]
   }
 ]

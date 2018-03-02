@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { UserComponent } from './user.component';
 import { UserRoutingModule } from './user.routing.module';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { LoginComponent } from './login/login.component';
   ],
   declarations: [
     UserComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   exports: [
   ],

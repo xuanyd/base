@@ -20,16 +20,16 @@ public class NoticeController {
     private NoticeService noticeService;
 
     @RequestMapping("admin/noticelist")
-    public @ResponseBody Map noticeList(HttpServletRequest request) {
+    public @ResponseBody Map noticeList(HttpServletRequest request, @RequestBody Map<String, String> map) {
         Map<String, Object> retMap = new HashMap<>();
-        String title = request.getParameter("title");
-        String currentPage = request.getParameter("page");
+        String title = map.get("title");
+        String currentPage = map.get("page");
         int page = 1;
         int pageSize = 10;
         if ((currentPage == null) || (currentPage.equals(""))) {
             page = 1;
         } else {
-            page = Integer.valueOf(request.getParameter("page")).intValue();
+            page = Integer.valueOf(request.getParameter("currentPage")).intValue();
         }
         try{
             PageInfo pageInfo = noticeService.getNoticePage(title, page, pageSize);

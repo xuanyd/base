@@ -8020,7 +8020,11 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
             var actionName = this.getOpt(action) || action,
                 imageUrl = this.getOpt('imageUrl'),
                 serverUrl = this.getOpt('serverUrl');
-
+                console.log('----');
+                console.log(action);
+            if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'uploadvideo') {  
+                return '/uploadimage';  
+            } 
             if(!serverUrl && imageUrl) {
                 serverUrl = imageUrl.replace(/^(.*[\/]).+([\.].+)$/, '$1controller$2');
             }

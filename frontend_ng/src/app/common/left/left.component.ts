@@ -32,6 +32,9 @@ export class LeftComponent implements OnInit {
     }
   ]
 
+  @Output()
+  priceChange:EventEmitter<PriceQuote> = new EventEmitter();
+
   constructor(private router: Router,
     private ls: LocalStorage, 
     private activeTitleService: ActiveTitleService) {

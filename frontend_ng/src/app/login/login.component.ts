@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     that.loginBtnDisable = 'disabled';
     that.httpService.request({
       method: "POST",
-      url: "http://localhost:8081/admin/login",
+      url: "http://47.94.81.15:8080/server/admin/login",
       data: {
         username: that.loginForm.value.userName,
         password: that.loginForm.value.password

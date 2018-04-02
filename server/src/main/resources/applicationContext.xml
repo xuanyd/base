@@ -33,7 +33,6 @@
     <bean id="dbcpDataSource" class="org.apache.commons.dbcp.BasicDataSource"
         destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <!--<property name="url" value="jdbc:mysql://127.0.0.1:3306/baseDB?generateSimpleParameterMetadata=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />-->
         <property name="url" value="jdbc:mysql://47.94.81.15:3306/test?generateSimpleParameterMetadata=true&amp;useUnicode=true&amp;characterEncoding=UTF-8" />
         <property name="username" value="cat" />
         <property name="password" value="cat123" />

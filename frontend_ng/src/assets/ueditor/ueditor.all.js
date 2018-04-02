@@ -23816,7 +23816,6 @@ UE.plugin.register('autoupload', function (){
             errorHandler(me.getLang('autoupload.exceedTypeError'));
             return;
         }
-
         /* 创建Ajax并提交 */
         var xhr = new XMLHttpRequest(),
             fd = new FormData(),
@@ -24514,6 +24513,7 @@ UE.plugin.register('simpleupload', function (){
                 var params = utils.serializeParam(me.queryCommandValue('serverparam')) || '';
 
                 var imageActionUrl = me.getActionUrl(me.getOpt('imageActionName'));
+
                 var allowFiles = me.getOpt('imageAllowFiles');
 
                 me.focus();
@@ -24570,7 +24570,10 @@ UE.plugin.register('simpleupload', function (){
                 }
 
                 domUtils.on(iframe, 'load', callback);
-                form.action = utils.formatUrl(imageActionUrl + (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
+                form.action = UEDITOR_CONFIG.apiHost + utils.formatUrl(imageActionUrl + (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
+                if(form.action.charAt(form.action.length-1) == '?')
+                    form.action = form.action.substr(0, form.action.length -1);
+                console.log(form.action);
                 form.submit();
             });
 

@@ -49,6 +49,8 @@
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.2" />
           <element id="library" level="project" name="Maven: org.samba.jcifs:jcifs:1.3.3" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../community/server/lib/itext-2.1.7.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../community/server/lib/ueditor-1.1.2.jar" />
         </element>
       </element>
       <element id="directory" name="META-INF">

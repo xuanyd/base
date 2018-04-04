@@ -6,14 +6,18 @@ import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.apache.commons.fileupload.util.Streams;
+import org.apache.poi.util.SystemOutLogger;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.support.DefaultMultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.plaf.synth.SynthEditorPaneUI;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -28,11 +32,9 @@ public class UploadController {
     @ResponseBody
     Map uploadFile(@RequestParam(value = "file", required = false) MultipartFile file,
                            HttpServletRequest request, HttpServletResponse response) throws Exception{
-        System.out.println("-----------");
-
         Map<String, Object> m = new HashMap<String, Object>();
         // 对上传文件夹和临时文件夹进行初始化
-        String rootDir = "d://";
+        String rootDir = request.getSession().getServletContext().getRealPath("");
         String tmpDir = rootDir + "/tmp";
         File tmpDirPath = new File(tmpDir);
         if (ServletFileUpload.isMultipartContent(request)) {
@@ -44,48 +46,48 @@ public class UploadController {
             sfu.setFileSizeMax(1000000000);// 指定单个上传文件的最大尺寸
             sfu.setSizeMax(1000000000);// 指定一次上传多个文件的总尺寸
             FileItemIterator fii = sfu.getItemIterator(request);// 解析request
-            // 请求,并返回FileItemIterator集合
-            while (fii.hasNext()) {
-                FileItemStream fis = fii.next();// 从集合中获得一个文件流
-                if (!fis.isFormField() && fis.getName().length() > 0) {// 过滤掉表单中非文件域
-                    String filename = fis.getName();
-                    String[] FileName = filename.split("\\.");
-                    String preFile = FileName[0];
-                    String endFile = FileName[1];
-                    Date date = new Date();
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
-                    String nowdate = sdf.format(date);
-                    String newFileName = preFile + "_" + nowdate + "." + endFile;
-                    File appDir = new File(rootDir);
-                    if (!appDir.isDirectory()) {
-                        appDir.mkdir();
-                    }
-                    // 创建按月分类的子文件夹
-                    Calendar cal = Calendar.getInstance();
-                    int year = cal.get(Calendar.YEAR);
-                    int month = cal.get(Calendar.MONTH )+1;
-                    String currentMonth = (year + month) + "";
-                    File appSubDir = new File(appDir + "/" + currentMonth);
-                    if (!appSubDir.isDirectory()) {
-                        appSubDir.mkdir();
-                    }
-                    String newFilepath = appSubDir + "/" + newFileName;
-                    BufferedInputStream in = new BufferedInputStream(fis.openStream());// 获得文件输入流
-                    BufferedOutputStream out =
-                            new BufferedOutputStream(new FileOutputStream(new File(newFilepath)));// 获得文件输出流
-                    Streams.copy(in, out, true);// 开始把文件写到你指定的上传文件夹
-                    m.put("path", "/" + currentMonth + "/");
-                    m.put("filename", newFileName);
-                    m.put("original", filename);
-                    m.put("name", newFileName);
-                    m.put("url", "/" + currentMonth + "/"+newFileName);
-                    m.put("state", "SUCCESS");
-                    m.put("type", ".jpg");
-                    m.put("size", "99697");
+            DefaultMultipartHttpServletRequest mfRequest = (DefaultMultipartHttpServletRequest) request;
+            MultiValueMap<String, MultipartFile> multipartFiles = mfRequest.getMultiFileMap();
+            MultipartFile multipartFile = multipartFiles.get("upfile").get(0);
+            if(!multipartFile.isEmpty()) {
+                String filename = multipartFile.getOriginalFilename();
+                Date date = new Date();
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
+                String[] FileName = filename.split("\\.");
+                String nowdate = sdf.format(date);
+                String preFile = FileName[0];
+                String endFile = FileName[1];
+                String newFileName = preFile + "_" + nowdate + "." + endFile;
+                File appDir = new File(rootDir);
+                if (!appDir.isDirectory()) {
+                    appDir.mkdir();
                 }
+                // 创建按月分类的子文件夹
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH )+1;
+                String currentMonth = (year + month) + "";
+                File appSubDir = new File(appDir + "/" + currentMonth);
+                if (!appSubDir.isDirectory()) {
+                    appSubDir.mkdir();
+                }
+                String newFilepath = appSubDir + "/" + newFileName;
+                BufferedInputStream in = new BufferedInputStream(multipartFile.getInputStream());// 获得文件输入流
+                BufferedOutputStream out =
+                        new BufferedOutputStream(new FileOutputStream(new File(newFilepath)));// 获得文件输出流
+                Streams.copy(in, out, true);// 开始把文件写到你指定的上传文件夹
+                m.put("path", "/" + currentMonth + "/");
+                m.put("filename", newFileName);
+                m.put("original", filename);
+                m.put("name", newFileName);
+                m.put("url", "/" + currentMonth + "/"+newFileName);
+                m.put("state", "SUCCESS");
+                m.put("type", ".jpg");
+                m.put("size", "99697");
+                out.flush();
+                out.close();
             }
         }
-
         return m;
     }
     @RequestMapping(value="/ueditorConfig")

@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   loginValid: boolean = true;
   connectionValid: boolean = true;
   connectErrMsg: string='';
+  isLogin: boolean = false;
   constructor(private router: Router, 
     private ls: LocalStorage,
     private httpService: HttpService, private formBuilder: FormBuilder) {
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
     if (!this.loginForm.valid)
       return
     let that = this;
+    that.isLogin = true;
     that.loginBtnDisable = 'disabled';
     that.httpService.request({
       method: "POST",
@@ -55,6 +57,7 @@ export class LoginComponent implements OnInit {
       } else {
         that.connectErrMsg = result.msg;
         that.connectionValid = false;
+        that.isLogin = false;
       }
     });
 	}

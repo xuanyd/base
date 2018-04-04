@@ -23835,6 +23835,7 @@ UE.plugin.register('autoupload', function (){
                     errorHandler(json.state);
                 }
             }catch(er){
+
                 errorHandler(me.getLang('autoupload.loadError'));
             }
         });
@@ -24521,11 +24522,15 @@ UE.plugin.register('simpleupload', function (){
 
                 function callback(){
                     try{
+                        console.log('1----------------');
                         var link, json, loader,
-                            body = (iframe.contentDocument || iframe.contentWindow.document).body,
-                            result = body.innerText || body.textContent || '';
+                            result;
+                        console.log('2----------------');
+                        console.log(result);
                         json = (new Function("return " + result))();
                         link = me.options.imageUrlPrefix + json.url;
+                        console.log('----------------');
+                        console.log(link);
                         if(json.state == 'SUCCESS' && json.url) {
                             loader = me.document.getElementById(loadingId);
                             loader.setAttribute('src', link);
@@ -24538,6 +24543,7 @@ UE.plugin.register('simpleupload', function (){
                             showErrorLoader && showErrorLoader(json.state);
                         }
                     }catch(er){
+                        console.log(er);
                         showErrorLoader && showErrorLoader(me.getLang('simpleupload.loadError'));
                     }
                     form.reset();

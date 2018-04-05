@@ -5,6 +5,8 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class HttpService {
  
+ host: String = "http://47.94.81.15:8080/server";
+
  constructor(private http: Http) {
  }
  
@@ -29,7 +31,8 @@ export class HttpService {
  * @returns {Promise<R>|Promise<U>}
  */
  public get(url: string, params: any): any {
-   return this.http.get(url, {search: params})
+  url = this.host+url;
+  return this.http.get(url, {search: params})
     .toPromise()
     .then(this.handleSuccess)
     .catch(res => this.handleError(res));
@@ -42,7 +45,8 @@ export class HttpService {
  * @returns {Promise<R>|Promise<U>}
  */
  public post(url: string, params: any) {
-   return this.http.post(url, params)
+  url = this.host+url;
+  return this.http.post(url, params)
     .toPromise()
     .then(this.handleSuccess)
     .catch(res => this.handleError(res));

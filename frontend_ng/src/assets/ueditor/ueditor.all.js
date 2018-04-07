@@ -24473,7 +24473,6 @@ UE.plugin.register('simpleupload', function (){
             h = containerBtn.offsetHeight || 20,
             btnIframe = document.createElement('iframe'),
             btnStyle = 'display:block;width:' + w + 'px;height:' + h + 'px;overflow:hidden;border:0;margin:0;padding:0;position:absolute;top:0;left:0;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0;cursor:pointer;';
-
         domUtils.on(btnIframe, 'load', function(){
 
             var timestrap = (+new Date()).toString(36),
@@ -24509,27 +24508,36 @@ UE.plugin.register('simpleupload', function (){
             var iframe = btnIframeDoc.getElementById('edui_iframe_' + timestrap);
 
             domUtils.on(input, 'change', function(){
+
                 if(!input.value) return;
                 var loadingId = 'loading_' + (+new Date()).toString(36);
                 var params = utils.serializeParam(me.queryCommandValue('serverparam')) || '';
 
                 var imageActionUrl = me.getActionUrl(me.getOpt('imageActionName'));
-
+                
                 var allowFiles = me.getOpt('imageAllowFiles');
-
+               
                 me.focus();
-                me.execCommand('inserthtml', '<img class="loadingclass" id="' + loadingId + '" src="' + me.options.themePath + me.options.theme +'/images/spacer.gif" title="' + (me.getLang('simpleupload.loading') || '') + '" >');
-
+                me.execCommand('inserthtml', '<img class="loadingclass" id="' + loadingId + '" src="' + 
+                    me.options.themePath + me.options.theme +'/images/spacer.gif" title="' +
+                     (me.getLang('simpleupload.loading') || '') + '" >');
                 function callback(){
                     try{
                         console.log('1----------------');
+                        console.log(iframe);
+                        console.log(iframe);
+                        console.log(me);
                         var link, json, loader,
-                            result;
-                        console.log('2----------------');
-                        console.log(result);
-                        console.log(json);
-                        json = (new Function("return " + result))();
+                            body = "<body><pre style='word-wrap: break-word; white-space: pre-wrap;'>{'path':'/2022/','filename':'sadf_20180407162017.bmp','original':'sadf.bmp','size':'99697','name':'sadf_20180407162017.bmp','state':'SUCCESS','type':'.jpg','url':'/2022/sadf_20180407162017.bmp'}</pre></body>",
+                            result = body.innerText || body.textContent || '';
+                        
+                        json = {"path":"/2022/","filename":"sadf_20180407163120.jpg","original":"sadf.jpg","size":"99697",
+                        "name":"sadf_20180407163120.jpg","state":"SUCCESS","type":".jpg","url":"/2022/sadf_20180407163120.jpg"};
+
                         link = me.options.imageUrlPrefix + json.url;
+                        link = UEDITOR_CONFIG.apiHost + link;
+
+                        console.log(json);
                         console.log('----------------');
                         console.log(link);
                         if(json.state == 'SUCCESS' && json.url) {
@@ -24580,7 +24588,6 @@ UE.plugin.register('simpleupload', function (){
                 form.action = UEDITOR_CONFIG.apiHost + utils.formatUrl(imageActionUrl + (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
                 if(form.action.charAt(form.action.length-1) == '?')
                     form.action = form.action.substr(0, form.action.length -1);
-                console.log(form.action);
                 form.submit();
             });
 

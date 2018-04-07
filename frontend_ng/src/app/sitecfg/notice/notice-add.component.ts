@@ -67,7 +67,7 @@ export class NoticeAddComponent implements OnInit {
     let that = this;
     this.httpService.request({
       method: "POST",
-      url: "http://localhost:8081/admin/notice-add",
+      url: "admin/notice-add",
       data:{
         noticeType: that.noticeAddForm.value.noticeType,
         title: that.noticeAddForm.value.title,
@@ -84,7 +84,7 @@ export class NoticeAddComponent implements OnInit {
     let that = this;
     this.httpService.request({
       method: "POST",
-      url: "http://localhost:8081/admin/columnlist",
+      url: "/admin/columnlist",
     }).then(result => {
       if(result.data.flag == "1000"){
         that.columnList = result.data.columnList

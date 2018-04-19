@@ -8020,8 +8020,6 @@ var fillCharReg = new RegExp(domUtils.fillChar, 'g');
             var actionName = this.getOpt(action) || action,
                 imageUrl = this.getOpt('imageUrl'),
                 serverUrl = this.getOpt('serverUrl');
-                console.log('----');
-                console.log(action);
             if (action == 'uploadimage' || action == 'uploadscrawl' || action == 'uploadvideo') {  
                 return '/uploadimage';  
             } 
@@ -24473,8 +24471,8 @@ UE.plugin.register('simpleupload', function (){
             h = containerBtn.offsetHeight || 20,
             btnIframe = document.createElement('iframe'),
             btnStyle = 'display:block;width:' + w + 'px;height:' + h + 'px;overflow:hidden;border:0;margin:0;padding:0;position:absolute;top:0;left:0;filter:alpha(opacity=0);-moz-opacity:0;-khtml-opacity: 0;opacity: 0;cursor:pointer;';
-        domUtils.on(btnIframe, 'load', function(){
-
+            
+            domUtils.on(btnIframe, 'load', function(){
             var timestrap = (+new Date()).toString(36),
                 wrapper,
                 btnIframeDoc,
@@ -24482,6 +24480,7 @@ UE.plugin.register('simpleupload', function (){
 
             btnIframeDoc = (btnIframe.contentDocument || btnIframe.contentWindow.document);
             btnIframeBody = btnIframeDoc.body;
+
             wrapper = btnIframeDoc.createElement('div');
 
             wrapper.innerHTML = '<form id="edui_form_' + timestrap + '" target="edui_iframe_' + timestrap + '" method="POST" enctype="multipart/form-data" action="' + me.getOpt('serverUrl') + '" ' +
@@ -24506,7 +24505,8 @@ UE.plugin.register('simpleupload', function (){
             var form = btnIframeDoc.getElementById('edui_form_' + timestrap);
             var input = btnIframeDoc.getElementById('edui_input_' + timestrap);
             var iframe = btnIframeDoc.getElementById('edui_iframe_' + timestrap);
-
+            console.log(1);
+            console.log(iframe);
             domUtils.on(input, 'change', function(){
 
                 if(!input.value) return;
@@ -24525,10 +24525,9 @@ UE.plugin.register('simpleupload', function (){
                     try{
                         console.log('1----------------');
                         console.log(iframe);
-                        console.log(iframe);
                         console.log(me);
+                        return;
                         var link, json, loader,
-                            body = "<body><pre style='word-wrap: break-word; white-space: pre-wrap;'>{'path':'/2022/','filename':'sadf_20180407162017.bmp','original':'sadf.bmp','size':'99697','name':'sadf_20180407162017.bmp','state':'SUCCESS','type':'.jpg','url':'/2022/sadf_20180407162017.bmp'}</pre></body>",
                             result = body.innerText || body.textContent || '';
                         
                         json = {"path":"/2022/","filename":"sadf_20180407163120.jpg","original":"sadf.jpg","size":"99697",
@@ -24583,12 +24582,33 @@ UE.plugin.register('simpleupload', function (){
                     showErrorLoader(me.getLang('simpleupload.exceedTypeError'));
                     return;
                 }
+                var uploadURL =  UEDITOR_CONFIG.apiHost + utils.formatUrl(imageActionUrl + 
+                    (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
+                console.log(uploadURL);
+                UE.ajax.request(uploadURL,{
+                    'method': 'POST',
+                    'dataType': isJsonp ? 'jsonp':'',
+                    'onsuccess':function(r){
+                        try {
+                            var config = isJsonp ? r:eval("("+r.responseText+")");
+                            utils.extend(me.options, config);
+                            me.fireEvent('serverConfigLoaded');
+                            me._serverConfigLoaded = true;
+                        } catch (e) {
+                            showErrorMsg(me.getLang('loadconfigFormatError'));
+                        }
+                    },
+                    'onerror':function(){
+                        showErrorMsg(me.getLang('loadconfigHttpError'));
+                    }
+                });
 
-                domUtils.on(iframe, 'load', callback);
-                form.action = UEDITOR_CONFIG.apiHost + utils.formatUrl(imageActionUrl + (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
+                //domUtils.on(iframe, 'load', callback);
+               /* form.action = UEDITOR_CONFIG.apiHost + utils.formatUrl(imageActionUrl + (imageActionUrl.indexOf('?') == -1 ? '?':'&') + params);
                 if(form.action.charAt(form.action.length-1) == '?')
                     form.action = form.action.substr(0, form.action.length -1);
-                form.submit();
+                console.log(form);
+                form.submit();*/
             });
 
             var stateTimer;

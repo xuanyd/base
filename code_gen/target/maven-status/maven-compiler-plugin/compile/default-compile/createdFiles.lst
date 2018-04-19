@@ -1,0 +1,6 @@
+demo\Hello.class
+core\CodeGenerateUtil.class
+core\ColumnClass.class
+util\DBUtil.class
+core\FreeMarkerTemplateUtils.class
+util\DBConnector.class

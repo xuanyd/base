@@ -3,8 +3,10 @@ package demo;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.HashMap;
 import util.*;
 import core.*;
+import gui.MainFrame;
 
 public class Hello {
 
@@ -31,14 +33,17 @@ public class Hello {
 		for (Map<String, Object> tableMap : dataList ) {
 			String tableName = tableMap.get("TABLE_NAME").toString();
 			if(dontGenTables.contains(tableName)) {
-				System.out.println("jump over " + tableName +  "'s code generate");
+				System.out.println("skip " + tableName +  "'s code generate");
 			} else {
 				try {
 					if(tableName.indexOf("_") > 0){
 						tableName = tableName.substring(tableName.lastIndexOf("_"), tableName.length());
 					}
 					System.out.println("Starting generage: " + tableName);
-					//genUtil.generateControllerFile();
+					Map<String, String> genInfo = new HashMap<>();
+					genInfo.put("tableName", tableName);
+					genInfo.put("packageName", "com.admin");
+					genUtil.generateControllerFile(genInfo);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

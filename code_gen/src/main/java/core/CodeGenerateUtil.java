@@ -14,21 +14,26 @@ import java.util.Map;
 
 public class CodeGenerateUtil {
 	
-  private final String AUTHOR = "XuanYanDong";
-  private final String CURRENT_DATE = "2017/05/03";
-  private final String diskPath = "D://code_gen//";
-  private final String tableName = "tm_project_quality_problem";
-  private final String packageName = "com.evada.pm.process.manage";
-  private final String tableAnnotation = "质量问题";
+  private String AUTHOR = "XuanYanDong";
+  private String CURRENT_DATE = "2017/05/03";
+  private String diskPath = "D://code_gen//";
+  private String tableName = "tm_project_quality_problem";
+  private String packageName = "com.evada.pm.process.manage";
+  private String tableAnnotation = "质量问题";
+  final String controllerSuffix = "Controller.java";
+  final String controllertemplateName = "Controller.ftl";
 
-	public void generateControllerFile() throws Exception{
-		final String suffix = "Controller.java";
-		final String path = diskPath + replaceUnderLineAndUpperCase(tableName) + suffix;
-		final String templateName = "Controller.ftl";
-		File mapperFile = new File(path);
+	public void generateControllerFile(Map<String, String> info) throws Exception{
+		tableName = info.get("tableName");
+	  packageName = info.get("packageName");
+
 		Map<String,Object> dataMap = new HashMap<>();
-		generateFileByTemplate(templateName,mapperFile,dataMap);	
-	}
+    System.out.println("-------------------------start gen controller-------------------------");
+		generateFileByTemplate(controllertemplateName, 
+      new File(diskPath + replaceUnderLineAndUpperCase(tableName) + controllerSuffix), dataMap);	
+    System.out.println("-------------------------complete gen controller-------------------------");
+
+  }
 
 	private void generateFileByTemplate(final String templateName,
 		File file, Map<String,Object> dataMap) throws Exception {

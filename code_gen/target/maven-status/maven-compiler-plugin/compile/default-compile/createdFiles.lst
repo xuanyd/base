@@ -1,6 +1,9 @@
 demo\Hello.class
 core\CodeGenerateUtil.class
-core\ColumnClass.class
+gui\LoadingPanel.class
 util\DBUtil.class
+gui\MainFrame.class
+gui\CheckTablePanel.class
+core\ColumnClass.class
 core\FreeMarkerTemplateUtils.class
 util\DBConnector.class

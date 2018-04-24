@@ -1,10 +1,6 @@
-import { Component, OnInit, Output} from '@angular/core';
+import { Component, OnInit, Output, ViewChild} from '@angular/core';
 import { Router } from '@angular/router';
-import { Pagination } from '../common/page/pagination';
-import { SelectTree } from '../common/select-tree/select-tree';
-import { ModalAlert } from '../common/modal/modal-alert';
-import { ModalConfirm } from '../common/confirm/modal-confirm';
-import { GridTable } from '../common/grid/grid-table';
+import { GridComponent } from '../common/lib/grid/grid.component';
 
 @Component({
   selector: 'c-test-layout',
@@ -14,59 +10,40 @@ import { GridTable } from '../common/grid/grid-table';
 
 export class LayoutComponent implements OnInit {
 	
-	@Output()
-  public pagination:Pagination = Pagination.defaultPagination;
+	@ViewChild('testGrid')
+  testGrid: GridComponent; 
 
-  @Output()
-  public selectTree:SelectTree = SelectTree.defaultSelectTree;
+  url: String = "admin/noticelist";
 
-  @Output()
-  public modalAlert:ModalAlert = ModalAlert.defaultModalAlert;
+  testGridHeaders: any;
 
-  @Output()
-  public modalConfirm:ModalConfirm = ModalConfirm.defaultModalConfirm;
-
-  @Output()
-  public gridTable:GridTable = GridTable.defaultGridTable;
+  searchParams: any  = {
+    title: ''
+  };
 
 	constructor(private router: Router) {
-    
+    this.testGridHeaders = [
+      {'key':'id', 'name': 'xxx','keyType': true, 'width': 'col-sm-1'},
+      {'key':'column_type_name', 'name': 'xxx1', 'width': 'col-sm-2'},
+      {'key':'title', 'name': 'xxx2', 'deleteTitle': true, 'width': 'col-sm-3'},
+      {'key':'add_time', 'name': 'xxx3', 'width': 'col-sm-1', 'date':true}
+    ];
 	}
 
   ngOnInit() {
-    this.selectTree.treeData = [{id:1,name:'测试'},{id:2,name:'测试'}];
-    this.selectTree.treeName = 'testTreeName';
-    this.initJobExceptionList();
-    this.pagination.changePage = (() => {
-      this.initJobExceptionList();
-    });
 
-    this.gridTable.headers = [{name:'name',displayName:'头部xxx'},
-      {name:'address',displayName:'头部xxx'},{name:'phone',displayName:'头部xxx'}]
-    this.gridTable.dataList = [
-      {name:'张三',address:'北京',phone:'13333338889'},
-      {name:'李四',address:'上海',phone:'13333338889'},
-      {name:'李四',address:'上海',phone:'13333338889'}
-      ] 
   }
-  initJobExceptionList(){
-    this.pagination.totalItems = 60;
-  }
+ 
 
   tip() {
-    this.modalAlert.success = true
-    this.modalAlert.show = true
+   
   }
 
   exception() {
-    this.modalAlert.success = false
-    this.modalAlert.show = true
+  
   }
 
   confirm(){
-    this.modalConfirm.show = true
-    this.modalConfirm.select = (() => {
-      console.log(this.modalConfirm.confirm)
-    })
+  
   }
 }

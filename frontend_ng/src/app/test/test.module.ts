@@ -1,12 +1,10 @@
-import { NgModule }   from '@angular/core'
-import { CommonModule }  from '@angular/common'
-import { TestComponent } from './test.component'
-import { LayoutComponent }   from './layout.component'
-import { TestRoutingModule  } from './test.routing.module'
-// import { SelectTreeComponent } from '../common/select-tree'
-// import { ModalComponent } from '../common/modal'
-// import { ConfirmComponent } from '../common/confirm'
-// import { GridComponent } from '../common/grid'
+import { NgModule }   from '@angular/core';
+import { CommonModule }  from '@angular/common';
+import { TestComponent } from './test.component';
+import { LayoutComponent }   from './layout.component';
+import { TestRoutingModule  } from './test.routing.module';
+import { GridComponent } from '../common/lib/grid/grid.component';
+
 
 @NgModule({
   imports:      [ 
@@ -15,11 +13,8 @@ import { TestRoutingModule  } from './test.routing.module'
   ],
   declarations: [
     TestComponent,
-    //SelectTreeComponent,
-    //ModalComponent,
-    //ConfirmComponent,
-    //GridComponent,
-    LayoutComponent
+    LayoutComponent,
+    GridComponent
   ],
   exports:      [ 
   ],

@@ -24,6 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
     "caniuse-db": "^1.0.30000769",
     "core-js": "^2.4.1",
+    "flatpickr": "^4.4.4",
     "font-awesome": "^4.7.0",
     "fontawesome": "^4.7.2",
     "ngx-ueditor": "^1.0.9",

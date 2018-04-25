@@ -11,6 +11,8 @@ import { ActiveTitleService } from "../common/page-title/active-title.service";
 })
 
 export class MainComponent implements OnInit {
+  	
+  	leftMenuClosed : boolean = false;
   	url:string='1';
   	appTitle = 'Hello title';
 	constructor(private ls: LocalStorage, private activeTitleService: ActiveTitleService){
@@ -21,5 +23,9 @@ export class MainComponent implements OnInit {
 	
 	ngOnInit() {
 
+	}
+
+	changeMenuStatus() {
+		this.leftMenuClosed = !this.leftMenuClosed;
 	}
 }

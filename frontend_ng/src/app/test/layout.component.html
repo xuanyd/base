@@ -6,4 +6,53 @@
   <br />
   <app-grid #testGrid [url]="url" [headers]="testGridHeaders" [params]="searchParams">
   </app-grid>
+  <div class="row"> 
+  	<div class="col-sm-6 col-md-6">
+  		<div class="block-flat">
+		    <div class="header">							
+		      <h3>表单校验</h3>
+		    </div>
+		    <div class="content">
+		      <form [formGroup]="testForm" class="form-horizontal" role="form">
+		        <div class="form-group">
+			        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+			        <div class="col-sm-10">
+			          <input type="email" name="email" formControlName="email"
+			          	class="form-control" placeholder="Email">
+			        </div>
+		         	<div style="color: red;" 
+				        [hidden]="!(testForm.controls['email'].errors && testForm.controls['email'].dirty)">
+				        名称必填，5-15位！
+			        </div>
+			      </div>
+		        <div class="form-group">
+			        <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+			        <div class="col-sm-10">
+			          <input type="password" name="password" formControlName="password"
+			          	class="form-control"  placeholder="Password">
+			        </div>
+		        	<div style="color: red;" 
+				        [hidden]="!(testForm.controls['password'].errors && testForm.controls['password'].dirty)">
+				        名称必填，5-15位！
+			        </div>
+		        </div>
+		        <div class="form-group">
+			        <div class="col-sm-offset-2 col-sm-10">
+			          <button type="submit" class="btn btn-primary">Registrer</button>
+			          <button class="btn btn-default">Cancel</button>
+			        </div>
+		        </div>
+		      </form>
+		    </div>
+		  </div>
+  	</div>
+  </div>
+  <div class="row">
+  	<div class="col-md-6">
+  		<div class="input-group date datetime col-md-5 col-xs-7" data-min-view="2" data-date-format="yyyy-mm-dd">
+        <input class="form-control" size="16" type="text" value="" readonly="">
+        <span class="input-group-addon btn btn-primary"><span class="glyphicon glyphicon-th"></span></span>
+      </div>
+  	</div>
+  </div>
 </div>

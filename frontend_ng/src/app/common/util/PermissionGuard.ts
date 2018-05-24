@@ -9,7 +9,8 @@ export class PermissionGuard implements CanActivate{
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean {
-  	if(this.ls.getObject('userName') == null || this.ls.getObject('token') == null){
+  	if (this.ls.getObject('userName') == null || this.ls.getObject('token') == null) {
+      alert("无权访问");
   		return false;
   	}
     return true

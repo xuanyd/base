@@ -1,0 +1,19 @@
+问题记录：
+	线程如何同步和通讯？
+
+	什么是SOA，谈谈你的SOA的理解？
+
+	81.简述synchronized和java.util.concurrent.locks.Lock的异同 ？
+
+
+		答：（1）主要相同点：Lock能完成synchronized所实现的所有功能
+
+			（2）主要不同点：Lock有比synchronized更精确的线程语义和更好的性能。synchronized会自动释放锁，而Lock一定要求程序员手工释放，并且必须在finally从句中释放。Lock还有更强大的功能，例如，它的tryLock方法可以非阻塞方式去拿锁。
+
+	84.描述一下JVM加载class文件的原理机制
+
+	阐述Spring框架中Bean的生命周期？
+
+	41.在Web项目中如何获得Spring的IoC容器？
+
+	答：WebApplicationContext ctx = WebApplicationContextUtils.getWebApplicationContext（servletContext）

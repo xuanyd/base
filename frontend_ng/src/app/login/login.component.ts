@@ -25,10 +25,11 @@ export class LoginComponent implements OnInit {
       Validators.compose([Validators.required, Validators.minLength(5), Validators.maxLength(15)]));
     let passwordFc = new FormControl('123456',
       Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(15)]));
+    
     this.loginForm = this.formBuilder.group({
       userName: userNameFc,
-      password: passwordFc
-    });
+      password: passwordFc    
+      });
   }
 
 	ngOnInit() {

@@ -22,6 +22,7 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
+    "angularjs-datepicker": "^2.1.23",
     "caniuse-db": "^1.0.30000769",
     "core-js": "^2.4.1",
     "flatpickr": "^4.4.4",
